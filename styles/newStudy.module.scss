@@ -1,0 +1,39 @@
+.main{
+  height: 79%;
+  padding-top:10px;
+  background-color: #F3F3F3;
+}
+.banner{
+  width: 90%;
+  border-radius: 16px;
+  background-color: #DFB144;
+  color: white;
+  margin:auto;
+  //margin-top:10px;
+  padding:15px;
+  display: flex;
+  .bannerTitle{
+    h3{
+      font-size: 13pt;
+      padding:2px 0;
+    }
+  }
+  p{
+    margin-top: 5px;
+    font-size: 10pt;
+  }
+  .pencil{
+    font-size: 2rem;
+  }
+
+}
+.topTemp{
+ height: 6%;
+ background-color: azure;
+}
+.bottomTemp{
+  height: 15%;
+  background-color: azure;
+  position: fixed;
+  width: 100%;
+ }
