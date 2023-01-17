@@ -27,9 +27,21 @@
   }
 
 }
-.topTemp{
- height: 6%;
- background-color: azure;
+.top{
+ height: 5%;
+ background-color: white;
+ border-bottom: solid 1px #DBDBDB;
+ .topTitle{
+  float: left;
+  font-size: 12pt;
+  margin-left: 45%;
+  margin-top: 3%;
+ }
+ .bell{
+  float: right;
+  margin-top: 3%;
+  margin-right: 2%;
+ }
 }
 .bottomTemp{
   height: 15%;

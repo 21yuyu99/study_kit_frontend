@@ -1,8 +1,12 @@
 import styles from '../styles/newStudy.module.scss';
+import { AiOutlineBell } from 'react-icons/ai'
 export default function newStudy(){
  return(
   <>
-  <nav className={styles.topTemp}>새 스터디</nav>
+  <nav className={styles.top}>
+    <div className={styles.topTitle}>새 스터디</div>
+    <div className={styles.bell}><AiOutlineBell></AiOutlineBell></div>
+  </nav>
   <main className={styles.main}>
     <div className={styles.banner}>
       <div className={styles.bannerText}>
