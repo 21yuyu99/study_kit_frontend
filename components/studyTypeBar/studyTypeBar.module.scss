@@ -1,0 +1,21 @@
+.studyTypeBar{
+  width:90%;
+  margin:auto;
+  margin-top:15px;
+  text-align: center;
+  font-size: 12pt;
+  color:#4D4D4D;
+  overflow-x: auto;
+  white-space: nowrap;
+  .studyType{
+    display: inline-block;
+    border: 1px solid #DBDBDB;
+    border-radius: 16px;
+    padding:10px;
+    margin-right:3%;
+    background-color: white;
+    &:last-child{
+      margin-right: 0px;
+    }
+  }
+}

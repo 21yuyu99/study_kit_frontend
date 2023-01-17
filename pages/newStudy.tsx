@@ -1,5 +1,6 @@
 import styles from '../styles/newStudy.module.scss';
 import { AiOutlineBell, AiOutlineSearch } from 'react-icons/ai';
+import StudyTypeBar from '@/components/studyTypeBar';
 export default function newStudy(){
  return(
   <>
@@ -22,6 +23,7 @@ export default function newStudy(){
       <input type="text" placeholder='스터디주제, 이름 검색'></input>
       <button type="submit" className={styles.searchButton}><AiOutlineSearch size="20"></AiOutlineSearch></button>
     </form>
+    <StudyTypeBar/>
   </main>
   <nav className={styles.bottomTemp}>홈 새스터디 마이페이지</nav>
   </>
