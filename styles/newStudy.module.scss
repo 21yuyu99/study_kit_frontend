@@ -34,6 +34,9 @@
   margin:auto;
   padding:15px;
   display: flex;
+  .bannerText{
+    width:80%;
+  }
   .bannerTitle{
     h3{
       font-size: 13pt;
@@ -43,6 +46,9 @@
   p{
     margin-top: 5px;
     font-size: 10pt;
+    @media (max-width: 340px) {
+      font-size: 9pt;
+    }
   }
   .pencil{
     font-size: 2rem;
