@@ -4,8 +4,9 @@ export default function newStudy(){
  return(
   <>
   <nav className={styles.top}>
-    <div className={styles.topTitle}>새 스터디</div>
-    <div className={styles.bell}><AiOutlineBell></AiOutlineBell></div>
+      <div className={styles.topLeftContainer}></div>
+      <div className={styles.topTitle}>새 스터디</div>
+      <div className={styles.bell}><AiOutlineBell></AiOutlineBell></div>
   </nav>
   <main className={styles.main}>
     <div className={styles.banner}>
