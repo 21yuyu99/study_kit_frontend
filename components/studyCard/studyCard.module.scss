@@ -1,0 +1,46 @@
+.studyCard{
+  width: 95%;
+  border-radius: 16px 0px 0px 16px / 16px 0px 0px 16px;
+  background-color: white;
+  color: black;
+  margin-left: 5%;
+  margin-top: 5%;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  .cardType{
+    width: 10%;
+    height: 20px;
+    font-size: 10pt;
+  }
+  .cardTag{
+    width: 80%;
+    height: 20px;
+    font-size: 10pt;
+  }
+  .star{
+    width: 10%;
+    height: 20px;
+    color: #0091FF;
+    text-align: right;
+  }
+  .cardContent{
+    .cardTitle{
+      h3{
+        font-size: 13pt;
+        padding:5px 0;
+      }
+    }
+    p{
+      font-size: 10pt;
+      height: 20px;
+    }  
+  }
+  progress{
+    margin-top: 15px;
+    width: 426px;
+    height: 10px;
+    border-radius: 10px;
+    color: #0091FF;
+  }
+}
