@@ -27,6 +27,30 @@
   }
 
 }
+
+.searchBox{
+  position: relative;
+  width: 90%;
+  margin:auto;
+  margin-top:15px;
+  input {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .searchButton{
+    position : absolute;
+    width: 30px;
+    height: 20px;
+    top: 7px;
+    right: 7px;
+    border: none;
+    background-color: white
+  }
+}
+
 .top{
  height: 6%;
  background-color: white;
