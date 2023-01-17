@@ -1,5 +1,5 @@
 import styles from '../styles/newStudy.module.scss';
-import { AiOutlineBell } from 'react-icons/ai'
+import { AiOutlineBell, AiOutlineSearch } from 'react-icons/ai';
 export default function newStudy(){
  return(
   <>
@@ -18,6 +18,10 @@ export default function newStudy(){
       </div>
       <div className={styles.pencil}>✏️</div>
     </div>
+    <form action="" method="GET" className={styles.searchBox}>
+      <input type="text" placeholder='스터디주제, 이름 검색'></input>
+      <button type="submit" className={styles.searchButton}><AiOutlineSearch size="20"></AiOutlineSearch></button>
+    </form>
   </main>
   <nav className={styles.bottomTemp}>홈 새스터디 마이페이지</nav>
   </>

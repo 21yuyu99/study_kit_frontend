@@ -4,9 +4,9 @@
   border-bottom: solid 1px #DBDBDB;
   display: flex;
   align-items: center;
-.topLeftContainer{
- width: 20%;
-}
+  .topLeftContainer{
+  width: 20%;
+  }
  .topTitle{
   width: 80%;
   text-align: center;
@@ -48,6 +48,28 @@
     font-size: 2rem;
   }
 
+}
+.searchBox{
+  position: relative;
+  width: 90%;
+  margin:auto;
+  margin-top:15px;
+  input {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .searchButton{
+    position : absolute;
+    width: 30px;
+    height: 20px;
+    top: 7px;
+    right: 7px;
+    border: none;
+    background-color: white
+  }
 }
 .bottomTemp{
   height: 15%;
