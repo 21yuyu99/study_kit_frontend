@@ -2,6 +2,7 @@ import styles from '../styles/newStudy.module.scss';
 import { AiOutlineBell, AiOutlineSearch } from 'react-icons/ai';
 import StudyTypeBar from '@/components/studyTypeBar';
 import StudyCard from '@/components/studyCard';
+import BottomNavigation from '@/components/bottomNavigation';
 export default function newStudy(){
  return(
   <>
@@ -26,8 +27,11 @@ export default function newStudy(){
     </form>
     <StudyTypeBar/>
     <StudyCard/>
+    <StudyCard/>
+    <StudyCard/>
+    <StudyCard/>
   </main>
-  <nav className={styles.bottomTemp}>홈 새스터디 마이페이지</nav>
+  <BottomNavigation/>
   </>
  )
 }
