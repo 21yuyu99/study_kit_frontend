@@ -1,0 +1,138 @@
+.top{
+  height: 6%;
+  background-color: white;
+  border-bottom: solid 1px #DBDBDB;
+  display: flex;
+  align-items: center;
+  .topLeftContainer{
+  width: 20%;
+  }
+ .topTitle{
+  width: 80%;
+  text-align: center;
+  font-size:12pt;
+ }
+  .bell{
+    width: 20%;
+    text-align: center;
+    line-height: 1;
+    svg{
+      vertical-align:top;
+    }
+  }
+ }
+.main{
+  height: 79%;
+  padding-top:10px;
+  background-color: #F3F3F3;
+}
+.banner{
+  width: 90%;
+  border-radius: 16px;
+  background-color: #DFB144;
+  color: white;
+  margin:auto;
+  padding:15px;
+  display: flex;
+  .bannerText{
+    width:80%;
+  }
+  .bannerTitle{
+    h3{
+      font-size: 13pt;
+      padding:2px 0;
+    }
+  }
+  p{
+    margin-top: 5px;
+    font-size: 10pt;
+    @media (max-width: 340px) {
+      font-size: 9pt;
+    }
+  }
+  .pencil{
+    font-size: 2rem;
+  }
+
+}
+.searchBox{
+  position: relative;
+  width: 90%;
+  margin:auto;
+  margin-top:15px;
+  input {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .searchButton{
+    position : absolute;
+    width: 30px;
+    height: 20px;
+    top: 7px;
+    right: 7px;
+    border: none;
+    background-color: white
+  }
+}
+.studyTypeBar{
+  width:90%;
+  margin:auto;
+  margin-top:15px;
+  text-align: center;
+  font-size: 12pt;
+  color:#4D4D4D;
+  overflow-x: auto;
+  white-space: nowrap;
+  .studyType{
+    display: inline-block;
+    border: 1px solid #DBDBDB;
+    border-radius: 16px;
+    padding:10px;
+    margin-right:3%;
+    &:last-child{
+      margin-right: 0px;
+    }
+  }
+}
+.createStudy{
+  width: 90%;
+  border-radius: 16px;
+  background-color: #E0E0E0;
+  margin:auto;
+  padding:15px;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  .createStudyButton{
+    width:8%;
+    height: 32.16px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: white;
+  }
+  .createStudyText{
+    width: 92%;
+    padding-left: 15px;
+    .createStudyTitle{
+      h3{
+        font-size: 13pt;
+        padding:2px 0;
+      }
+    }
+    p{
+      margin-top: 5px;
+      font-size: 10pt;
+      @media (max-width: 340px) {
+        font-size: 9pt;
+      }
+    }
+  }
+}
+.noSearchResult{
+  text-align: center;
+  margin-top: 30px;
+  font-size: 10pt;
+}

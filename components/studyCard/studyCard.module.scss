@@ -1,0 +1,68 @@
+.studyCard{
+  width: 95%;
+  border-radius: 16px 0px 0px 16px / 16px 0px 0px 16px;
+  background-color: white;
+  color: black;
+  margin-left: 5%;
+  margin-top: 3%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .cardType{
+    width: 8%;
+    height: 20px;
+    font-size: 8pt;
+    font-weight: bold;
+    color: #9E9E9E;
+    background: #F3F3F3;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 4px;
+  }
+  .cardTag{
+    width: 86%;
+    height: 20px;
+    font-size: 10pt;
+    padding-left: 8px;
+    padding-top: 2px;
+    color: #9E9E9E;
+  }
+  .star{
+    width: 6%;
+    height: 23px;
+    color: #0091FF;
+    text-align: right;
+  }
+  .cardContent{
+    .cardTitle{
+      h3{
+        font-size: 13pt;
+        padding-top: 5px;
+        padding-bottom: 7px;
+      }
+    }
+    p{
+      font-size: 10pt;
+      height: 20px;
+      color: #6A6A8B
+    }  
+  }
+  .progressBar {
+    position: relative;
+    display: inline-block;
+    background: #DCDCDC;
+    height: 8px;
+    width: 255%;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .progressBar::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    border-radius: 6px;
+    background: #0091FF;
+  }
+}
