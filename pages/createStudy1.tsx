@@ -1,4 +1,4 @@
-import styles from '../styles/studyTemplate.module.scss';
+import styles from '../styles/createStudy1.module.scss';
 import { IoIosArrowBack } from 'react-icons/Io';
 import { BsPlusLg } from 'react-icons/Bs';
 import { BiBox } from 'react-icons/Bi';
