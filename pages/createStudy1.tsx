@@ -5,7 +5,7 @@ import { BiBox } from 'react-icons/Bi';
 import StudyTypeBar from '@/components/studyTypeBar';
 import Template from '@/components/template';
 import TopProgressBar from '@/components/topProgressBar';
-export default function studyTemplate(){
+export default function createStudy1(){
  return(
   <>
   <TopProgressBar/>
