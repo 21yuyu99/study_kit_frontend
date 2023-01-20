@@ -51,8 +51,12 @@
       color: #B3B3B3
     }
     .like{
+      display: flex;
       padding: 10px 0;
       font-size: 8pt;
     } 
+    .likeNum{
+      padding-left: 3px;
+    }
   }
 }
