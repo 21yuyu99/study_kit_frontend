@@ -1,0 +1,26 @@
+.top{
+  height: 6%;
+  background-color: white;
+  border-bottom: solid 1px #DBDBDB;
+  display: flex;
+  align-items: center;
+  .back{
+    width: 10%;
+    padding-top: 5px;
+    text-align: center;
+    }
+  .topTitle{
+    padding-left: 10px;
+    width: 80%;
+    font-size: 12pt;
+  }
+  .box{
+    width: 10%;
+    padding-top: 5px;
+    text-align: center;
+  }
+}
+.main{
+  height: 100%;
+  background-color: white;
+}
