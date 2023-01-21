@@ -18,7 +18,11 @@ const StudyTypeBar = ()=>{
     }, 
     {text:"프로젝트",
     isSelected : false
-    }]);
+    },
+    {text:"기타",
+    isSelected : false
+    }
+  ]);
   const onClickHandler=({name}:{name:StudyName})=>{
     const temp:StudyName[] =[];
     studyName.map(
