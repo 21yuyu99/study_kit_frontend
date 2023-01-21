@@ -1,3 +1,15 @@
+.topProgressBar{
+  height: 0.5%;
+  display: flex;
+  .left{
+    width:66%;
+    background-color: #0091FF;
+  }
+  .right{
+    width:34%;
+    background-color: #F0F0F0;
+  }
+}
 .top{
   height: 6%;
   background-color: white;
