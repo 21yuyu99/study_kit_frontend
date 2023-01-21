@@ -34,8 +34,7 @@ export default function SelectTemplate(){
         <div className={styles.createTemplateTitle}>
           <h3>새 템플릿 제안하기</h3>
         </div>
-        <p>다른 사람에게 알리고 싶은 꿀팁이나 노하우가 있나요?</p>
-        <p>스터디키트 팀에게 새로운 스터디 템플릿을 제안해주세요!</p>
+        <p>다른 사람에게 알리고 싶은 꿀팁이나 노하우가 있나요?&nbsp;스터디키트 팀에게 새로운 스터디 템플릿을 제안해주세요!</p>
       </div>
     </div>
   </main>
