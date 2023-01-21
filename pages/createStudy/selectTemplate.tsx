@@ -1,16 +1,19 @@
-import styles from '../styles/createStudy1.module.scss';
+import styles from '../../styles/createStudy/selectTemplate.module.scss';
 import { IoIosArrowBack } from 'react-icons/Io';
 import { BsPlusLg } from 'react-icons/Bs';
 import { BiBox } from 'react-icons/Bi';
 import StudyTypeBar from '@/components/studyTypeBar';
 import Template from '@/components/template';
-import TopProgressBar from '@/components/topProgressBar';
-export default function createStudy1(){
+import Link from 'next/link';
+export default function SelectTemplate(){
  return(
   <>
-  <TopProgressBar/>
+  <div className={styles.topProgressBar}>
+    <div className={styles.left}></div>
+    <div className={styles.right}></div>
+  </div>
   <nav className={styles.top}>
-      <div className={styles.back}><IoIosArrowBack/></div>
+      <div className={styles.back}><Link href="/newStudy"><IoIosArrowBack/></Link></div>
       <div className={styles.topTitle}>스터디 개설 (1/3)</div>
       <div className={styles.box}><BiBox/></div>
   </nav>
