@@ -4,7 +4,9 @@ import { BsPlusLg } from 'react-icons/Bs';
 import StudyTypeBar from '@/components/studyTypeBar';
 import StudyCard from '@/components/studyCard';
 import BottomNavigation from '@/components/bottomNavigation';
-export default function newStudy(){
+import { useState } from 'react';
+export default function NewStudy(){
+  const [search,setSearch] = useState("");
  return(
   <>
   <nav className={styles.top}>
@@ -23,7 +25,7 @@ export default function newStudy(){
       <div className={styles.pencil}>✏️</div>
     </div>
     <form action="" method="GET" className={styles.searchBox}>
-      <input type="text" placeholder='스터디주제, 이름 검색'></input>
+      <input value={search} onChange={e=> setSearch(e.target.value)} type="text" placeholder='스터디주제, 이름 검색'></input>
       <button type="submit" className={styles.searchButton}><AiOutlineSearch size="20"/></button>
     </form>
     <StudyTypeBar/>

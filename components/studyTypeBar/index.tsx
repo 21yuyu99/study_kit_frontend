@@ -5,7 +5,7 @@ import StudyName from "@/types/studyName";
 const StudyTypeBar = ()=>{
   const [studyName,setStudyName] = useState<StudyName[]>([
     {text:"전체",
-    isSelected : false
+    isSelected : true
     },
     {text:"언어",
     isSelected : false
@@ -24,12 +24,11 @@ const StudyTypeBar = ()=>{
     studyName.map(
       each => {
         if(each === name){
-          each.isSelected = !each.isSelected;
+            each.isSelected = true;
         }
         else{
           each.isSelected = false;
         }
-        console.log(each);
         temp.push(each);
       }
     )
