@@ -1,10 +1,10 @@
 import styles from '../styles/newStudy.module.scss';
 import { AiOutlineBell, AiOutlineSearch } from 'react-icons/ai';
-import { BsPlusLg } from 'react-icons/Bs';
 import StudyTypeBar from '@/components/studyTypeBar';
 import StudyCard from '@/components/studyCard';
 import BottomNavigation from '@/components/bottomNavigation';
 import { useState } from 'react';
+import Plus from '../img/plus.svg';
 export default function NewStudy(){
   const [search,setSearch] = useState("");
  return(
@@ -32,7 +32,7 @@ export default function NewStudy(){
     <StudyCard/>
     <StudyCard/>
     <div className={styles.createStudy}>
-      <div className={styles.createStudyButton}><BsPlusLg size="10"/></div>
+      <Plus/>
       <div className={styles.createStudyText}>
         <div className={styles.createStudyTitle}>
           <h3>새 스터디 만들기</h3>
