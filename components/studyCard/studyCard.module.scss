@@ -35,6 +35,7 @@
     text-align: right;
   }
   .cardContent{
+    width: 100%;
     .cardTitle{
       h3{
         font-size: 13pt;
@@ -53,7 +54,7 @@
     display: inline-block;
     background: #DCDCDC;
     height: 8px;
-    width: 255%;
+    width: 100%;
     border-radius: 6px;
     overflow: hidden;
   }

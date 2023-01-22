@@ -9,8 +9,7 @@ export default function Home() {
       <Head>	
         <title>Study Kit</title>	
         <meta name="description" content="스터디 키트" />	
-        <meta name="viewport" content="width=device-width, initial-scale=1" />	
-        <link rel="icon" href="/favicon.ico" />	
+        <link rel="icon" href="/img/favicon.ico" />	
       </Head>	
       <main>	
         메인 페이지	

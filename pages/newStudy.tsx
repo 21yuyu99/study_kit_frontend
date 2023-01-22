@@ -1,15 +1,17 @@
 import styles from '../styles/newStudy.module.scss';
 import { AiOutlineBell, AiOutlineSearch } from 'react-icons/ai';
-import { BsPlusLg } from 'react-icons/Bs';
 import StudyTypeBar from '@/components/studyTypeBar';
 import StudyCard from '@/components/studyCard';
 import BottomNavigation from '@/components/bottomNavigation';
 import { useState } from 'react';
+import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
+import Head from 'next/head';
 export default function NewStudy(){
   const [search,setSearch] = useState("");
  return(
   <>
+  <div className={styles.scrollSpace}>
   <nav className={styles.top}>
       <div className={styles.topLeftContainer}></div>
       <div className={styles.topTitle}>새 스터디</div>
@@ -33,7 +35,7 @@ export default function NewStudy(){
     <StudyCard/>
     <StudyCard/>
     <div className={styles.createStudy}>
-      <div className={styles.createStudyButton}><BsPlusLg size="10"/></div>
+      <Plus/>
       <div className={styles.createStudyText}>
         <div className={styles.createStudyTitle}>
           <h3>새 스터디 만들기</h3>
@@ -43,6 +45,7 @@ export default function NewStudy(){
     </div>
     <div className={styles.noSearchResult}>더이상 검색결과가 없습니다</div>
   </main>
+  </div>
   <BottomNavigation/>
   </>
  )
