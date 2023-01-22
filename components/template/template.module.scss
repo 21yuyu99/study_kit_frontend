@@ -1,0 +1,62 @@
+.studyCard{
+  background-color: white;
+  color: black;
+  border-bottom: solid 1px #DBDBDB;
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  .rectangle{
+    width: 10%;
+    height: 45px;
+    color: #FFD753;
+    background-color: #FFD753;
+    text-align: center;
+    border-radius: 16px;
+  }
+  .top{
+    display: flex;
+    .cardType{
+      width: 8%;
+      height: 20px;
+      font-size: 8pt;
+      font-weight: bold;
+      color: #9E9E9E;
+      background: #F3F3F3;
+      border-radius: 5px;
+      text-align: center;
+      padding-top: 4px;
+    }
+    .cardTag{
+      width: 92%;
+      height: 20px;
+      font-size: 10pt;
+      padding-left: 8px;
+      padding-top: 2px;
+      color: #9E9E9E;
+    }
+  }
+  .cardContent{
+    width: 90%;
+    padding-left: 15px;
+    .cardTitle{
+      h3{
+        font-size: 13pt;
+        padding-top: 5px;
+        padding-bottom: 7px;
+      }
+    }
+    p{
+      font-size: 10pt;
+      height: 20px;
+      color: #B3B3B3
+    }
+    .like{
+      display: flex;
+      padding: 10px 0;
+      font-size: 8pt;
+    } 
+    .likeNum{
+      padding-left: 3px;
+    }
+  }
+}

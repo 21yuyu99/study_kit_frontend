@@ -1,5 +1,5 @@
 .top{
-  height: 6%;
+  height: 6.5%;
   background-color: white;
   border-bottom: solid 1px #DBDBDB;
   display: flex;
@@ -48,6 +48,9 @@
     font-size: 10pt;
     @media (max-width: 340px) {
       font-size: 9pt;
+    }
+    a{
+      color: white;
     }
   }
   .pencil{
