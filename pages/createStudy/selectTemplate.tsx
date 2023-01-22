@@ -3,7 +3,7 @@ import { IoIosArrowBack } from 'react-icons/Io';
 import { BsPlusLg } from 'react-icons/Bs';
 import { BiBox } from 'react-icons/Bi';
 import StudyTypeBar from '@/components/studyTypeBar';
-import Template from '@/components/template';
+import Template from '@/components/createStudy/template';
 import Link from 'next/link';
 export default function SelectTemplate(){
  return(
@@ -26,7 +26,7 @@ export default function SelectTemplate(){
       </div>
     </div>
     <StudyTypeBar/>
-    <Template/>
+    <Link href="/createStudy/detailStep"><Template/></Link>
     <Template/>
     <div className={styles.createTemplate}>
       <div className={styles.createTemplateButton}><BsPlusLg size="10"/></div>

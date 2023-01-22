@@ -2,7 +2,8 @@ import styles from '../../styles/createStudy/detailStep.module.scss';
 import { IoIosArrowBack } from 'react-icons/Io';
 import { BiBox } from 'react-icons/Bi';
 import Link from 'next/link';
-import {InputBox, InputSpace } from '@/components/inputBox';
+import {InputBox, InputSpace } from '@/components/createStudy/inputBox';
+import { detailStepContent } from '@/components/createStudy/inputBox/content';
 export default function DetailStep(){
   const one:number = 1;
   const title:string = "스터디 제목";
@@ -19,9 +20,13 @@ export default function DetailStep(){
       <div className={styles.box}><BiBox/></div>
   </nav>
   <main className={styles.main}>
-    <InputBox number={one} title={title} subTitle={subTitle}>
-      <InputSpace/>
-    </InputBox>
+    {detailStepContent.map((content)=>{
+      return(
+        <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
+              <InputSpace/>
+        </InputBox>
+      )
+    })}
   </main>
   </>
  )
