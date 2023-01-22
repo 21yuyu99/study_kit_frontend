@@ -4,12 +4,14 @@ import StudyTypeBar from '@/components/studyTypeBar';
 import StudyCard from '@/components/studyCard';
 import BottomNavigation from '@/components/bottomNavigation';
 import { useState } from 'react';
-import Plus from '../img/plus.svg';
+import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
+import Head from 'next/head';
 export default function NewStudy(){
   const [search,setSearch] = useState("");
  return(
   <>
+  <div className={styles.scrollSpace}>
   <nav className={styles.top}>
       <div className={styles.topLeftContainer}></div>
       <div className={styles.topTitle}>새 스터디</div>
@@ -43,6 +45,7 @@ export default function NewStudy(){
     </div>
     <div className={styles.noSearchResult}>더이상 검색결과가 없습니다</div>
   </main>
+  </div>
   <BottomNavigation/>
   </>
  )
