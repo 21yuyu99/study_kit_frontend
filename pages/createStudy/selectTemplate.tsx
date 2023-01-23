@@ -1,7 +1,7 @@
 import styles from '../../styles/createStudy/selectTemplate.module.scss';
 import { IoIosArrowBack } from 'react-icons/Io';
-import { BsPlusLg } from 'react-icons/Bs';
 import { BiBox } from 'react-icons/Bi';
+import Plus from '../../public/img/Group 7029.svg';
 import StudyTypeBar from '@/components/studyTypeBar';
 import Template from '@/components/createStudy/template';
 import Link from 'next/link';
@@ -29,7 +29,7 @@ export default function SelectTemplate(){
     <Link href="/createStudy/detailStep"><Template/></Link>
     <Template/>
     <div className={styles.createTemplate}>
-      <div className={styles.createTemplateButton}><BsPlusLg size="10"/></div>
+      <Plus/>
       <div className={styles.createTemplateText}>
         <div className={styles.createTemplateTitle}>
           <h3>새 템플릿 제안하기</h3>
