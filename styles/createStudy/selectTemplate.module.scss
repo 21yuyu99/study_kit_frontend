@@ -1,0 +1,105 @@
+.topProgressBar{
+  height: 0.8%;
+  display: flex;
+  .left{
+    width:33%;
+    background-color: #0091FF;
+  }
+  .right{
+    width:67%;
+    background-color: #F0F0F0;
+  }
+}
+.top{
+    height: 6%;
+    background-color: white;
+    border-bottom: solid 1px #DBDBDB;
+    display: flex;
+    align-items: center;
+    .back{
+        width: 10%;
+        padding-top: 5px;
+        text-align: center;
+        }
+   .topTitle{
+        width: 80%;
+        text-align: center;
+        font-size: 12pt;
+   }
+    .box{
+      width: 10%;
+      padding-top: 5px;
+      text-align: center;
+    }
+   }
+  .main{
+    height: 100%;
+    background-color: white;
+  }
+  .banner{
+    width: 100%;
+    background-color: #F5F5F5;
+    padding: 25px 20px;
+    display: flex;
+    .bannerText{
+      width:80%;
+    }
+    .bannerTitle{
+      h3{
+        font-size: 13pt;
+        padding:2px 0;
+      }
+    }
+  }
+  .studyTypeBar{
+    width:90%;
+    margin:auto;
+    margin-top:15px;
+    text-align: center;
+    font-size: 12pt;
+    color:#4D4D4D;
+    overflow-x: auto;
+    white-space: nowrap;
+    .studyType{
+      display: inline-block;
+      border: 1px solid #DBDBDB;
+      border-radius: 16px;
+      padding:10px;
+      margin-right:3%;
+      &:last-child{
+        margin-right: 0px;
+      }
+    }
+  }
+  .createTemplate{
+    width: 90%;
+    border-radius: 16px;
+    background-color: #F4F4F4;
+    margin:auto;
+    padding:15px;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    .createTemplateButton{
+      width:8%;
+      height: 32.16px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #E0E0E0;
+    }
+    .createTemplateText{
+      width: 92%;
+      padding-left: 15px;
+      .createTemplateTitle{
+        h3{
+          font-size: 13pt;
+          padding:2px 0;
+        }
+      }
+      p{
+        margin-top: 5px;
+        font-size: 10pt;
+        color:#7E8489;
+      }
+    }
+  }

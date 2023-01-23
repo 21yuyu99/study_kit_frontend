@@ -4,11 +4,14 @@ import StudyTypeBar from '@/components/studyTypeBar';
 import StudyCard from '@/components/studyCard';
 import BottomNavigation from '@/components/bottomNavigation';
 import { useState } from 'react';
-import Plus from '../img/plus.svg';
+import Plus from 'public/img/plus.svg';
+import Link from 'next/link'
+import Head from 'next/head';
 export default function NewStudy(){
   const [search,setSearch] = useState("");
  return(
   <>
+  <div className={styles.scrollSpace}>
   <nav className={styles.top}>
       <div className={styles.topLeftContainer}></div>
       <div className={styles.topTitle}>새 스터디</div>
@@ -20,7 +23,7 @@ export default function NewStudy(){
       <div className={styles.bannerTitle}>
           <h3>원하는 스터디가 없다면?</h3><h3>스터디장이 될 차례!</h3>
         </div>
-        <p>스터디키트가 떠먹여주는 스터디 만들기 &gt;</p>
+       <p><Link href="/createStudy/selectTemplate">스터디키트가 떠먹여주는 스터디 만들기 &gt;</Link></p>
       </div>
       <div className={styles.pencil}>✏️</div>
     </div>
@@ -42,6 +45,7 @@ export default function NewStudy(){
     </div>
     <div className={styles.noSearchResult}>더이상 검색결과가 없습니다</div>
   </main>
+  </div>
   <BottomNavigation/>
   </>
  )
