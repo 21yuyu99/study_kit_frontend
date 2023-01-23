@@ -5,7 +5,7 @@ const StudyCard = ()=>{
   return(
     <div className={styles.studyCard}>
       <div className={styles.cardType}>언어</div>
-      <div className={styles.cardTag}>#문제풀이</div>
+      <div className={styles.cardTag}>#문제풀이&nbsp;&nbsp;#실습</div>
       <div className={styles.star}><AiFillStar size={27}/></div>
       <div className={styles.cardContent}>
         <div className={styles.cardTitle}>
