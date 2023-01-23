@@ -5,20 +5,12 @@
   margin: 10px;
   padding: 5px;
   display: flex;
-  .rectangle{
-    width: 10%;
-    height: 45px;
-    color: #FFD753;
-    background-color: #FFD753;
-    text-align: center;
-    border-radius: 16px;
-  }
   .top{
     display: flex;
     .cardType{
-      width: 8%;
+      width: 9%;
       height: 20px;
-      font-size: 8pt;
+      font-size: 7pt;
       font-weight: bold;
       color: #9E9E9E;
       background: #F3F3F3;
@@ -29,24 +21,24 @@
     .cardTag{
       width: 92%;
       height: 20px;
-      font-size: 10pt;
+      font-size: 9pt;
       padding-left: 8px;
       padding-top: 2px;
       color: #9E9E9E;
     }
   }
   .cardContent{
-    width: 90%;
+    width: 85%;
     padding-left: 15px;
     .cardTitle{
       h3{
-        font-size: 13pt;
+        font-size: 12pt;
         padding-top: 5px;
         padding-bottom: 7px;
       }
     }
     p{
-      font-size: 10pt;
+      font-size: 9pt;
       height: 20px;
       color: #B3B3B3
     }

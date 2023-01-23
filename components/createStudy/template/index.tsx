@@ -1,10 +1,11 @@
 import styles from "./template.module.scss";
 import { AiOutlineHeart } from 'react-icons/ai'
+import Rectangle from '../../../public/img/Rectangle 9030.svg'
 
 const Template = ()=>{
   return(
     <div className={styles.studyCard}>
-      <div className={styles.rectangle}></div>
+      <Rectangle/>
       <div className={styles.cardContent}>
         <div className={styles.top}>
           <div className={styles.cardType}>언어</div>
