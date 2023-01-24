@@ -9,25 +9,36 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  .cardType{
-    width: 8%;
+  .languageOther, .certificate, .employment, .project{
     height: 20px;
     font-size: 10pt;
     font-weight: bold;
+  }
+  .languageOther{
+    color: #0091FF;
+  }
+  .certificate{
+    color: #DFB144;
+  }
+  .employment{
+    color: #C94E38;
+  }
+  .project{
     color: #0091FF;
   }
   .cardTag{
-    width: 86%;
+    width: 75%;
     height: 20px;
-    padding-left: 5px;
+    padding-left: 7px;
     font-size: 10pt;
     color: #9E9E9E;
   }
   .star{
-    width: 6%;
+    margin-left: auto;
     height: 23px;
     color: #0091FF;
     text-align: right;
+    right: 0;
   }
   .cardContent{
     width: 100%;
