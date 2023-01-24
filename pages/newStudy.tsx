@@ -32,8 +32,11 @@ export default function NewStudy(){
       <button type="submit" className={styles.searchButton}><AiOutlineSearch size="20"/></button>
     </form>
     <StudyTypeBar/>
-    <StudyCard/>
-    <StudyCard/>
+    <StudyCard typeName={"언어"}></StudyCard>
+    <StudyCard typeName={"기타"}></StudyCard>
+    <StudyCard typeName={"자격증"}></StudyCard>
+    <StudyCard typeName={"취/창업"}></StudyCard>
+    <StudyCard typeName={"프로젝트"}></StudyCard>
     <div className={styles.createStudy}>
       <Plus/>
       <div className={styles.createStudyText}>
