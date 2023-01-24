@@ -23,3 +23,35 @@ export interface CountMemberProps {
     count: number;
 }
 }
+export interface checkBoxTypes{
+  content:string
+  isChecked: boolean
+}
+export interface InputCheckProps {
+  state : {
+    check: checkBoxTypes[];
+} | {
+    temp: checkBoxTypes[];
+    check: checkBoxTypes[];
+}
+ dispatch : Dispatch<{
+  type: String;
+}>
+ reducer : (state: {
+  check: checkBoxTypes[];
+}, action: {
+  type: String;
+}) => {
+  check: checkBoxTypes[];
+} | {
+  onTemp: checkBoxTypes[];
+  check: checkBoxTypes[];
+} | {
+  offTemp: checkBoxTypes[];
+  check: checkBoxTypes[];
+}
+}
+export interface ToggleProps{
+  toggle:boolean
+  setToggle:Dispatch<SetStateAction<boolean>>
+}

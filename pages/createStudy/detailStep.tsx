@@ -2,14 +2,17 @@ import styles from '../../styles/createStudy/detailStep.module.scss';
 import { IoIosArrowBack } from 'react-icons/Io';
 import { BiBox } from 'react-icons/Bi';
 import Link from 'next/link';
-import {CountMember, InputBox, InputSpace } from '@/components/createStudy/inputBox';
+import {AddPhoto, CountMember, InputBox, InputDeadline, InputSpace, SelectOnOff } from '@/components/createStudy/inputBox';
 import { detailStepContent } from '@/components/createStudy/inputBox/content';
 import { useReducer, useState } from 'react';
+import { checkBoxTypes } from '@/types/createStudy';
+import { WidthButton } from '@/components/widthButton';
 export default function DetailStep(){
   const [title,setTitle] = useState("");
   const [lan,setLan] =useState("");
   const [tool,setTool] = useState("");
-  const reducer = (state:{count:number},action:{type:String})=>{
+  const [toggle,setToggle] = useState(false);
+  const countReducer = (state:{count:number},action:{type:String})=>{
     switch(action.type){
       case "INCREMENT":
         return state.count<6?{...state,count:state.count+1}:state;
@@ -19,7 +22,49 @@ export default function DetailStep(){
         return state;
     }
   }
-  const [state,dispatch] = useReducer(reducer,{count:1});
+  const [countState,countDispatch] = useReducer(countReducer,{count:1});
+  const checkReducer = (state:{check:checkBoxTypes[]},action:{type:String})=>{
+    switch(action.type){
+      case "ONLINE":
+        let onTemp:checkBoxTypes[] = [];
+        state.check.map(
+          check=>{
+            check.content === "비대면"?
+            onTemp.push({...check,isChecked:!check.isChecked})
+            :onTemp.push({...check,isChecked:false})
+          }
+        )
+        return(
+          {...state,check:onTemp}
+        )
+      case "OFFLINE":
+        let offTemp:checkBoxTypes[] = [];
+        state.check.map(
+          check=>{
+            check.content === "대면"?
+            offTemp.push({...check,isChecked:!check.isChecked}):offTemp.push({...check,isChecked:false})
+          }
+        )
+        return(
+          {...state,check:offTemp}
+        )
+        default:
+          return state;
+    }
+  }
+  const [checkState,checkDispatch] = useReducer(checkReducer,{check:
+    [
+      {
+        content : "대면",
+        isChecked:false
+      },
+      {
+        content:"비대면",
+        isChecked:false,
+      }
+    ]
+  }
+    );
  return(
   <>
   <div className={styles.topProgressBar}>
@@ -40,10 +85,22 @@ export default function DetailStep(){
                 <InputSpace text={title} setText={setTitle}/>
             </InputBox>
           )
+          case 2:
+            return(
+              <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
+              <InputDeadline toggle={toggle} setToggle={setToggle}/>
+          </InputBox>
+            )
+          case 3:
+            return(
+              <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
+                  <AddPhoto/>
+            </InputBox>
+            )
         case 4:
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
-                <CountMember state={state} dispatch={dispatch} reducer={reducer}/>
+                <CountMember state={countState} dispatch={countDispatch} reducer={countReducer}/>
           </InputBox>
           )
         case 5:
@@ -58,6 +115,12 @@ export default function DetailStep(){
                 <InputSpace text={tool} setText={setTool}/>
             </InputBox>
           )
+        case 8 :
+          return(
+            <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
+                <SelectOnOff state={checkState} dispatch={checkDispatch} reducer={checkReducer}/>
+            </InputBox>
+          )
         default :
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
@@ -66,6 +129,7 @@ export default function DetailStep(){
           )
       }
     })}
+    <WidthButton color="blue" buttonText ="다음"/>
   </main>
   </>
  )
