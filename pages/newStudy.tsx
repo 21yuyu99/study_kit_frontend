@@ -49,7 +49,7 @@ export default function NewStudy(){
     <div className={styles.noSearchResult}>더이상 검색결과가 없습니다</div>
   </main>
   </div>
-  <BottomNavigation/>
+  <BottomNavigation location={"새스터디"}/>
   </>
  )
 }
