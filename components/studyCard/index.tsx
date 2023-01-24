@@ -24,7 +24,6 @@ const StudyCard = ({typeName} : Props)=>{
     <div className={styles.studyCard}>
       <div className={type}>{typeName}</div>
       <div className={styles.cardTag}>#문제풀이&nbsp;&nbsp;#실습</div>
-      <div className={styles.container}></div>
       <div className={styles.star}><AiFillStar size={27}/></div>
       <div className={styles.cardContent}>
         <div className={styles.cardTitle}>
