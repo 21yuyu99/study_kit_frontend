@@ -116,6 +116,7 @@
     border-radius: 10px;
     line-height: 35px;
     margin-top:5px;
+    width: 90%;
     svg{
       vertical-align:text-top;
     }
@@ -167,9 +168,42 @@
       position: absolute;
     }
 }
+
+.date{
+  font-size: 10pt;
+  font-weight: bold;
+  padding-left:15px;
+}
 .calendar{
   position:absolute;
   z-index:10;
-  width: 300px;
+  right:0;
+  left:0;
+  :global(.rdrDateDisplayWrapper){
+    display:none;
+  }
+  :global(.rdrMonth){
+    padding-bottom:0;
+  }
+  .closeButtonWrapper{
+    width:100%;
+    background-color: white;
+    text-align:right;
+    font-size:10pt;
+    .closeButton{
+      margin-top:5px;
+      margin-right: 20px;
+      margin-left:5px;
+      display: inline-block;
+      background-color: #E0E0E0;
+      border-radius: 5px;
+      padding:5px;
+    }
+    svg{
+      vertical-align: text-bottom;
+      margin-left:5px;
+    }
+  }
 }
 }
+
