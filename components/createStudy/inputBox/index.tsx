@@ -1,11 +1,11 @@
 import { FiMinus, FiPlus} from "react-icons/fi";
 import styles from "./inputBox.module.scss";
-import { CountMemberProps, InputBoxProps, InputCheckProps, InputSpaceProps, ToggleProps } from "@/types/createStudy";
-import { AiOutlineCheck, AiOutlinePlus } from "react-icons/ai";
-import Calendar from 'react-calendar';
+import { CountMemberProps, DeadlineProps, InputBoxProps, InputCheckProps, InputSpaceProps} from "@/types/createStudy";
+import { AiOutlineCheck, AiOutlineCloseCircle, AiOutlinePlus } from "react-icons/ai";
 import { useState } from "react";
-import 'react-calendar/dist/Calendar.css'
-
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
+import { DateRange, RangeKeyDict, Range } from 'react-date-range';
 export const InputBox = (props:InputBoxProps)=>{
  return(
   <div className={styles.boxContainer}>
@@ -32,21 +32,38 @@ export const InputSpace = (props:InputSpaceProps)=>{
     <input value={props.text} onChange = {e => props.setText(e.target.value)} className={styles.inputSpace}></input>
   )
 }
-export const InputDeadline = (props:ToggleProps)=>{
-  const [value, onChange] = useState(new Date());
+export const InputDeadline = (props:DeadlineProps)=>{
+  const [calendarOpen,setOpen] = useState(false);
+  const onClickToggle = ()=>{
+    if(props.toggle ===true){
+      props.setToggle(false);
+      setOpen(false);
+    }
+    else{
+      props.setToggle(true);
+      setOpen(true);
+    }
+  }
   return(
     <>
       <div className={props.toggle===true?`${styles.deadlineContainer_on}`:`${styles.deadlineContainer_off}`}>
-        <div className={styles.toggleSwitch} onClick={()=>props.setToggle(!props.toggle)}>
+        {props.toggle ===true&&(
+          <div className={styles.date} onClick={()=> setOpen(true)}>
+            {props.range[0].startDate?.getFullYear()}.{parseInt(`${props.range[0].startDate?.getMonth()}`)+1}.{props.range[0].startDate?.getDate()}&nbsp;~&nbsp;
+            {props.range[0].endDate?.getFullYear()}.{parseInt(`${props.range[0].endDate?.getMonth()}`)+1}.{props.range[0].endDate?.getDate()}
+          </div>
+        )}
+        <div className={styles.toggleSwitch} onClick={()=>onClickToggle()}>
           <div className={props.toggle===true?`${styles.toggleButton_on}`:`${styles.toggleButton_off}`}></div>
         </div>
       </div>  
-      <div>
-
-      </div>
-      <div className={styles.calendar}>
-        <Calendar onChange={onChange} value={value}/>
-      </div>
+      {calendarOpen===true?(
+          <div className= {styles.calendar}>
+          <DateRange ranges={props.range} onChange={item => props.setRange([item.range])}/>
+          <div className={styles.closeButtonWrapper} onClick={()=>setOpen(false)}><div className={styles.closeButton}>닫기<AiOutlineCloseCircle/></div></div>
+          </div>
+      ):<></>
+      }
     </>
   )
 }
@@ -88,6 +105,14 @@ export const AddPhoto = ()=>{
         <AiOutlinePlus/> 사진 추가하기
         </label>
     <input type="file" id="chooseFile" accept="image"></input>
+    </div>
+  )
+}
+
+export const AddQuestion = ()=>{
+  return(
+      <div className={styles.photoButton}>
+        <AiOutlinePlus/> 질문 추가하기
     </div>
   )
 }

@@ -7,6 +7,7 @@ import { detailStepContent } from '@/components/createStudy/inputBox/content';
 import { useReducer, useState } from 'react';
 import { checkBoxTypes } from '@/types/createStudy';
 import { WidthButton } from '@/components/widthButton';
+import {Range } from 'react-date-range';
 export default function DetailStep(){
   const [title,setTitle] = useState("");
   const [lan,setLan] =useState("");
@@ -65,6 +66,15 @@ export default function DetailStep(){
     ]
   }
     );
+    const [range,setRange] = useState<Range[]>(
+      [
+        {
+          startDate : new Date(),
+          endDate : new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()+2),
+          key:'range',
+        }
+      ]
+    );
  return(
   <>
   <div className={styles.topProgressBar}>
@@ -88,7 +98,7 @@ export default function DetailStep(){
           case 2:
             return(
               <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
-              <InputDeadline toggle={toggle} setToggle={setToggle}/>
+              <InputDeadline toggle={toggle} setToggle={setToggle} range={range} setRange={setRange}/>
           </InputBox>
             )
           case 3:

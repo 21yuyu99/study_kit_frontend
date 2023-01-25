@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react"
-
+import {Range } from 'react-date-range';
 export interface InputBoxProps {
   number : number
   title : string
@@ -51,7 +51,9 @@ export interface InputCheckProps {
   check: checkBoxTypes[];
 }
 }
-export interface ToggleProps{
+export interface DeadlineProps{
   toggle:boolean
   setToggle:Dispatch<SetStateAction<boolean>>
+  range : Range[]
+  setRange : Dispatch<SetStateAction<Range[]>>
 }

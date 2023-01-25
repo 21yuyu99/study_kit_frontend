@@ -14,12 +14,15 @@
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
+    "date-fns": "^2.29.3",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.2",
     "momment": "^0.0.1",
     "next": "13.1.2",
-    "react": "18.2.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
     "react-calendar": "^4.0.0",
+    "react-date-range": "^1.4.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-native-svg": "^13.7.0",
@@ -28,6 +31,7 @@
   },
   "devDependencies": {
     "@types/react-calendar": "^3.9.0",
+    "@types/react-date-range": "^1.4.4",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "react-native-svg-transformer": "^1.0.0"
   }
