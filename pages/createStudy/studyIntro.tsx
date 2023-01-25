@@ -25,6 +25,7 @@ export default function StudyIntro() {
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                 <InputSpace text={intro} setText={setIntro}/>
+                <></>
             </InputBox>
           )
         case 2:
@@ -37,18 +38,19 @@ export default function StudyIntro() {
             )
           case 3:
             return(
-              <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}></InputBox>
+              <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}><></><></></InputBox>
             )
         default :
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                   <InputSpace text={intro} setText={setIntro}/>
+                  <></>
             </InputBox>
           )
       }
     })}
-    <Link href="/home"><WidthButton color="blue" buttonText ="개설하기"/></Link>
   </main>
+  <Link href="/home"><WidthButton color="blue" buttonText ="개설하기"/></Link>
   </>
  )
 }

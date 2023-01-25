@@ -4,7 +4,7 @@ export interface InputBoxProps {
   number : number
   title : string
   subTitle : string
-  children : JSX.Element
+  children : JSX.Element[]
 }
 export interface InputSpaceProps{
   text : string

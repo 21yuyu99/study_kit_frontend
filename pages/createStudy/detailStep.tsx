@@ -93,54 +93,62 @@ export default function DetailStep(){
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                 <InputSpace text={title} setText={setTitle}/>
+                <></>
             </InputBox>
           )
           case 2:
             return(
               <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
               <InputDeadline toggle={toggle} setToggle={setToggle} range={range} setRange={setRange}/>
+              <></>
           </InputBox>
             )
           case 3:
             return(
               <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                   <AddPhoto/>
+                  <></>
             </InputBox>
             )
         case 4:
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                 <CountMember state={countState} dispatch={countDispatch} reducer={countReducer}/>
+                <></>
           </InputBox>
           )
         case 5:
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                 <InputSpace text={lan} setText={setLan}/>
+                <></>
             </InputBox>
           )
         case 6:
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                 <InputSpace text={tool} setText={setTool}/>
+                <></>
             </InputBox>
           )
         case 8 :
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                 <SelectOnOff state={checkState} dispatch={checkDispatch} reducer={checkReducer}/>
+                <></>
             </InputBox>
           )
         default :
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                   <InputSpace text={title} setText={setTitle}/>
+                  <></>
             </InputBox>
           )
       }
     })}
-    <WidthButton color="blue" buttonText ="다음"/>
   </main>
+  <Link href="/createStudy/studyIntro"><WidthButton color="blue" buttonText ="다음"/></Link>
   </>
  )
 }
