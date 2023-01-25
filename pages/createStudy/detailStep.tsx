@@ -147,8 +147,8 @@ export default function DetailStep(){
           )
       }
     })}
+    <Link href="/createStudy/studyIntro"><WidthButton color="blue" buttonText ="다음"/></Link>
   </main>
-  <Link href="/createStudy/studyIntro"><WidthButton color="blue" buttonText ="다음"/></Link>
   </>
  )
 }
