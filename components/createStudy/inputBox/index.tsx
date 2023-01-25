@@ -91,3 +91,11 @@ export const AddPhoto = ()=>{
     </div>
   )
 }
+
+export const AddQuestion = ()=>{
+  return(
+      <div className={styles.photoButton}>
+        <AiOutlinePlus/> 질문 추가하기
+    </div>
+  )
+}
