@@ -1,6 +1,6 @@
 import styles from '../../styles/createStudy/detailStep.module.scss';
-import { IoIosArrowBack } from 'react-icons/Io';
-import { BiBox } from 'react-icons/Bi';
+import { IoIosArrowBack } from 'react-icons/io';
+import { BiBox } from 'react-icons/bi';
 import Link from 'next/link';
 import {AddPhoto, CountMember, InputBox, InputDeadline, InputSpace, SelectOnOff } from '@/components/createStudy/inputBox';
 import { detailStepContent } from '@/components/createStudy/inputBox/content';

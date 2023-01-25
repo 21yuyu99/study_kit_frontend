@@ -1,6 +1,6 @@
 import styles from '../../styles/createStudy/selectTemplate.module.scss';
-import { IoIosArrowBack } from 'react-icons/Io';
-import { BiBox } from 'react-icons/Bi';
+import { IoIosArrowBack } from 'react-icons/io';
+import { BiBox } from 'react-icons/bi';
 import Plus from '../../public/img/Group 7029.svg';
 import StudyTypeBar from '@/components/studyTypeBar';
 import Template from '@/components/createStudy/template';
