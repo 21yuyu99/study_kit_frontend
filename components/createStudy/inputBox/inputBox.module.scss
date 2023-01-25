@@ -116,12 +116,16 @@
     border-radius: 10px;
     line-height: 35px;
     margin-top:5px;
-    width: 90%;
+    label{
+      margin: auto;
+      display: block;
+      width: 100%;
+    }
     svg{
       vertical-align:text-top;
     }
     input{
-      visibility: hidden;
+      display: none;
     }
   }
   .deadlineContainer_on{
@@ -173,12 +177,13 @@
   font-size: 10pt;
   font-weight: bold;
   padding-left:15px;
+  width: 100%;
 }
 .calendar{
   position:absolute;
   z-index:10;
-  right:0;
-  left:0;
+  left:50%;
+  margin-left:-166px;
   :global(.rdrDateDisplayWrapper){
     display:none;
   }
