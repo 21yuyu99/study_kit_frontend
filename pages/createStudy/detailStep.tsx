@@ -1,6 +1,4 @@
 import styles from '../../styles/createStudy/detailStep.module.scss';
-import { IoIosArrowBack } from 'react-icons/io';
-import { BiBox } from 'react-icons/bi';
 import Link from 'next/link';
 import {AddPhoto, CountMember, InputBox, InputDeadline, InputSpace, SelectOnOff } from '@/components/createStudy/inputBox';
 import { detailStepContent } from '@/components/createStudy/inputBox/content';
@@ -8,6 +6,7 @@ import { useReducer, useState } from 'react';
 import { checkBoxTypes } from '@/types/createStudy';
 import { WidthButton } from '@/components/widthButton';
 import {Range } from 'react-date-range';
+import TopNavigation from '@/components/topNavigation';
 export default function DetailStep(){
   const [title,setTitle] = useState("");
   const [lan,setLan] =useState("");
@@ -81,11 +80,7 @@ export default function DetailStep(){
   <div className={styles.left}></div>
   <div className={styles.right}></div>
   </div>
-  <nav className={styles.top}>
-      <div className={styles.back}><Link href="/createStudy/selectTemplate"><IoIosArrowBack/></Link></div>
-      <div className={styles.topTitle}>스터디 개설 (2/3)</div>
-      <div className={styles.box}><BiBox/></div>
-  </nav>
+  <TopNavigation title={"스터디 개설 (2/3)"} backSpace={true} bellOrBox={false}></TopNavigation>
   <main className={styles.main}>
     {detailStepContent.map((content)=>{
       switch(content.number){

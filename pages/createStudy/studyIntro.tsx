@@ -1,11 +1,10 @@
 import styles from '../../styles/createStudy/studyIntro.module.scss';
-import { IoIosArrowBack } from 'react-icons/io';
-import { BiBox } from 'react-icons/bi';
 import Link from 'next/link';
 import {AddQuestion, InputBox, InputSpace} from '@/components/createStudy/inputBox';
 import { introStepContent } from '@/components/createStudy/inputBox/content';
 import { useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
+import TopNavigation from '@/components/topNavigation';
 
 export default function StudyIntro() {
  const [intro,setIntro] = useState("");
@@ -13,11 +12,7 @@ export default function StudyIntro() {
  return(
   <>
   <div className={styles.topProgressBar}></div>
-  <nav className={styles.top}>
-      <div className={styles.back}><Link href="/createStudy/detailStep"><IoIosArrowBack/></Link></div>
-      <div className={styles.topTitle}>스터디 소개 (3/3)</div>
-      <div className={styles.box}><BiBox/></div>
-  </nav>
+  <TopNavigation title={"스터디 개설 (3/3)"} backSpace={true} bellOrBox={false}></TopNavigation>
   <main className={styles.main}>
     {introStepContent.map((content)=>{
       switch(content.number){

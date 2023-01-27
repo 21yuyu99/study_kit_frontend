@@ -1,10 +1,9 @@
 import styles from '../../styles/createStudy/selectTemplate.module.scss';
-import { IoIosArrowBack } from 'react-icons/io';
-import { BiBox } from 'react-icons/bi';
 import Plus from '../../public/img/Group 7029.svg';
 import StudyTypeBar from '@/components/studyTypeBar';
 import Template from '@/components/createStudy/template';
 import Link from 'next/link';
+import TopNavigation from '@/components/topNavigation';
 export default function SelectTemplate(){
  return(
   <>
@@ -12,11 +11,7 @@ export default function SelectTemplate(){
     <div className={styles.left}></div>
     <div className={styles.right}></div>
   </div>
-  <nav className={styles.top}>
-      <div className={styles.back}><Link href="/newStudy"><IoIosArrowBack/></Link></div>
-      <div className={styles.topTitle}>스터디 개설 (1/3)</div>
-      <div className={styles.box}><BiBox/></div>
-  </nav>
+  <TopNavigation title={"스터디 개설 (1/3)"} backSpace={true} bellOrBox={false}></TopNavigation>
   <main className={styles.main}>
     <div className={styles.banner}>
       <div className={styles.bannerText}>

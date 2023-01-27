@@ -1,7 +1,8 @@
 import styles from '../styles/newStudy.module.scss';
-import { AiOutlineBell, AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineSearch } from 'react-icons/ai';
 import StudyTypeBar from '@/components/studyTypeBar';
 import StudyCard from '@/components/studyCard';
+import TopNavigation from '@/components/topNavigation';
 import BottomNavigation from '@/components/bottomNavigation';
 import { useState } from 'react';
 import Plus from 'public/img/plus.svg';
@@ -13,11 +14,7 @@ export default function NewStudy(){
  return(
   <>
   <div className={styles.scrollSpace}>
-  <nav className={styles.top}>
-      <div className={styles.topLeftContainer}></div>
-      <div className={styles.topTitle}>새 스터디</div>
-      <div className={styles.bell}><AiOutlineBell/></div>
-  </nav>
+  <TopNavigation title={"새 스터디"} backSpace={false} bellOrBox={true}></TopNavigation>
   <main className={styles.main}>
     <div className={styles.banner}>
       <div className={styles.bannerText}>

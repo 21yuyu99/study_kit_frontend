@@ -2,29 +2,6 @@
   min-height: 85.8vh;
   overflow-y: scroll;
 }
-.top{
-  height: 6.8vh;
-  background-color: white;
-  border-bottom: solid 1px #DBDBDB;
-  display: flex;
-  align-items: center;
-  .topLeftContainer{
-  width: 20%;
-  }
- .topTitle{
-  width: 80%;
-  text-align: center;
-  font-size:12pt;
- }
-  .bell{
-    width: 20%;
-    text-align: center;
-    line-height: 1;
-    svg{
-      vertical-align:top;
-    }
-  }
- }
 .main{
   min-height: 79vh;
   max-height: 100vh;
