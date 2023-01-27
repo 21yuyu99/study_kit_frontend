@@ -144,40 +144,47 @@
     display: flex;
     align-items: center;
   }
-  .toggleSwitch{
-    width: 40px;
-    height: 25px;
-    background-color: #9E9E9E;
-    margin-left: auto;
-    margin-right:10px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    .toggleButton_on{
-      width:15px;
-      height:15px;
-      margin:0 5px;
-      border-radius: 50%;
-      background-color: white;
-      position: absolute;
-      left:40%;
-    }
-    .toggleButton_off{
-      width:15px;
-      height:15px;
-      margin:0 5px;
-      border-radius: 50%;
-      background-color: white;
-      position: absolute;
-    }
+  @each $onOff in on,off{
+    .toggleSwitch_#{$onOff}{
+      display: inline-block;
+      width: 40px;
+      height: 25px;
+      margin-left: auto;
+      margin-right:10px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      position: relative;
+  }
+}
+.toggleSwitch_on{
+  background-color: #0091FF;
+}
+.toggleSwitch_off{
+  background-color :#9E9E9E;
+}
+.toggleButton_on{
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left:42%;
+}
+.toggleButton_off{
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 5%;
 }
 
 .date{
   font-size: 10pt;
   font-weight: bold;
   padding-left:15px;
-  width: 100%;
+  width: 80%;
 }
 .calendar{
   position:absolute;

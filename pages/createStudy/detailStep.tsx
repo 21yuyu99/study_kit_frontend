@@ -16,7 +16,7 @@ export default function DetailStep(){
   const countReducer = (state:{count:number},action:{type:String})=>{
     switch(action.type){
       case "INCREMENT":
-        return state.count<6?{...state,count:state.count+1}:state;
+        return state.count<50?{...state,count:state.count+1}:state;
       case "DECREMENT":
         return state.count>1?{...state,count:state.count-1}:state;
       default:

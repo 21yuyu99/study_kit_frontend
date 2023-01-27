@@ -16,7 +16,7 @@ export const detailStepContent = [
    {
     number : 4,
     title : "인원 설정",
-    subTitle : "스터디에 참여할 인원을 설정해주세요.\n최대 가능 인원은 5명까지 입니다.",
+    subTitle : "스터디에 참여할 인원을 설정해주세요.\n최대 가능 인원은 50명까지 입니다.",
    },
    {
     number : 5,

@@ -46,20 +46,20 @@ export const InputDeadline = (props:DeadlineProps)=>{
   }
   return(
     <>
-      <div className={props.toggle===true?`${styles.deadlineContainer_on}`:`${styles.deadlineContainer_off}`}>
+      <div className={props.toggle===true?`${styles.deadlineContainer_on}`:`${styles.deadlineContainer_off}`} onClick={()=>onClickToggle()}>
         {props.toggle ===true&&(
           <div className={styles.date} onClick={()=> setOpen(true)}>
             {props.range[0].startDate?.getFullYear()}.{parseInt(`${props.range[0].startDate?.getMonth()}`)+1}.{props.range[0].startDate?.getDate()}&nbsp;~&nbsp;
             {props.range[0].endDate?.getFullYear()}.{parseInt(`${props.range[0].endDate?.getMonth()}`)+1}.{props.range[0].endDate?.getDate()}
           </div>
         )}
-        <div className={styles.toggleSwitch} onClick={()=>onClickToggle()}>
+        <div className={props.toggle===true?`${styles.toggleSwitch_on}`:`${styles.toggleSwitch_off}`} onClick={()=>onClickToggle()}>
           <div className={props.toggle===true?`${styles.toggleButton_on}`:`${styles.toggleButton_off}`}></div>
         </div>
       </div>  
       {calendarOpen===true?(
           <div className= {styles.calendar}>
-          <DateRange ranges={props.range} onChange={item => props.setRange([item.range])}/>
+          <DateRange ranges={props.range} onChange={item => props.setRange([item.range])}></DateRange>
           <div className={styles.closeButtonWrapper} onClick={()=>setOpen(false)}><div className={styles.closeButton}>닫기<AiOutlineCloseCircle/></div></div>
           </div>
       ):<></>
