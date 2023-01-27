@@ -37,7 +37,8 @@ export default function NewStudy(){
     <StudyCard typeName={"자격증"}></StudyCard>
     <StudyCard typeName={"취/창업"}></StudyCard>
     <StudyCard typeName={"프로젝트"}></StudyCard>
-    <div className={styles.createStudy}>
+    <Link href="/createStudy/selectTemplate">
+    <div className={styles.createStudyContainer}>
       <Plus/>
       <div className={styles.createStudyText}>
         <div className={styles.createStudyTitle}>
@@ -46,6 +47,7 @@ export default function NewStudy(){
         <p>원하는 스터디가 없다면? 스터디장이 될 차례!</p>
       </div>
     </div>
+    </Link>
     <div className={styles.noSearchResult}>더이상 검색결과가 없습니다</div>
   </main>
   </div>

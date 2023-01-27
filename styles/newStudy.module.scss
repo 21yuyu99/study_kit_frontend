@@ -105,7 +105,7 @@
     }
   }
 }
-.createStudy{
+.createStudyContainer{
   width: 90%;
   border-radius: 16px;
   background-color: #E0E0E0;
@@ -121,11 +121,13 @@
       h3{
         font-size: 13pt;
         padding:2px 0;
+        color:black;
       }
     }
     p{
       margin-top: 5px;
       font-size: 10pt;
+      color : #7E8489;
       @media (max-width: 340px) {
         font-size: 9pt;
       }
