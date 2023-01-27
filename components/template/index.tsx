@@ -1,6 +1,6 @@
 import styles from "./template.module.scss";
 import { AiOutlineHeart } from 'react-icons/ai'
-import Rectangle from '../../../public/img/Rectangle 9030.svg'
+import Rectangle from '../../public/img/Rectangle 9030.svg'
 
 const Template = ()=>{
   return(

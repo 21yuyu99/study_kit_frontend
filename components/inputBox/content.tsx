@@ -1,7 +1,7 @@
 export const detailStepContent = [
   {number : 1,
     title:"스터디 제목",
-    subTitle:"스터디의 제목을 지어주세요."
+    subTitle:"스터디의 제목을 지어주세요. 필수 항목입니다."
    },
    {
     number : 2,
@@ -11,22 +11,22 @@ export const detailStepContent = [
    {
     number : 3,
     title : "사진 업로드",
-    subTitle : "스터디 참가자들에게 간단한 질문을 해주세요."
+    subTitle : "스터디를 대표할 사진을 업로드 해주세요."
    },
    {
     number : 4,
     title : "인원 설정",
-    subTitle : "스터디에 참여할 인원을 설정해주세요.\n최대 가능 인원은 50명까지 입니다.",
+    subTitle : "스터디에 참여할 인원을 설정해주세요.\n최대 인원은 50명까지 입니다.",
    },
    {
     number : 5,
     title : "사용 언어",
-    subTitle : "스터디를 진행할 언어를 설정해주세요.",
+    subTitle : "스터디를 진행할 언어를 설정해주세요. 필수 항목입니다.",
    },
   {
     number : 6,
     title : "사용 도구",
-    subTitle : "스터디에서 사용할 도구를 설정해주세요.",
+    subTitle : "스터디에서 사용할 도구를 설정해주세요. 필수 항목입니다.",
   },
   {
     number : 7,
@@ -36,7 +36,7 @@ export const detailStepContent = [
   {
     number : 8,
     title : "대면/ 비대면",
-    subTitle : "스터디 진행 형태에 맞추어 체크해주세요."
+    subTitle : "스터디 진행 형태에 맞추어 체크해주세요. 필수 항목입니다."
   }
 ]
 

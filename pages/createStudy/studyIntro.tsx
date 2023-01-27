@@ -2,8 +2,8 @@ import styles from '../../styles/createStudy/studyIntro.module.scss';
 import { IoIosArrowBack } from 'react-icons/io';
 import { BiBox } from 'react-icons/bi';
 import Link from 'next/link';
-import {AddQuestion, InputBox, InputSpace} from '@/components/createStudy/inputBox';
-import { introStepContent } from '@/components/createStudy/inputBox/content';
+import {AddQuestion, InputBox, InputSpace} from '@/components/inputBox';
+import { introStepContent } from '@/components/inputBox/content';
 import { useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 

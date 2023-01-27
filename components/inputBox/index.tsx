@@ -1,6 +1,6 @@
 import { FiMinus, FiPlus} from "react-icons/fi";
 import styles from "./inputBox.module.scss";
-import { CountMemberProps, DeadlineProps, InputBoxProps, InputCheckProps, InputSpaceProps} from "@/types/createStudy";
+import { CountMemberProps, DeadlineProps, InputBoxProps, InputCheckProps, InputSpaceProps} from "@/types/inputBox";
 import { AiOutlineCheck, AiOutlineCloseCircle, AiOutlinePlus } from "react-icons/ai";
 import { useState } from "react";
 import 'react-date-range/dist/styles.css';
@@ -86,7 +86,7 @@ export const SelectOnOff = (props:InputCheckProps)=>{
         ):(<div className={styles.isNotChecked} onClick={()=> props.dispatch({type:"OFFLINE"})}>
           </div>)
         }
-      <span className={props.state.check[0].isChecked===true?`${styles.color_black}`:`${styles.color_gray}`}>대면</span>
+      <span onClick={()=> props.dispatch({type:"OFFLINE"})} className={props.state.check[0].isChecked===true?`${styles.color_black}`:`${styles.color_gray}`}>대면</span>
       {props.state.check[1].isChecked===true?(
           <div className={styles.isChecked} onClick={()=> props.dispatch({type:"ONLINE"})}>
                         <div className={styles.checkSvg}><AiOutlineCheck/></div>
@@ -94,7 +94,7 @@ export const SelectOnOff = (props:InputCheckProps)=>{
         ):(<div className={styles.isNotChecked} onClick={()=> props.dispatch({type:"ONLINE"})}>
           </div>)
         }
-      <span className={props.state.check[1].isChecked===true?`${styles.color_black}`:`${styles.color_gray}`}>비대면</span>
+      <span onClick={()=> props.dispatch({type:"ONLINE"})} className={props.state.check[1].isChecked===true?`${styles.color_black}`:`${styles.color_gray}`}>비대면</span>
     </div>
   )
 }
