@@ -9,6 +9,7 @@ import Link from 'next/link'
 import Head from 'next/head';
 export default function NewStudy(){
   const [search,setSearch] = useState("");
+
  return(
   <>
   <div className={styles.scrollSpace}>
@@ -32,11 +33,11 @@ export default function NewStudy(){
       <button type="submit" className={styles.searchButton}><AiOutlineSearch size="20"/></button>
     </form>
     <StudyTypeBar/>
-    <StudyCard typeName={"언어"}></StudyCard>
-    <StudyCard typeName={"기타"}></StudyCard>
-    <StudyCard typeName={"자격증"}></StudyCard>
-    <StudyCard typeName={"취/창업"}></StudyCard>
-    <StudyCard typeName={"프로젝트"}></StudyCard>
+    <StudyCard typeName={"언어"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"기타"} starStatus={true}cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"자격증"} starStatus={false}cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"취/창업"} starStatus={false}cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={false}cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
     <Link href="/createStudy/selectTemplate">
     <div className={styles.createStudyContainer}>
       <Plus/>

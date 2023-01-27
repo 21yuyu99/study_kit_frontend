@@ -33,12 +33,19 @@
     font-size: 10pt;
     color: #9E9E9E;
   }
-  .star{
-    margin-left: auto;
-    height: 23px;
-    color: #0091FF;
-    text-align: right;
-    right: 0;
+  @each $bool in true, false{
+    .star_#{$bool}{
+      margin-left: auto;
+      height: 23px;
+      text-align: right;
+      right: 0;
+    }
+    .star_true{
+      color: #0091FF;
+    }
+    .star_false{
+      color : #7E8489;
+    }
   }
   .cardContent{
     width: 100%;

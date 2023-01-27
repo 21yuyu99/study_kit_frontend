@@ -1,12 +1,17 @@
 import styles from "./studyCard.module.scss";
-import { AiFillStar } from 'react-icons/ai';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { ReactNode } from "react";
 
 interface Props {
   typeName: ReactNode;
+  starStatus : boolean;
+  cardTag : string[]|string;
+  cardTitle : string;
+  cardPeriod : string;
+  progressStatus : number;
 }
 
-const StudyCard = ({typeName} : Props)=>{
+const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressStatus} : Props)=>{
   let type
   if (typeName=="언어" || typeName=="기타") {
     type = styles.languageOther
@@ -24,7 +29,11 @@ const StudyCard = ({typeName} : Props)=>{
     <div className={styles.studyCard}>
       <div className={type}>{typeName}</div>
       <div className={styles.cardTag}>#문제풀이&nbsp;&nbsp;#실습</div>
-      <div className={styles.star}><AiFillStar size={27}/></div>
+        {starStatus===true?
+        (<div className={styles.star_true}><AiFillStar size={27}/></div>) 
+        :
+          (<div className={styles.star_false}><AiOutlineStar size={27}/></div>)
+        }
       <div className={styles.cardContent}>
         <div className={styles.cardTitle}>
           <h3>오픽 자격증 따기</h3>
