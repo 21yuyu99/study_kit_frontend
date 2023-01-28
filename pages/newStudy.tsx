@@ -8,9 +8,11 @@ import { useState } from 'react';
 import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 export default function NewStudy(){
   const [search,setSearch] = useState("");
-
+  const router = useRouter().query;
+  console.log(router);
  return(
   <>
   <div className={styles.scrollSpace}>
