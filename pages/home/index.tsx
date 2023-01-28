@@ -6,7 +6,6 @@ import BottomNavigation from '@/components/bottomNavigation';
 export default function home(){
  return(
   <>
-  <div className={styles.scrollSpace}>
   <nav className={styles.top}>
       <div className={styles.topTitle}>스터디키트</div>
       <div className={styles.topCenterContainer}></div>
@@ -25,8 +24,16 @@ export default function home(){
     <StudyCard typeName={"자격증"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
     <StudyCard typeName={"취/창업"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
     <StudyCard typeName={"프로젝트"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
   </main>
-  </div>
   <BottomNavigation location={"홈"}/>
   </>
  )
