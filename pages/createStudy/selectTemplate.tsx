@@ -1,7 +1,7 @@
 import styles from '../../styles/createStudy/selectTemplate.module.scss';
 import Plus from '../../public/img/Group 7029.svg';
 import StudyTypeBar from '@/components/studyTypeBar';
-import Template from '@/components/createStudy/template';
+import Template from '@/components/template';
 import Link from 'next/link';
 import TopNavigation from '@/components/topNavigation';
 export default function SelectTemplate(){

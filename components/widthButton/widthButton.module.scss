@@ -1,18 +1,15 @@
 $color-data:(
- blue : #0091FF
+ blue : #0091FF,
+ gray : #ECECEC
 );
 @each $color-name,$color-code in $color-data{
   .button_#{$color-name}{
-    width: 90%;
+    width: 88%;
     background-color:$color-code;
     height: 48px;
     border-radius: 8px;
     margin:auto;
     text-align: center;
     line-height: 48px;
-    @if $color-name == blue{
-    margin-top:50px;
-    color:white;
-  } 
 }
 }

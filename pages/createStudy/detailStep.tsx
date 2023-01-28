@@ -1,17 +1,20 @@
 import styles from '../../styles/createStudy/detailStep.module.scss';
 import Link from 'next/link';
-import {AddPhoto, CountMember, InputBox, InputDeadline, InputSpace, SelectOnOff } from '@/components/createStudy/inputBox';
-import { detailStepContent } from '@/components/createStudy/inputBox/content';
+import {AddPhoto, CountMember, InputBox, InputDeadline, InputSpace, SelectOnOff} from '@/components/inputBox';
+import { detailStepContent } from '@/components/inputBox/content';
 import { useReducer, useState } from 'react';
 import { checkBoxTypes } from '@/types/createStudy';
 import { WidthButton } from '@/components/widthButton';
 import {Range } from 'react-date-range';
 import TopNavigation from '@/components/topNavigation';
+import { WarningBox, WarningMsg } from '@/components/Warning';
 export default function DetailStep(){
   const [title,setTitle] = useState("");
   const [lan,setLan] =useState("");
   const [tool,setTool] = useState("");
   const [toggle,setToggle] = useState(false);
+  const [essentialCheck,setEssential]= useState(true);
+  const [warningStatus,setWarning] = useState(true);
   const countReducer = (state:{count:number},action:{type:String})=>{
     switch(action.type){
       case "INCREMENT":
@@ -88,7 +91,9 @@ export default function DetailStep(){
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                 <InputSpace text={title} setText={setTitle}/>
-                <></>
+                {(title===""&&essentialCheck===false)?(
+                  <WarningMsg msg="필수 항목입니다."/>
+                ):<></>}
             </InputBox>
           )
           case 2:
@@ -116,21 +121,27 @@ export default function DetailStep(){
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                 <InputSpace text={lan} setText={setLan}/>
-                <></>
+                {(lan===""&&essentialCheck===false)?(
+                  <WarningMsg msg="필수 항목입니다."/>
+                ):<></>}
             </InputBox>
           )
         case 6:
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                 <InputSpace text={tool} setText={setTool}/>
-                <></>
+                {(tool===""&&essentialCheck===false)?(
+                  <WarningMsg msg="필수 항목입니다."/>
+                ):<></>}
             </InputBox>
           )
         case 8 :
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
                 <SelectOnOff state={checkState} dispatch={checkDispatch} reducer={checkReducer}/>
-                <></>
+                {((checkState.check[0].isChecked===false&&checkState.check[1].isChecked===false)&&essentialCheck===false)?(
+                  <WarningMsg msg="필수 항목입니다."/>
+                ):<></>}
             </InputBox>
           )
         default :
@@ -142,8 +153,17 @@ export default function DetailStep(){
           )
       }
     })}
-    <Link href="/createStudy/studyIntro"><WidthButton color="blue" buttonText ="다음"/></Link>
   </main>
+  <div className={styles.bottomContainer}>
+    {(title===""||lan===""||tool===""||(checkState.check[0].isChecked===false&&checkState.check[1].isChecked===false))?
+      (
+        <>
+        <WarningBox message="필수 항목을 모두 선택한 후 넘어가주세요." status= {warningStatus} setStatus={setWarning}/>
+        <span className = {styles.grayButtonWrapper} onClick={()=>{setEssential(false);setWarning(true)}}><WidthButton color="gray" buttonText ="다음"/></span>
+        </>)
+        :<Link className = {styles.blueButtonWrapper} href="/createStudy/studyIntro"><WidthButton color="blue" buttonText ="다음"/></Link>
+      }
+  </div>
   </>
  )
 }

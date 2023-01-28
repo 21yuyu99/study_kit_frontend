@@ -1,7 +1,7 @@
 import styles from '../../styles/createStudy/studyIntro.module.scss';
 import Link from 'next/link';
-import {AddQuestion, InputBox, InputSpace} from '@/components/createStudy/inputBox';
-import { introStepContent } from '@/components/createStudy/inputBox/content';
+import {AddQuestion, InputBox, InputSpace} from '@/components/inputBox';
+import { introStepContent } from '@/components/inputBox/content';
 import { useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';

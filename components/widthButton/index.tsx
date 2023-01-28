@@ -1,16 +1,18 @@
 import { widthButtonProps } from "@/types/widthButton";
 import styles from "./widthButton.module.scss";
 export const WidthButton = (props:widthButtonProps)=>{
-  if(props.color==="blue"){
+  let button_class;
+  switch(props.color){
+    case "blue":
+      button_class = styles.button_blue;
+      break;
+    case "gray" :
+      button_class = styles.button_gray;
+      break;
+  }
     return(
-      <div className={styles.button_blue}>
+      <div className={button_class}>
       {props.buttonText}
     </div>  
-    )
-  }
-  else{
-    return(
-      <></>
-    )
-  }
+    )  
 }
