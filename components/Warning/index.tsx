@@ -17,6 +17,9 @@ export const WarningBox = ({message,status,setStatus}:WarningBoxProps)=>{
     </div>
     )
   }
+  return(
+    <></>
+  )
 }
 export const WarningMsg = ({msg}:{msg:string}) =>{
 return(

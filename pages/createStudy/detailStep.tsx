@@ -14,7 +14,7 @@ export default function DetailStep(){
   const [tool,setTool] = useState("");
   const [toggle,setToggle] = useState(false);
   const [essentialCheck,setEssential]= useState(true);
-  const [warningStatus,setWarning] = useState(true);
+  const [warningStatus,setWarning] = useState(false);
   const countReducer = (state:{count:number},action:{type:String})=>{
     switch(action.type){
       case "INCREMENT":
