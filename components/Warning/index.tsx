@@ -1,4 +1,4 @@
-import styles from "./WarningBox.module.scss";
+import styles from "./warningBox.module.scss";
 import {IoIosWarning} from 'react-icons/io';
 import {GrFormClose} from 'react-icons/gr';
 import { Dispatch, SetStateAction } from "react";
