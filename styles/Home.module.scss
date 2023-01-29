@@ -27,59 +27,48 @@
   }
   .linkToSignIn{
     height: 5%;
-    font-size: 9pt;
     padding-left: 20px;
+    font-size: 11pt;
+    a{
+      color: #0091FF;
+    }
+    
   }
   .signUp{
     max-height: 30%;
-    .studyKit{
+    margin-top: 5px;
+    a{
+    }
+    .studyKit, .kakao, .google{
       height: 7vh;
-      background-color: #0091FF;
       border-radius: 16px;
-      padding: 10px;
       width: 90%;
       margin: auto;
-      margin-top: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
       h3{
-        font-size: 9pt;
+        font-size: 1.5vh;
+      }
+    }
+    .studyKit{
+      background-color: #0091FF;
+      h3{
         color: white;
       }
     }
-    .kakao{
-      height: 7vh;
-      background-color: #FEE100;
-      border-radius: 16px;
-      padding: 10px;
-      width: 90%;
-      margin: auto;
+    .kakao, .google{
       margin-top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       h3{
         padding-left: 5px;
-        font-size: 9pt;
         color: #535353;
       }
+    }
+    .kakao{
+      background-color: #FEE100;
     }
     .google{
-      height: 7vh;
       background-color: #ECECEC;
-      border-radius: 16px;
-      padding: 10px;
-      width: 90%;
-      margin: auto;
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      h3{
-        padding-left: 5px;
-        font-size: 9pt;
-        color: #535353;
-      }
     }
   }
+    

@@ -27,9 +27,9 @@ export default function Home() {
           <p>이미 회원이신가요? <Link href='/'>로그인</Link></p>
         </div>
         <div className={styles.signUp}>
-          <div className={styles.studyKit}><h3>1분만에 회원가입하기</h3></div>
-          <div className={styles.kakao}><Kakao/><h3>카카오로 바로 시작하기</h3></div>
-          <div className={styles.google}><Google/><h3>구글로 바로 시작하기</h3></div>
+          <Link href='/'><div className={styles.studyKit}><h3>1분만에 회원가입하기<h3/></h3></div></Link>
+          <Link href='/'><div className={styles.kakao}><Kakao/><h3>카카오로 바로 시작하기</h3></div></Link>
+          <Link href='/'><div className={styles.google}><Google/><h3>구글로 바로 시작하기</h3></div></Link>
         </div>	
       </main>
     </>	
