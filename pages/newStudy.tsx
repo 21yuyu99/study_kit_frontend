@@ -4,15 +4,18 @@ import StudyTypeBar from '@/components/studyTypeBar';
 import StudyCard from '@/components/studyCard';
 import TopNavigation from '@/components/topNavigation';
 import BottomNavigation from '@/components/bottomNavigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { kakao } from './api/auth/kakao';
 export default function NewStudy(){
   const [search,setSearch] = useState("");
-  const router = useRouter().query;
-  console.log(router);
+  const routerCode = useRouter().query.code;
+  if(typeof(routerCode)==="string"){
+    kakao({routerCode});
+  }
  return(
   <>
   <div className={styles.scrollSpace}>
