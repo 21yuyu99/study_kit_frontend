@@ -9,7 +9,6 @@ import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { kakao } from './api/auth/kakao';
 export default function NewStudy(){
   const [search,setSearch] = useState("");
   const routerCode = useRouter().query.code;
