@@ -11,10 +11,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 export default function NewStudy(){
   const [search,setSearch] = useState("");
-  const routerCode = useRouter().query.code;
-  if(typeof(routerCode)==="string"){
-    kakao({routerCode});
-  }
  return(
   <>
   <div className={styles.scrollSpace}>
