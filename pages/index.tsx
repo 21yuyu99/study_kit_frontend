@@ -15,7 +15,9 @@ export default function Home() {
       <main>	
         메인 페이지	
       </main>	
-      <Link href="/auth/kakao">카카오</Link>   
+      {/* <Link href="/auth/kakao">카카오</Link>    */}
+      <Link href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${
+          process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}`}>카카오</Link>
     </>	
   )	
 }

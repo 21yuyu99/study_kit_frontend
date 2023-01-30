@@ -15,6 +15,16 @@ export const requestToken = ({routerCode}:{routerCode:string})=>{
   return request.then(data=>data.json());
   }
 
-  // export const sendData = ()=>{
-    
-  // }
+  export const sendData = ({routerCode}:{routerCode:string})=>{
+    const request = fetch(`https://www.studykit.site/api/oauth/kakao`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body:JSON.stringify({
+      "code" : routerCode
+    }
+    )
+  })
+  return request.then(data=>data.json());
+}
