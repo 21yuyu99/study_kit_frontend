@@ -1,11 +1,12 @@
 import { FiMinus, FiPlus} from "react-icons/fi";
 import styles from "./inputBox.module.scss";
-import { CountMemberProps, DeadlineProps, InputBoxProps, InputCheckProps, InputSpaceProps} from "@/types/inputBox";
+import { CountMemberProps, DeadlineProps, InputBoxProps, InputCheckProps, InputQnaProps, InputSpaceProps} from "@/types/inputBox";
 import { AiOutlineCheck, AiOutlineCloseCircle, AiOutlinePlus } from "react-icons/ai";
 import { useState } from "react";
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { DateRange, RangeKeyDict, Range } from 'react-date-range';
+import { QnaType } from "@/pages/createStudy/studyIntro";
 export const InputBox = (props:InputBoxProps)=>{
  return(
   <div className={styles.boxContainer}>
@@ -30,6 +31,23 @@ export const InputBox = (props:InputBoxProps)=>{
 export const InputSpace = (props:InputSpaceProps)=>{
   return(
     <input value={props.text} onChange = {e => props.setText(e.target.value)} className={styles.inputSpace}></input>
+  )
+}
+export const InputQna = (props:InputQnaProps)=>{
+  const {qnaList,id,setQna} = props;
+  const onChangeHandler = (e : React.ChangeEvent<HTMLInputElement>)=>{
+  setQna(
+    qnaList.map(
+      qna=>
+      qna.id===id?{...qna,content:e.target.value}:qna
+  )
+  )
+  }
+  return(
+    <div className={styles.qnaContainer}>
+    <input id="qnaInput" className={styles.inputSpace} value={qnaList[id-1].content} onChange={(e)=>onChangeHandler(e)}/>
+    <label htmlFor="qnaInput" className={styles.removeQna}>질문 삭제</label>
+    </div>
   )
 }
 export const InputDeadline = (props:DeadlineProps)=>{
@@ -100,7 +118,7 @@ export const SelectOnOff = (props:InputCheckProps)=>{
 }
 export const AddPhoto = ()=>{
   return(
-      <div className={styles.photoButton}>
+      <div className={styles.addButton}>
         <label htmlFor="chooseFile">
         <AiOutlinePlus/> 사진 추가하기
         </label>
@@ -111,7 +129,7 @@ export const AddPhoto = ()=>{
 
 export const AddQuestion = ()=>{
   return(
-      <div className={styles.photoButton}>
+      <div className={styles.addButton}>
         <AiOutlinePlus/> 질문 추가하기
     </div>
   )

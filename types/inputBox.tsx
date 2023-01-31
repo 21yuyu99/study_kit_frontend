@@ -1,15 +1,21 @@
-import { Dispatch, SetStateAction } from "react"
+import { QnaType } from "@/pages/createStudy/studyIntro";
+import { Dispatch, ReactElement, SetStateAction } from "react"
 import {Range } from 'react-date-range';
 
 export interface InputBoxProps {
   number : number
   title : string
   subTitle : string
-  children : JSX.Element[]|JSX.Element
+  children : React.ReactNode;
 }
 export interface InputSpaceProps{
   text : string
   setText : Dispatch<SetStateAction<string>>
+}
+export interface InputQnaProps{
+  id : number
+  qnaList : QnaType[]
+  setQna : Dispatch<SetStateAction<QnaType[]>>
 }
 export interface checkBoxTypes{
   content:string

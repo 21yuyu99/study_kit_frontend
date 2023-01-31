@@ -39,7 +39,7 @@
     height:35px;
     padding:15px;
     border-radius: 10px;
-    font-weight: bold;
+    color : #535353;
   }
 
   .countContainer{
@@ -107,7 +107,7 @@
       }
     }
   }
-  .photoButton{
+  .addButton{
     height: 35px;
     font-size: 12pt;
     color: #9E9E9E;
@@ -182,7 +182,7 @@
 
 .date{
   font-size: 10pt;
-  font-weight: bold;
+  color : #535353;
   padding-left:15px;
   width: 80%;
 }
@@ -217,4 +217,14 @@
     }
   }
 }
+}
+.qnaContainer{
+  position:relative;
+  .removeQna{
+    position:absolute;
+    font-size: 10pt;
+    right: 5%;
+    top : 36%;
+    color:#7E8489;
+  }
 }

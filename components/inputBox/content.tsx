@@ -31,7 +31,7 @@ export const detailStepContent = [
   {
     number : 7,
     title : "태그 남기기",
-    subTitle : "스터디를 설명할 수 있는 태그를 남겨주세요."
+    subTitle : "스터디를 설명할 수 있는 태그를 남겨주세요. 띄어쓰기로 구분해주세요."
   },
   {
     number : 8,
