@@ -1,7 +1,5 @@
 import Head from 'next/head'	
-import Image from 'next/image'	
-import { Inter } from '@next/font/google'	
-import styles from '@/styles/Home.module.css'	
+import styles from '@/styles/Home.module.scss'	
 import Kakao from '@/public/img/kakao.svg'
 import Google from '@/public/img/google.svg'
 import Link from 'next/link'
@@ -14,9 +12,6 @@ export default function Home() {
         <meta name="description" content="스터디 키트" />	
         <link rel="icon" href="/img/favicon.ico" />	
       </Head>	
-      <main>	
-      </main>	
-      <Link href="/auth/kakao">카카오</Link>   
       <main className={styles.main}>
         <div className={styles.banner}>
           <div>
