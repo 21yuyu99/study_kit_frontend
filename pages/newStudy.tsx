@@ -13,7 +13,6 @@ export default function NewStudy(){
   const [search,setSearch] = useState("");
  return(
   <>
-  <div className={styles.scrollSpace}>
   <TopNavigation title={"새 스터디"} backSpace={false} bellOrBox={true}></TopNavigation>
   <main className={styles.main}>
     <div className={styles.banner}>
@@ -48,7 +47,6 @@ export default function NewStudy(){
     </Link>
     <div className={styles.noSearchResult}>더이상 검색결과가 없습니다</div>
   </main>
-  </div>
   <BottomNavigation location={"새스터디"}/>
   </>
  )

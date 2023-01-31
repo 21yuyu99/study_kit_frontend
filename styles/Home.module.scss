@@ -1,0 +1,77 @@
+  .main{
+    height: 100%;
+    background-color: white;
+  }
+  .banner{
+    width: 100%;
+    height: 65%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    .pencil{
+        font-size: 3rem;
+        text-align: center;
+    }
+    .bannerTitle{
+      h3{
+        font-size: 20pt;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+    }
+    p{
+      font-size: 11pt;
+      text-align: center;
+      color: #7E8489;
+    }
+  }
+  .linkToSignIn{
+    height: 5%;
+    padding-left: 25px;
+    font-size: 11pt;
+    a{
+      color: #0091FF;
+    }
+  }
+  .signUp{
+    max-height: 30%;
+    margin-top: 5px;
+    a{
+      display: block;
+      margin: auto;
+      width: 90%;
+    }
+    .studyKit, .kakao, .google{
+      position: relative;
+      height: 50px;
+      border-radius: 16px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h3{
+        font-size: 15px;
+      }
+    }
+    .studyKit{
+      background-color: #0091FF;
+      h3{
+        color: white;
+      }
+    }
+    .kakao, .google{
+      margin-top: 10px;
+      h3{
+        padding-left: 8px;
+        color: #535353;
+      }
+    }
+    .kakao{
+      background-color: #FEE500;
+    }
+    .google{
+      background-color: #ECECEC;
+    }
+  }
+    
