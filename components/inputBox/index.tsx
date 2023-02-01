@@ -2,7 +2,7 @@ import { FiMinus, FiPlus} from "react-icons/fi";
 import styles from "./inputBox.module.scss";
 import { CountMemberProps, DeadlineProps, InputBoxProps, InputCheckProps, InputQnaProps, InputSpaceProps} from "@/types/inputBox";
 import { AiOutlineCheck, AiOutlineCloseCircle, AiOutlinePlus } from "react-icons/ai";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { DateRange, RangeKeyDict, Range } from 'react-date-range';
@@ -35,7 +35,15 @@ export const InputSpace = (props:InputSpaceProps)=>{
 }
 export const InputQna = (props:InputQnaProps)=>{
   const {qnaList,id,setQna} = props;
-  const onChangeHandler = (e : React.ChangeEvent<HTMLInputElement>)=>{
+  const handleResizeHeight = useCallback(() => {
+    let targetTextarea:HTMLElement;
+    if (typeof document !== "undefined") {
+      targetTextarea = document.getElementById(`qnaInput${id}`) as HTMLElement;
+      targetTextarea.style.height = 'auto';
+      targetTextarea.style.height = targetTextarea.scrollHeight + "px";
+    }
+  },[]);
+  const onChangeHandler = (e : React.ChangeEvent<HTMLTextAreaElement>)=>{
   setQna(
     qnaList.map(
       qna=>
@@ -45,7 +53,7 @@ export const InputQna = (props:InputQnaProps)=>{
   }
   return(
     <div className={styles.qnaContainer}>
-    <input id="qnaInput" className={styles.inputSpace} value={qnaList[id-1].content} onChange={(e)=>onChangeHandler(e)}/>
+    <textarea rows={1} id={`qnaInput${id}`} onInput={handleResizeHeight} className={styles.inputSpace}  onChange={(e)=>onChangeHandler(e)} value={qnaList[id-1].content}/>
     <label htmlFor="qnaInput" className={styles.removeQna}>질문 삭제</label>
     </div>
   )

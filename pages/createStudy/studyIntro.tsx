@@ -2,7 +2,7 @@ import styles from '../../styles/createStudy/studyIntro.module.scss';
 import Link from 'next/link';
 import {AddQuestion, InputBox, InputQna, InputSpace} from '@/components/inputBox';
 import { introStepContent } from '@/components/inputBox/content';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useCallback, useRef, useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
 export interface QnaType{
