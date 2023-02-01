@@ -12,7 +12,7 @@ export default function StudyIntro() {
  return(
   <>
   <div className={styles.topProgressBar}></div>
-  <TopNavigation title={"스터디 개설 (3/3)"} backSpace={true} bellOrBox={false}></TopNavigation>
+  <TopNavigation title={"스터디 개설 (3/3)"} backSpace={true} rightIcon={"box"}></TopNavigation>
   <main className={styles.main}>
     {introStepContent.map((content)=>{
       switch(content.number){

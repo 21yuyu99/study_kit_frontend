@@ -5,19 +5,26 @@
   display: flex;
   align-items: center;
   .topLeftContainer{
-  width: 10%;
+  width: 15%;
   }
  .topTitle{
-  width: 80%;
+  width: 75%;
   text-align: center;
   font-size:12pt;
  }
-  .bell, .box, .back{
-    width: 10%;
+  .icon{
+    width: 15%;
     text-align: center;
     line-height: 1;
     svg{
-      vertical-align:top;
+      vertical-align:bottom;
     }
+  }
+  .back{
+    a{
+      padding: 10px;
+    }
+    width: 15%;
+    text-align: center;
   }
  }
