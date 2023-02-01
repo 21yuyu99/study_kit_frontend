@@ -1,0 +1,46 @@
+.boxContainer{
+  width: 90%;
+  margin: 10px auto;
+  margin-bottom: 20px;
+  display: flex;
+  .textContainer{
+    width: 100%;
+    .title{
+      font-size: 13pt;
+    }
+    .subTitle{
+      font-size: 11pt;
+      color: #9E9E9E;
+      margin: 2px 0;
+    }
+  }
+  .inputSpaceContainer{
+    display: flex;
+    position: relative;
+    align-items: center;
+    .inputSpace{
+      margin-top: 5px;
+      background-color: #F4F4F4;
+      border: none;
+      width: 100%;
+      height: 40px;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    .inputSpaceButton{
+      position: absolute;
+      border: none;
+      margin-top: 5px;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-right: 2px;
+      right: 0;
+      font-size: 11pt;
+      background-color: #F4F4F4;
+      color: #9E9E9E; 
+      line-height: 0.5;
+    }
+  }  
+}

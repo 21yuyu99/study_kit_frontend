@@ -83,7 +83,7 @@ export default function DetailStep(){
   <div className={styles.left}></div>
   <div className={styles.right}></div>
   </div>
-  <TopNavigation title={"스터디 개설 (2/3)"} backSpace={true} bellOrBox={false}></TopNavigation>
+  <TopNavigation title={"스터디 개설 (2/3)"} backSpace={true} rightIcon={"box"}></TopNavigation>
   <main className={styles.main}>
     {detailStepContent.map((content)=>{
       switch(content.number){
