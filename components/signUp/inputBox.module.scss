@@ -28,7 +28,7 @@
       border-radius: 10px;
       font-weight: bold;
     }
-    .inputSpaceButton{
+    .activeButton ,.disabledButton{
       position: absolute;
       border: none;
       margin-top: 5px;
@@ -38,9 +38,14 @@
       margin-right: 2px;
       right: 0;
       font-size: 11pt;
-      background-color: #F4F4F4;
-      color: #9E9E9E; 
+      background-color: #F4F4F4; 
       line-height: 0.5;
+    }
+    .disabledButton{
+      color: #7E8489;
+    }
+    .activeButton{
+      color: #0091FF; 
     }
   }  
 }
