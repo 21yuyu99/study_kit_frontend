@@ -12,6 +12,7 @@ export default function DetailStep(){
   const [title,setTitle] = useState("");
   const [lan,setLan] =useState("");
   const [tool,setTool] = useState("");
+  const [tag,setTag] = useState("");
   const [toggle,setToggle] = useState(false);
   const [essentialCheck,setEssential]= useState(true);
   const [warningStatus,setWarning] = useState(false);
@@ -135,6 +136,13 @@ export default function DetailStep(){
                 ):<></>}
             </InputBox>
           )
+        case 7:
+          return(
+            <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
+                  <InputSpace text={tag} setText={setTag}/>
+                  <></>
+            </InputBox>
+          )
         case 8 :
           return(
             <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
@@ -142,13 +150,6 @@ export default function DetailStep(){
                 {((checkState.check[0].isChecked===false&&checkState.check[1].isChecked===false)&&essentialCheck===false)?(
                   <WarningMsg msg="필수 항목입니다."/>
                 ):<></>}
-            </InputBox>
-          )
-        default :
-          return(
-            <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
-                  <InputSpace text={title} setText={setTitle}/>
-                  <></>
             </InputBox>
           )
       }
