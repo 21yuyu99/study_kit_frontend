@@ -51,10 +51,24 @@ export const InputQna = (props:InputQnaProps)=>{
   )
   )
   }
+  const onValue = ()=>{
+    let content:string="";
+    qnaList.filter(
+      qna => qna.id === id?content = qna.content:''
+    )
+    return content
+  }
+  const onClickHandler = ()=>{
+    setQna(
+      qnaList.filter(
+        qna=> qna.id!=id
+      )
+    )
+  }
   return(
     <div className={styles.qnaContainer}>
-    <textarea rows={1} id={`qnaInput${id}`} onInput={handleResizeHeight} className={styles.inputSpace}  onChange={(e)=>onChangeHandler(e)} value={qnaList[id-1].content}/>
-    <label htmlFor="qnaInput" className={styles.removeQna}>질문 삭제</label>
+    <textarea rows={1} id={`qnaInput${id}`} onInput={handleResizeHeight} className={styles.inputSpace}  onChange={(e)=>onChangeHandler(e)} value={onValue()}/>
+    <label htmlFor={`qnaInput${id}`} id={`remove${id}`} className={styles.removeQna} onClick={()=>onClickHandler()}>질문 삭제</label>
     </div>
   )
 }

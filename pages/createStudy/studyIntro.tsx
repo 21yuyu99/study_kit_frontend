@@ -21,9 +21,11 @@ export default function StudyIntro() {
     content : ""
   }
  ]);
+ const [qnaCount,setQnaCount] = useState(2);
  const addQnaHandler = ()=>{
-  const newQna:QnaType = {id:qnaList.length+1,content:""};
+  const newQna:QnaType = {id:qnaCount+1,content:""};
   setQnaList([...qnaList,newQna])
+  setQnaCount(qnaCount+1);
  }
  return(
   <>

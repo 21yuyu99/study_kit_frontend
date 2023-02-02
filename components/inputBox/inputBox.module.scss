@@ -42,6 +42,7 @@
     color : #535353;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+    resize: none;
   }
   .inputSpace::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
@@ -224,11 +225,14 @@
 }
 .qnaContainer{
   position:relative;
+  .inputSpace{
+    padding-right:25%;
+  }
   .removeQna{
     position:absolute;
     font-size: 10pt;
     right: 5%;
-    top : 36%;
+    bottom:12px;
     color:#7E8489;
   }
 }
