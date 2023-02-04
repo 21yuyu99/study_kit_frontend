@@ -19,3 +19,15 @@ export const signUpStepContent = [
     subTitle : "닉네임을 입력한 후 중복확인을 진행해주세요",
    },
 ]
+
+export const signInStepContent = [
+  {number : 1,
+    title:"아이디",
+    subTitle:"3자 이상의 아이디를 입력해주세요"
+   },
+   {
+    number : 2,
+    title: "비밀번호",
+    subTitle:"알파벳, 숫자, 특수문자를 결합하여 8자 이상"
+   },
+]

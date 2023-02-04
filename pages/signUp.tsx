@@ -65,7 +65,7 @@ export default function SignUp() {
     })}
       <div className={styles.bottomContainer}>
         <div className={styles.linkToSignIn}>
-          <p>이미 회원이신가요? <Link href=''>로그인</Link></p>
+          이미 회원이신가요? <Link href='/signIn'>로그인</Link>
         </div>
         {(id===""||id.length<3||pwd===""||verifyPwd===""||phoneNum===""||authNum===""||nickName==="")?
           (

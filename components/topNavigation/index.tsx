@@ -21,7 +21,7 @@ const topNavigation = ({title, backSpace, rightIcon} : Props)=>{
   else if (title=="스터디 개설 (3/3)") {
     lnk = "/createStudy/detailStep"
   }
-  else if (title=="회원가입") {
+  else if (title=="회원가입"||"로그인") {
     lnk = "/"
   }
   let icon
