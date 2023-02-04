@@ -23,8 +23,13 @@ export default function Home() {
             <p>스터디그룹 활동하기</p>
           </div>
         </div>
-        <div className={styles.linkToSignIn}>
-          <p>이미 회원이신가요? <Link href=''>로그인</Link></p>
+        <div className={styles.linkContainer}>
+          <div className={styles.linkToSignIn}>
+            이미 회원이신가요? <Link href='/signIn'>로그인</Link>
+          </div>
+          <div className={styles.linkToNewStudy}>
+            <Link href='/newStudy'>먼저 둘러보기 &#62;</Link>
+          </div>
         </div>
         <div className={styles.signUp}>
           <Link href='/signUp'><div className={styles.studyKit}><h3>1분만에 회원가입하기</h3></div></Link>
