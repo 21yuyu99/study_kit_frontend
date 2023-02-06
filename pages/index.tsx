@@ -34,8 +34,10 @@ export default function Home() {
         <div className={styles.signUp}>
           <Link href='/signUp'><div className={styles.studyKit}><h3>1분만에 회원가입하기</h3></div></Link>
           <Link href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${
-          process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}`}><div className={styles.kakao}><Kakao/><h3>카카오로 바로 시작하기</h3></div></Link>
-          <Link href=''><div className={styles.google}><Google/><h3>구글로 바로 시작하기</h3></div></Link>
+          process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI}`}><div className={styles.kakao}><Kakao/><h3>카카오로 바로 시작하기</h3></div></Link>
+          <Link href={`https://accounts.google.com/o/oauth2/v2/auth?scope=profile email&response_type=code&client_id=${
+            process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI}`}><div className={styles.google}>
+            <Google/><h3>구글로 바로 시작하기</h3></div></Link>
         </div>	
       </main>
       </>
