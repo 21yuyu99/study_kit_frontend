@@ -11,5 +11,8 @@ $color-data:(
     margin:auto;
     text-align: center;
     line-height: 48px;
+    @if $color-code == #0091FF{
+      color:white;
+    }
 }
 }

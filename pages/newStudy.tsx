@@ -13,7 +13,7 @@ export default function NewStudy(){
   const [search,setSearch] = useState("");
  return(
   <>
-  <TopNavigation title={"새 스터디"} backSpace={false} bellOrBox={true}></TopNavigation>
+  <TopNavigation title={"새 스터디"} backSpace={false} rightIcon={"bell"}></TopNavigation>
   <main className={styles.main}>
     <div className={styles.banner}>
       <div className={styles.bannerText}>

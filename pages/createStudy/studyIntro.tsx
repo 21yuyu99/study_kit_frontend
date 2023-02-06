@@ -1,18 +1,36 @@
 import styles from '../../styles/createStudy/studyIntro.module.scss';
 import Link from 'next/link';
-import {AddQuestion, InputBox, InputSpace} from '@/components/inputBox';
+import {AddQuestion, InputBox, InputQna, InputSpace} from '@/components/inputBox';
 import { introStepContent } from '@/components/inputBox/content';
-import { useState } from 'react';
+import { ReactElement, useCallback, useRef, useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
-
+export interface QnaType{
+  id:number,
+  content:string
+}
 export default function StudyIntro() {
  const [intro,setIntro] = useState("");
- const [qna,setQna] = useState("");
+ const [qnaList,setQnaList] = useState<QnaType[]>([
+  {
+    id:1,
+    content : ""
+  },
+  {
+    id:2,
+    content : ""
+  }
+ ]);
+ const [qnaCount,setQnaCount] = useState(2);
+ const addQnaHandler = ()=>{
+  const newQna:QnaType = {id:qnaCount+1,content:""};
+  setQnaList([...qnaList,newQna])
+  setQnaCount(qnaCount+1);
+ }
  return(
   <>
   <div className={styles.topProgressBar}></div>
-  <TopNavigation title={"스터디 개설 (3/3)"} backSpace={true} bellOrBox={false}></TopNavigation>
+  <TopNavigation title={"스터디 개설 (3/3)"} backSpace={true} rightIcon={"box"}></TopNavigation>
   <main className={styles.main}>
     {introStepContent.map((content)=>{
       switch(content.number){
@@ -26,22 +44,25 @@ export default function StudyIntro() {
         case 2:
             return(
               <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
-                <InputSpace text={qna} setText={setQna}/>
-                <InputSpace text={qna} setText={setQna}/>
-                <AddQuestion/>
+                {
+                  qnaList.map(
+                    qna=>
+                   {
+                    return(
+                      <InputQna key={qna.id} id={qna.id} qnaList={qnaList} setQna={setQnaList}/>  
+                    )
+                   }
+                  )
+                }
+                <div onClick={()=>addQnaHandler()}>
+                  <AddQuestion/>
+                </div>
               </InputBox>
             )
           case 3:
             return(
               <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}><></><></></InputBox>
             )
-        default :
-          return(
-            <InputBox key = {content.number} number={content.number} title={content.title} subTitle={content.subTitle}>
-                  <InputSpace text={intro} setText={setIntro}/>
-                  <></>
-            </InputBox>
-          )
       }
     })}
   </main>

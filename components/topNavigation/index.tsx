@@ -1,16 +1,16 @@
 import styles from "./topNavigation.module.scss";
 import Bell from '@/public/img/bell.svg';
 import Box from '@/public/img/box.svg';
-import { IoIosArrowBack } from 'react-icons/io';
+import Back from '@/public/img/back.svg';
 import Link from "next/link";
 
 interface Props {
   title: string
   backSpace: boolean;
-  bellOrBox: boolean;
+  rightIcon: string;
 }
 
-const topNavigation = ({title, backSpace, bellOrBox} : Props)=>{
+const topNavigation = ({title, backSpace, rightIcon} : Props)=>{
   let lnk : string = ""
   if (title=="스터디 개설 (1/3)") {
     lnk = "/newStudy"
@@ -21,19 +21,25 @@ const topNavigation = ({title, backSpace, bellOrBox} : Props)=>{
   else if (title=="스터디 개설 (3/3)") {
     lnk = "/createStudy/detailStep"
   }
+  else if (title=="회원가입"||"로그인") {
+    lnk = "/"
+  }
+  let icon
+  if (rightIcon=="bell"){
+    icon = <Bell/>
+  }
+  else if (rightIcon=="box"){
+    icon = <Box/>
+  }
   return(
     <nav className={styles.top}>
       {backSpace===true?
-        (<div className={styles.back}><Link href={lnk}><IoIosArrowBack/></Link></div>) 
+        (<div className={styles.back}><Link href={lnk}><Back/></Link></div>) 
         :
           (<div className={styles.topLeftContainer}></div>)
         }
       <div className={styles.topTitle}>{title}</div>
-      {bellOrBox===true?
-        (<div className={styles.bell}><Bell/></div>) 
-        :
-          (<div className={styles.box}><Box/></div>)
-        }
+      <div className={styles.icon}>{icon}</div>
     </nav>
   )
 }
