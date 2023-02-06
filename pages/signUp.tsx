@@ -1,11 +1,12 @@
 import styles from '@/styles/signUp.module.scss';
 import Link from 'next/link';
-import {InputBox, InputSpace} from '@/components/signUp/index';
+import {CheckButton, InputBox, InputSpace, InputSpaceContainer} from '@/components/signUp/index';
 import { signUpStepContent } from '@/components/signUp/content';
 import { useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
 import { WarningBox, WarningMsg } from '@/components/Warning';
+import { idCheckHandler, sendSms, verifySms } from './api/singUp';
 
 export default function SignUp() {
  const [id,setId] = useState("");
@@ -25,7 +26,12 @@ export default function SignUp() {
         case 1:
           return(
             <InputBox key = {content.number} title={content.title} subTitle={content.subTitle}>
-              <InputSpace index = {1} text={id} setText={setId} buttonName={"중복확인"}/>
+              <InputSpaceContainer>
+                <InputSpace type = "id" text={id} setText={setId}/>
+                <span className={styles.checkButtonWrapper} onClick={()=>id.length>=3&&idCheckHandler(id)}>
+                  <CheckButton type="id" content = {id} buttonName={"중복확인"}/>
+                </span>
+              </InputSpaceContainer>
               {(id===""&&essentialCheck===false)?(
                   <WarningMsg msg="중복확인을 진행해주세요"/>
                 ):<></>}
@@ -34,33 +40,45 @@ export default function SignUp() {
         case 2:
             return(
               <InputBox key = {content.number} title={content.title} subTitle={content.subTitle}>
-                <InputSpace index = {2} text={pwd} setText={setPwd} buttonName={''} />
-                <InputSpace index = {2} text={verifyPwd} setText={setverifyPwd} buttonName={''}/>
+                <InputSpaceContainer>
+                  <InputSpace type="pw" text={pwd} setText={setPwd}/>
+                </InputSpaceContainer> 
+                <InputSpaceContainer>
+                  <InputSpace type="pw" text={verifyPwd} setText={setverifyPwd}/>
+                </InputSpaceContainer>
               </InputBox>
             )
         case 3:
             return(
               <InputBox key = {content.number} title={content.title} subTitle={content.subTitle}>
-                <InputSpace index = {3} text={phoneNum} setText={setPhoneNum} buttonName={"문자보내기"}/>
-                <InputSpace index = {3} text={authNum} setText={setauthNum} buttonName={"인증하기"}/>
+                  <InputSpaceContainer>
+                    <InputSpace type="phoneNum" text={phoneNum} setText={setPhoneNum}/>
+                    <span className={styles.checkButtonWrapper} onClick={()=>phoneNum.length===11&&sendSms({phoneNum})}>
+                      <CheckButton type="phoneNum" content = {phoneNum} buttonName={"문자보내기"}/>
+                    </span>
+                  </InputSpaceContainer>
+                  <InputSpaceContainer>
+                  <InputSpace type="authNum" text={authNum} setText={setauthNum}/>
+                  <span className={styles.checkButtonWrapper} onClick={()=>phoneNum.length===11&&authNum.length===6&&verifySms({authNum,phoneNum})}>
+                    <CheckButton type="authNum" content = {authNum} buttonName={"인증하기"}/>
+                  </span>
+                  </InputSpaceContainer>
               </InputBox>
             )
         case 4:
             return(
               <InputBox key = {content.number} title={content.title} subTitle={content.subTitle}>
-                <InputSpace index = {4} text={nickName} setText={setNickName} buttonName={"중복확인"}/>
+                 <InputSpaceContainer>
+                 <InputSpace type="nickName" text={nickName} setText={setNickName}/>
+                  <span className={styles.checkButtonWrapper} onClick={()=>phoneNum.length===11&&authNum.length===6?verifySms({phoneNum,authNum}):""}>
+                    <CheckButton type="nickName" content = {nickName} buttonName={"중복확인"}/>
+                  </span>
+                  </InputSpaceContainer>
                 {(id===""&&essentialCheck===false)?(
                   <WarningMsg msg="중복확인을 진행해주세요"/>
                 ):<></>}
               </InputBox>
             )
-        default :
-          return(
-            <InputBox key = {content.number} title={content.title} subTitle={content.subTitle}>
-                <InputSpace index = {1} text={id} setText={setId} buttonName={"인증하기"}/>
-                <></>
-            </InputBox>
-          )
       }
     })}
       <div className={styles.bottomContainer}>

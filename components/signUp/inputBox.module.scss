@@ -7,6 +7,7 @@
     width: 100%;
     .title{
       font-size: 13pt;
+      margin-bottom: 10px;
     }
     .subTitle{
       font-size: 11pt;
@@ -27,19 +28,17 @@
       padding: 15px;
       border-radius: 10px;
       font-weight: bold;
+      outline:none;
     }
     .activeButton ,.disabledButton{
-      position: absolute;
       border: none;
       margin-top: 5px;
       padding: 10px;
       border-radius: 10px;
       font-weight: bold;
       margin-right: 2px;
-      right: 0;
       font-size: 11pt;
-      background-color: #F4F4F4; 
-      line-height: 0.5;
+      background-color: #F4F4F4;
     }
     .disabledButton{
       color: #7E8489;

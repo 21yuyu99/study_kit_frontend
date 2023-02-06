@@ -1,6 +1,7 @@
 import styles from "./inputBox.module.scss";
-import { InputBoxProps, InputSpaceProps} from "@/types/signUp";
+import { CheckButtonProps, InputBoxProps, InputSpaceContainerProp, InputSpaceProps} from "@/types/signUp";
 import { useState } from "react";
+import { idCheckHandler } from "@/pages/api/singUp";
 export const InputBox = (props:InputBoxProps)=>{
  return(
   <div className={styles.boxContainer}>
@@ -17,39 +18,52 @@ export const InputBox = (props:InputBoxProps)=>{
 </div>
  )
 }
+export const InputSpaceContainer = (props:InputSpaceContainerProp)=>{
+return(
+  <form action="" method="post"className={styles.inputSpaceContainer}>
+    {props.children}
+ </form>
+)
+}
 export const InputSpace = (props:InputSpaceProps)=>{
-  let [active, setActive] = useState(false);
-  const ActiveIsIdDoubleCheck = () => {
-    return props.text.length >= 3
-      ? setActive(true)
-      : setActive(false);
-  };
-  const ActiveIsOtherCheck = () => {
-    return props.text.length >= 1
-      ? setActive(true)
-      : setActive(false);
-  };
-  let disabledController
-  if (props.index==1) {
-    disabledController = props.text.length < 3
-  }
-  else {
-    disabledController = props.text == ""
-  }
   return(
-    <form action="" method="post" className={styles.inputSpaceContainer}>
       <input
-        type={props.index==2 ? "password" : "text"} 
+        type={props.type==="pw" ? "password" : "text"} 
+        autoComplete="off"
         value={props.text} 
         onChange={e => props.setText(e.target.value)} 
         className={styles.inputSpace}
-        onKeyUp={props.index==1 ? ActiveIsIdDoubleCheck : ActiveIsOtherCheck}
       ></input>
-      <button 
-        type="button" 
-        className={active ? styles.activeButton : styles.disabledButton} 
-        disabled={disabledController ? true : false}
-      >{props.buttonName}</button>
-    </form>
   )
+}
+
+export const CheckButton = (props:CheckButtonProps)=>{
+  const {type,content,buttonName} = props;
+  const activeCheck = ()=>{
+    if(type==="id"){
+      return content.length >= 3
+      ? styles.activeButton
+      : styles.disabledButton;
+    }
+    else if (type==="phoneNum"){
+      return content.length === 11
+      ? styles.activeButton
+      : styles.disabledButton;
+    }
+    else if (type==="authNum"){
+      return content.length === 6
+      ? styles.activeButton
+      : styles.disabledButton;
+    }
+    else{
+      return content.length >= 1
+      ? styles.activeButton
+      : styles.disabledButton;
+    }
+  }
+ return(
+  <button type="button" className={activeCheck()}>
+          {buttonName}
+  </button>
+ )
 }
