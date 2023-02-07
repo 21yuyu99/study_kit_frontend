@@ -7,7 +7,7 @@ import { checkBoxTypes } from '@/types/createStudy';
 import { WidthButton } from '@/components/widthButton';
 import {Range } from 'react-date-range';
 import TopNavigation from '@/components/topNavigation';
-import { WarningBox, WarningMsg } from '@/components/Warning';
+import { WarningBox, WarningMsg } from '@/components/msgBox';
 export default function DetailStep(){
   const [title,setTitle] = useState("");
   const [lan,setLan] =useState("");

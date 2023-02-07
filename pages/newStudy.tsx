@@ -7,10 +7,10 @@ import BottomNavigation from '@/components/bottomNavigation';
 import { useState } from 'react';
 import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
-import Head from 'next/head';
+import { IsOKBox, IsOkMsg } from '@/components/msgBox';
 export default function NewStudy(){
   const [search,setSearch] = useState("");
-
+  const [signUpMsg,setsignUpMsg] = useState(true);
  return(
   <>
   <TopNavigation title={"새 스터디"} backSpace={false} rightIcon={"bell"}></TopNavigation>
@@ -46,6 +46,7 @@ export default function NewStudy(){
       </div>
     </Link>
     <div className={styles.noSearchResult}>더이상 검색결과가 없습니다</div>
+    <IsOKBox status = {signUpMsg} setStatus = {setsignUpMsg} message="회원가입을 완료했습니다."></IsOKBox>
   </main>
   <BottomNavigation location={"새스터디"}/>
   </>

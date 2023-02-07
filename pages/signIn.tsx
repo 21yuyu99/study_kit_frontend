@@ -5,7 +5,7 @@ import { signInStepContent } from '@/components/signUp/content';
 import { useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
-import { WarningBox, WarningMsg } from '@/components/Warning';
+import { WarningBox, WarningMsg } from '@/components/msgBox';
 
 export default function SignIn() {
  const [id,setId] = useState("");

@@ -5,7 +5,7 @@ import { signUpStepContent } from '@/components/signUp/content';
 import { useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
-import { WarningBox, WarningMsg, IsOkMsg } from '@/components/Warning';
+import { WarningBox, WarningMsg, IsOkMsg } from '@/components/msgBox';
 import { idCheckHandler, nicknameCheckHandler, sendSms, signUp, verifySms } from './api/singUp';
 import { essentialCheckType } from '@/types/signUp';
 
