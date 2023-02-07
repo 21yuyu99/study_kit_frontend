@@ -1,7 +1,7 @@
 import Head from 'next/head'	
 import Kakao from '@/public/img/kakao.svg'
 import Google from '@/public/img/google.svg'
-import styles from '@/styles/Home.module.scss'	
+import styles from '@/styles/index.module.scss'	
 import Link from 'next/link'
 
 export default function Home() {	

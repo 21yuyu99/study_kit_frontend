@@ -28,7 +28,7 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
   return(
     <div className={styles.studyCard}>
       <div className={type}>{typeName}</div>
-      <div className={styles.cardTag}>#문제풀이&nbsp;&nbsp;#실습</div>
+      <div className={styles.cardTag}>{cardTag}</div>
         {starStatus===true?
         (<div className={styles.star_true}><AiFillStar size={27}/></div>) 
         :
@@ -36,9 +36,9 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
         }
       <div className={styles.cardContent}>
         <div className={styles.cardTitle}>
-          <h3>오픽 자격증 따기</h3>
+          <h3>{cardTitle}</h3>
         </div>
-        <p>12월 18일~ (27일째 스터디 중)</p>
+        <p>{cardPeriod}</p>
         <div className={styles.progressBar}></div>
       </div>
     </div>

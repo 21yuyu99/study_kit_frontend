@@ -1,0 +1,70 @@
+.studyCard{
+  width: 45%;
+  border-radius: 16px;
+  background-color: white;
+  margin-right: 10px;
+  padding: 15px;
+  display: inline-block;
+  flex-wrap: wrap;
+  .cardTopContent{
+    display: flex;
+  }
+  .languageOther, .certificate, .employment, .project{
+    height: 20px;
+    font-size: 10pt;
+    font-weight: bold;
+  }
+  .languageOther{
+    color: #0091FF;
+  }
+  .certificate{
+    color: #DFB144;
+  }
+  .employment{
+    color: #C94E38;
+  }
+  .project{
+    color: #0091FF;
+  }
+  .cardTag{
+    font-size: 10pt;
+    color: #9E9E9E;
+    margin-bottom: 7px;
+  }
+  .member{
+    margin-left: auto;
+    text-align: right;
+    right: 0;
+    font-size: 10pt;
+    color: #9E9E9E;
+  }
+  .cardMainContent{
+    text-align: left;
+    width: 100%;
+    .cardTitle{
+      h3{
+        color: black;
+        font-size: 13pt;
+        margin-top: 5px;
+        margin-bottom: 7px;
+      }
+    }
+  }
+  .progressBar{
+    position: relative;
+    display: inline-block;
+    background: #DCDCDC;
+    height: 7px;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .progressBar::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    border-radius: 6px;
+    background: #0091FF;
+  }
+}

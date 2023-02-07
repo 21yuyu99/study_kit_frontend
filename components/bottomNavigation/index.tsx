@@ -6,6 +6,7 @@ import BookB from '../../public/img/bookB.svg';
 import Man from '../../public/img/man.svg';
 import ManB from '../../public/img/manB.svg';
 import { ReactNode } from "react";
+import Link from "next/link";
 
 interface Props {
   location: ReactNode;
@@ -23,19 +24,19 @@ const BottomNavigation = ({location} : Props)=>{
     center = <BookB/>
   }
   else if (location == "마이페이지") {
-    //center = <manB/>
+    //right = <manB/>
   }
   return(
     <nav className={styles.bottomNavigation}>
-      <div className={styles.icon}>{left}
+      <Link href='/home' className={styles.icon}>{left} 
         <div className={styles.text}>홈</div>
-      </div>
-      <div className={styles.icon}>{center}
+      </Link>
+      <Link href='/newStudy' className={styles.icon}>{center} 
         <div className={styles.text}>새 스터디</div>
-      </div>
-      <div className={styles.icon}>{right}
+      </Link>
+      <Link href='' className={styles.icon}>{right}
         <div className={styles.text}>마이페이지</div>
-      </div>
+      </Link>
     </nav>
   )
 }
