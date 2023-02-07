@@ -1,6 +1,7 @@
 import styles from "./studyCard.module.scss";
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { ReactNode } from "react";
+import styled from "styled-components";
 
 interface Props {
   typeName: ReactNode;
@@ -25,6 +26,25 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
   else if (typeName=="프로젝트") {
     type = styles.project
   }
+  
+  const ProgressBar = styled.div`
+  position: relative;
+  display: inline-block;
+  background: #DCDCDC;
+  height: 7px;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+
+  &::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: ${progressStatus}%;
+  border-radius: 6px;
+  background: ${progressStatus>=50 ? 'Dodgerblue' : 'gray'};
+  }
+`;
   return(
     <div className={styles.studyCard}>
       <div className={type}>{typeName}</div>
@@ -39,7 +59,7 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
           <h3>{cardTitle}</h3>
         </div>
         <p>{cardPeriod}</p>
-        <div className={styles.progressBar}></div>
+        <ProgressBar></ProgressBar>
       </div>
     </div>
   )

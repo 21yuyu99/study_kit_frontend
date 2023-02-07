@@ -50,21 +50,4 @@
       }
     }
   }
-  .progressBar{
-    position: relative;
-    display: inline-block;
-    background: #DCDCDC;
-    height: 7px;
-    width: 100%;
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  .progressBar::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 80%;
-    border-radius: 6px;
-    background: #0091FF;
-  }
 }
