@@ -1,11 +1,12 @@
 import { FiMinus, FiPlus} from "react-icons/fi";
 import styles from "./inputBox.module.scss";
-import { CountMemberProps, DeadlineProps, InputBoxProps, InputCheckProps, InputSpaceProps} from "@/types/inputBox";
+import { CountMemberProps, DeadlineProps, InputBoxProps, InputCheckProps, InputQnaProps, InputSpaceProps} from "@/types/inputBox";
 import { AiOutlineCheck, AiOutlineCloseCircle, AiOutlinePlus } from "react-icons/ai";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import { DateRange, RangeKeyDict, Range } from 'react-date-range';
+import { QnaType } from "@/pages/createStudy/studyIntro";
 export const InputBox = (props:InputBoxProps)=>{
  return(
   <div className={styles.boxContainer}>
@@ -30,6 +31,45 @@ export const InputBox = (props:InputBoxProps)=>{
 export const InputSpace = (props:InputSpaceProps)=>{
   return(
     <input value={props.text} onChange = {e => props.setText(e.target.value)} className={styles.inputSpace}></input>
+  )
+}
+export const InputQna = (props:InputQnaProps)=>{
+  const {qnaList,id,setQna} = props;
+  const handleResizeHeight = useCallback(() => {
+    let targetTextarea:HTMLElement;
+    if (typeof document !== "undefined") {
+      targetTextarea = document.getElementById(`qnaInput${id}`) as HTMLElement;
+      targetTextarea.style.height = 'auto';
+      targetTextarea.style.height = targetTextarea.scrollHeight + "px";
+    }
+  },[]);
+  const onChangeHandler = (e : React.ChangeEvent<HTMLTextAreaElement>)=>{
+  setQna(
+    qnaList.map(
+      qna=>
+      qna.id===id?{...qna,content:e.target.value}:qna
+  )
+  )
+  }
+  const onValue = ()=>{
+    let content:string="";
+    qnaList.filter(
+      qna => qna.id === id?content = qna.content:''
+    )
+    return content
+  }
+  const onClickHandler = ()=>{
+    setQna(
+      qnaList.filter(
+        qna=> qna.id!=id
+      )
+    )
+  }
+  return(
+    <div className={styles.qnaContainer}>
+    <textarea rows={1} id={`qnaInput${id}`} onInput={handleResizeHeight} className={styles.inputSpace}  onChange={(e)=>onChangeHandler(e)} value={onValue()}/>
+    <label htmlFor={`qnaInput${id}`} id={`remove${id}`} className={styles.removeQna} onClick={()=>onClickHandler()}>질문 삭제</label>
+    </div>
   )
 }
 export const InputDeadline = (props:DeadlineProps)=>{
@@ -100,7 +140,7 @@ export const SelectOnOff = (props:InputCheckProps)=>{
 }
 export const AddPhoto = ()=>{
   return(
-      <div className={styles.photoButton}>
+      <div className={styles.addButton}>
         <label htmlFor="chooseFile">
         <AiOutlinePlus/> 사진 추가하기
         </label>
@@ -111,7 +151,7 @@ export const AddPhoto = ()=>{
 
 export const AddQuestion = ()=>{
   return(
-      <div className={styles.photoButton}>
+      <div className={styles.addButton}>
         <AiOutlinePlus/> 질문 추가하기
     </div>
   )

@@ -1,14 +1,14 @@
 .studyCard{
-  width: 95%;
-  border-radius: 16px 0px 0px 16px / 16px 0px 0px 16px;
+  width: 45%;
+  border-radius: 16px;
   background-color: white;
-  color: black;
-  margin-left: 5%;
-  margin-top: 3%;
+  margin-right: 10px;
   padding: 15px;
-  display: flex;
-  align-items: center;
+  display: inline-block;
   flex-wrap: wrap;
+  .cardTopContent{
+    display: flex;
+  }
   .languageOther, .certificate, .employment, .project{
     height: 20px;
     font-size: 10pt;
@@ -27,40 +27,28 @@
     color: #0091FF;
   }
   .cardTag{
-    width: 75%;
-    height: 20px;
-    padding-left: 7px;
+    font-size: 10pt;
+    color: #9E9E9E;
+    margin-bottom: 7px;
+  }
+  .member{
+    margin-left: auto;
+    text-align: right;
+    right: 0;
     font-size: 10pt;
     color: #9E9E9E;
   }
-  @each $bool in true, false{
-    .star_#{$bool}{
-      margin-left: auto;
-      height: 23px;
-      text-align: right;
-      right: 0;
-    }
-    .star_true{
-      color: #0091FF;
-    }
-    .star_false{
-      color : #7E8489;
-    }
-  }
-  .cardContent{
+  .cardMainContent{
+    text-align: left;
     width: 100%;
     .cardTitle{
       h3{
+        color: black;
         font-size: 13pt;
-        padding-top: 5px;
-        padding-bottom: 7px;
+        margin-top: 5px;
+        margin-bottom: 7px;
       }
     }
-    p{
-      font-size: 10pt;
-      height: 20px;
-      color: #6A6A8B
-    }  
   }
   .progressBar {
     position: relative;
