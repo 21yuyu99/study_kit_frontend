@@ -1,6 +1,5 @@
 import styles from "./small.module.scss";
 import styled from "styled-components";
-import { ThemeProvider } from "styled-components";
 import { ReactNode } from "react";
 
 interface Props {
@@ -26,25 +25,6 @@ const SmallStudyCard = ({typeName,currentMember,totalMember,cardTitle,cardTag,pr
   else if (typeName=="프로젝트") {
     type = styles.project
   }
-
-  const ProgressBar = styled.div`
-    position: relative;
-    display: inline-block;
-    background: #DCDCDC;
-    height: 7px;
-    width: 100%;
-    border-radius: 6px;
-    overflow: hidden;
-
-    &::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: ${progressStatus}%;
-    border-radius: 6px;
-    background: ${progressStatus>=50 ? 'Dodgerblue' : 'Slategray'};
-    }
-  `;
   return(
     <div className={styles.studyCard}>
       <div className={styles.cardTopContent}>
@@ -56,7 +36,7 @@ const SmallStudyCard = ({typeName,currentMember,totalMember,cardTitle,cardTag,pr
           <h3>{cardTitle}</h3>
         </div>
         <div className={styles.cardTag}>{cardTag}</div>
-        <ProgressBar></ProgressBar>
+        <div className={styles.progressBar}></div>
       </div>
     </div>
   )
