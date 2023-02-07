@@ -30,3 +30,13 @@ export const idCheckHandler = (id:string)=>{
   })
   )
  }
+ export const signUp = ({id,nickName,pwd}:{id:string,nickName:string,pwd:string})=>{
+  return(
+    axios.post('https://www.studykit.site:443/api/members/signup',{
+      id:id,
+      joinAccepted :true,
+      nickname : nickName,
+      password : pwd
+    })
+  )
+ }

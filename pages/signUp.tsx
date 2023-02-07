@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
 import { WarningBox, WarningMsg, IsOkMsg } from '@/components/Warning';
-import { idCheckHandler, nicknameCheckHandler, sendSms, verifySms } from './api/singUp';
+import { idCheckHandler, nicknameCheckHandler, sendSms, signUp, verifySms } from './api/singUp';
 import { essentialCheckType } from '@/types/signUp';
 
 export default function SignUp() {
@@ -214,7 +214,7 @@ export default function SignUp() {
             <WarningBox message="모든 항목을 입력해주세요" status= {warningStatus} setStatus={setWarning}/>
             <span className = {styles.grayButtonWrapper} onClick={()=>{setButton(false);setWarning(true)}}><WidthButton color="gray" buttonText ="회원가입하기"/></span>
             </>)
-            :<Link className = {styles.blueButtonWrapper} href="/newStudy"><WidthButton color="blue" buttonText ="회원가입하기"/></Link>
+            :<Link className = {styles.blueButtonWrapper} href="/newStudy" onClick={()=> signUp({id,nickName,pwd}).then(data=>console.log(data))} ><WidthButton color="blue" buttonText ="회원가입하기"/></Link>
           }
     </div>
   </main>
