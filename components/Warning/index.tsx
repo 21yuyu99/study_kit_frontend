@@ -29,3 +29,10 @@ return(
 </div>
 )
 } 
+export const IsOkMsg = ({msg}:{msg:string}) =>{
+  return(
+    <div className={styles.isOkContainer}>
+    {msg}
+    </div>
+  )
+  } 

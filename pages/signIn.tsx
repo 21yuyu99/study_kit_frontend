@@ -21,24 +21,17 @@ export default function SignIn() {
         case 1:
           return(
             <InputBox key = {content.number} title={content.title} subTitle={content.subTitle}>
-              <InputSpace index = {1} text={id} setText={setId} buttonName={''}/>
+              <InputSpace type="id" text={id} setText={setId} placeholder={''}/>
               <></>
             </InputBox>
           )
         case 2:
             return(
               <InputBox key = {content.number} title={content.title} subTitle={content.subTitle}>
-                <InputSpace index = {2} text={pwd} setText={setPwd} buttonName={''} />
+                <InputSpace type="pw" text={pwd} setText={setPwd} placeholder={''}/>
                 <></>
               </InputBox>
             )
-        default :
-          return(
-            <InputBox key = {content.number} title={content.title} subTitle={content.subTitle}>
-                <InputSpace index = {1} text={id} setText={setId} buttonName={''}/>
-                <></>
-            </InputBox>
-          )
       }
     })}
       <div className={styles.bottomContainer}>
