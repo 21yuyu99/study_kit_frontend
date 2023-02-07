@@ -28,7 +28,6 @@
     "eslint-config-next": "13.1.2",
     "momment": "^0.0.1",
     "next": "13.1.2",
-    "node": "^19.6.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-calendar": "^4.0.0",

@@ -1,6 +1,4 @@
 import styles from "./small.module.scss";
-import styled from "styled-components";
-import { ReactNode } from "react";
 
 interface Props {
   typeName: string;
