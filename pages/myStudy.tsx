@@ -1,4 +1,4 @@
-import styles from '../styles/home.module.scss';
+import styles from '../styles/myStudy.module.scss';
 import SmallStudyCard from '@/components/studyCard/small';
 import StudyCard from '@/components/studyCard';
 import TopNavigation from '@/components/topNavigation';
@@ -7,7 +7,7 @@ import { useState } from 'react';
 import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
 import Head from 'next/head';
-export default function Home(){
+export default function myStudy(){
   let numStudy = 0 //2
 
  return(

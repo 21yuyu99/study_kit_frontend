@@ -1,0 +1,94 @@
+.main{
+  min-height: 100%;
+  padding-top:10px;
+  background-color: #F3F3F3;
+}
+.banner{
+  width: 90%;
+  border-radius: 16px;
+  background-color: #DFB144;
+  color: white;
+  margin:auto;
+  padding:15px;
+  display: flex;
+  .bannerText{
+    width:80%;
+  }
+  .bannerTitle{
+    h3{
+      font-size: 13pt;
+      padding:2px 0;
+    }
+  }
+  p{
+    margin-top: 5px;
+    font-size: 10pt;
+    @media (max-width: 340px) {
+      font-size: 9pt;
+    }
+    a{
+      color: white;
+    }
+  }
+  .pencil{
+    font-size: 2rem;
+  }
+}
+.subTitle{
+  width: 90%;
+  margin: auto;
+  margin-top: 35px;
+  display: flex;
+  h3{
+    font-size: 15pt;
+    color:#535353;
+  }
+}
+.numStudy{
+  margin-left: 5px;
+  h3{
+    color: #0091FF;
+  }
+}
+.studyCard{
+  width: 90%;
+  margin: auto;
+  margin-top: 15px;
+  color:#4D4D4D;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.a{
+  display: block;
+  margin: auto;
+  width: 90%;
+  border-radius: 16px;
+}
+.createStudyContainer{
+  border-radius: 16px;
+  background-color: #E0E0E0;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  .createStudyText{
+    width: 92%;
+    padding-left: 15px;
+    .createStudyTitle{
+      h3{
+        font-size: 13pt;
+        padding: 2px 0;
+        color:black;
+      }
+    }
+    p{
+      margin-top: 5px;
+      font-size: 10pt;
+      color : #7E8489;
+      @media (max-width: 340px) {
+        font-size: 9pt;
+      }
+    }
+  }
+}

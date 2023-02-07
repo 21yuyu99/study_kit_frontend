@@ -28,7 +28,7 @@ const BottomNavigation = ({location} : Props)=>{
   }
   return(
     <nav className={styles.bottomNavigation}>
-      <Link href='/home' className={styles.icon}>{left} 
+      <Link href='/myStudy' className={styles.icon}>{left} 
         <div className={styles.text}>홈</div>
       </Link>
       <Link href='/newStudy' className={styles.icon}>{center} 

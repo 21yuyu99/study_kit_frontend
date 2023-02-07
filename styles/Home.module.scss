@@ -1,94 +1,90 @@
-.main{
-  min-height: 100%;
-  padding-top:10px;
-  background-color: #F3F3F3;
-}
-.banner{
-  width: 90%;
-  border-radius: 16px;
-  background-color: #DFB144;
-  color: white;
-  margin:auto;
-  padding:15px;
-  display: flex;
-  .bannerText{
-    width:80%;
+  .main{
+    height: 100%;
+    background-color: white;
   }
-  .bannerTitle{
-    h3{
-      font-size: 13pt;
-      padding:2px 0;
+  .banner{
+    width: 100%;
+    height: 65%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    .pencil{
+        font-size: 3rem;
+        text-align: center;
     }
-  }
-  p{
-    margin-top: 5px;
-    font-size: 10pt;
-    @media (max-width: 340px) {
-      font-size: 9pt;
-    }
-    a{
-      color: white;
-    }
-  }
-  .pencil{
-    font-size: 2rem;
-  }
-}
-.subTitle{
-  width: 90%;
-  margin: auto;
-  margin-top: 35px;
-  display: flex;
-  h3{
-    font-size: 15pt;
-    color:#535353;
-  }
-}
-.numStudy{
-  margin-left: 5px;
-  h3{
-    color: #0091FF;
-  }
-}
-.studyCard{
-  width: 90%;
-  margin: auto;
-  margin-top: 15px;
-  color:#4D4D4D;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-.a{
-  display: block;
-  margin: auto;
-  width: 90%;
-  border-radius: 16px;
-}
-.createStudyContainer{
-  border-radius: 16px;
-  background-color: #E0E0E0;
-  margin: auto;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-  .createStudyText{
-    width: 92%;
-    padding-left: 15px;
-    .createStudyTitle{
+    .bannerTitle{
       h3{
-        font-size: 13pt;
-        padding: 2px 0;
-        color:black;
+        font-size: 20pt;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        text-align: center;
       }
     }
     p{
-      margin-top: 5px;
-      font-size: 10pt;
-      color : #7E8489;
-      @media (max-width: 340px) {
-        font-size: 9pt;
+      font-size: 11pt;
+      text-align: center;
+      color: #7E8489;
+    }
+  }
+  .linkContainer{
+    display: flex;
+    height: 5%;
+    font-size: 11pt;
+    .linkToSignIn{
+      width: 50%;
+      padding-left: 20px;
+      color: #7E8489;
+      a{
+        color: #0091FF;
+      }
+    }
+    .linkToNewStudy{
+      width: 50%;
+      text-align: right;
+      padding-right: 20px;
+      a{
+        color: #7E8489;
+        font-weight: bold;
       }
     }
   }
-}
+  .signUp{
+    max-height: 30%;
+    margin-top: 5px;
+    a{
+      display: block;
+      margin: auto;
+      width: 90%;
+      border-radius: 16px;
+    }
+    .studyKit, .kakao, .google{
+      height: 50px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h3{
+        font-size: 15px;
+      }
+    }
+    .studyKit{
+      background-color: #0091FF;
+      h3{
+        color: white;
+      }
+    }
+    .kakao, .google{
+      margin-top: 10px;
+      h3{
+        padding-left: 8px;
+        color: #535353;
+      }
+    }
+    .kakao{
+      background-color: #FEE500;
+    }
+    .google{
+      background-color: #ECECEC;
+    }
+  }
+    
