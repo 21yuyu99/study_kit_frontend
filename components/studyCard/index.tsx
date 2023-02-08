@@ -25,6 +25,7 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
   else if (typeName=="프로젝트") {
     type = styles.project
   }
+  let _width = progressStatus + '%';
   return(
     <div className={styles.studyCard}>
       <div className={type}>{typeName}</div>
@@ -39,7 +40,11 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
           <h3>오픽 자격증 따기</h3>
         </div>
         <p>12월 18일~ (27일째 스터디 중)</p>
-        <div className={styles.progressBar}></div>
+        <div className={styles.progressBar}>
+          <div className={progressStatus>=50 ? styles.blueBar : styles.grayBar} 
+                style={{width:_width}}>
+          </div>
+        </div>
       </div>
     </div>
   )

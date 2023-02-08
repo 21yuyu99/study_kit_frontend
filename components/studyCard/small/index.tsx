@@ -25,6 +25,7 @@ const SmallStudyCard = ({typeName,currentMember,totalMember,cardTitle,cardTag,pr
   else if (typeName=="프로젝트") {
     type = styles.project
   }
+  let _width = progressStatus + '%';
   return(
     <div className={styles.studyCard}>
       <div className={styles.cardTopContent}>
@@ -36,7 +37,11 @@ const SmallStudyCard = ({typeName,currentMember,totalMember,cardTitle,cardTag,pr
           <h3>{cardTitle}</h3>
         </div>
         <div className={styles.cardTag}>{cardTag}</div>
-        <div className={styles.progressBar}></div>
+        <div className={styles.progressBar}>
+          <div className={progressStatus>=50 ? styles.blueBar : styles.grayBar} 
+                style={{width:_width}}>
+          </div>
+        </div>
       </div>
     </div>
   )
