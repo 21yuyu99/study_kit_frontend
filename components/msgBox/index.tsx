@@ -11,7 +11,7 @@ interface MsgBoxProps{
 export const WarningBox = ({message,status,setStatus}:MsgBoxProps)=>{
   if(status===true){
     return(
-      <div className={styles.boxContainer}>
+      <div className={styles.warningBoxContainer}>
       <span className={styles.warnImg}> <IoIosWarning size={20}/> </span>
       {message}
       <span className={styles.closeButton} onClick={()=> setStatus(false)}><GrFormClose size={20}/></span>
@@ -40,11 +40,11 @@ export const IsOkMsg = ({msg}:{msg:string}) =>{
 export const  IsOKBox = ({message,status,setStatus}:MsgBoxProps)=>{
     if(status===true){
       return(
-        <div className={styles.boxContainer}>
+        <div className={styles.okBoxContainer}>
         <span className={styles.OkImg}> <Check/> </span>
         {message}
         <span className={styles.closeButton} onClick={()=> setStatus(false)}><GrFormClose size={20}/></span>
-      </div>
+        </div>
       )
     }
     return(

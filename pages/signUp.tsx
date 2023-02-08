@@ -1,13 +1,14 @@
 import styles from '@/styles/signUp.module.scss';
 import Link from 'next/link';
-import {CheckButton, InputBox, InputSpace, InputSpaceContainer, SignUpInputSpace} from '@/components/signUp/index';
+import {CheckButton, InputBox,InputSpaceContainer, SignUpInputSpace} from '@/components/signUp/index';
 import { signUpStepContent } from '@/components/signUp/content';
 import { useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
 import { WarningBox, WarningMsg, IsOkMsg } from '@/components/msgBox';
-import { idCheckHandler, nicknameCheckHandler, sendSms, signUp, verifySms } from './api/singUp';
+import { CommonSignUp, idCheckHandler, nicknameCheckHandler, sendSms, verifySms } from './api/singInUp';
 import { essentialCheckType } from '@/types/signUp';
+import { useCookies } from 'react-cookie';
 
 export default function SignUp() {
  const [id,setId] = useState("");
@@ -126,7 +127,6 @@ export default function SignUp() {
       }
   }
  }
-
  return(
   <>
   <TopNavigation title={"회원가입"} backSpace={true} rightIcon={"null"}></TopNavigation>
@@ -214,7 +214,10 @@ export default function SignUp() {
             <WarningBox message="모든 항목을 입력해주세요" status= {warningStatus} setStatus={setWarning}/>
             <span className = {styles.grayButtonWrapper} onClick={()=>{setButton(false);setWarning(true)}}><WidthButton color="gray" buttonText ="회원가입하기"/></span>
             </>)
-            :<Link className = {styles.blueButtonWrapper} href="/newStudy" onClick={()=> signUp({id,nickName,pwd}).then(data=>console.log(data))} ><WidthButton color="blue" buttonText ="회원가입하기"/></Link>
+            :(<>
+            <span className = {styles.blueButtonWrapper} onClick={()=> CommonSignUp({id,nickName,pwd})} ><WidthButton color="blue" buttonText ="회원가입하기"/></span>
+            </>
+            )
           }
     </div>
   </main>

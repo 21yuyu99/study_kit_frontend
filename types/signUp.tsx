@@ -2,9 +2,9 @@ import { Dispatch, MouseEventHandler, SetStateAction } from "react"
 export interface InputBoxProps {
   title : string
   subTitle : string
-  children : JSX.Element[]
+  children : JSX.Element[]|JSX.Element
 }
-export interface InputSpaceProps{
+export interface SignInInputSpaceProps{
   type : string
   text : string
   setText : Dispatch<SetStateAction<string>>

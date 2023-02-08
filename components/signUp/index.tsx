@@ -1,7 +1,7 @@
 import styles from "./inputBox.module.scss";
-import { CheckButtonProps, InputBoxProps, InputSpaceContainerProp, InputSpaceProps,SignUpInputSpaceProps} from "@/types/signUp";
+import { CheckButtonProps, InputBoxProps, InputSpaceContainerProp, SignInInputSpaceProps,SignUpInputSpaceProps} from "@/types/signUp";
 import { useState } from "react";
-import { idCheckHandler } from "@/pages/api/singUp";
+import { idCheckHandler } from "@/pages/api/singInUp";
 export const InputBox = (props:InputBoxProps)=>{
  return(
   <div className={styles.boxContainer}>
@@ -25,7 +25,7 @@ return(
  </form>
 )
 }
-export const InputSpace = (props:InputSpaceProps)=>{
+export const SignInInputSpace = (props:SignInInputSpaceProps)=>{
   return(
       <input
         type={props.type==="pw" ? "password" : "text"} 
