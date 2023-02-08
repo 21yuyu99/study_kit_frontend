@@ -13,7 +13,7 @@ export default function NewStudy(){
 
  return(
   <>
-  <TopNavigation title={"새 스터디"} backSpace={false} rightIcon={"bell"}></TopNavigation>
+  <TopNavigation title={"새 스터디"} backSpace={false} rightIcon={"bell"} backgroundStyle={0}></TopNavigation>
   <main className={styles.main}>
     <div className={styles.banner}>
       <div className={styles.bannerText}>

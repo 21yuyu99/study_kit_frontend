@@ -14,7 +14,7 @@ export default function SignIn() {
  const [warningStatus,setWarning] = useState(false);
  return(
   <>
-  <TopNavigation title={"로그인"} backSpace={true} rightIcon={"null"}></TopNavigation>
+  <TopNavigation title={"로그인"} backSpace={true} rightIcon={"null"} backgroundStyle={0}></TopNavigation>
   <main className={styles.main}>
     {signInStepContent.map((content)=>{
       switch(content.number){
