@@ -1,6 +1,7 @@
 import styles from "./studyCard.module.scss";
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { ReactNode } from "react";
+import Link from "next/link";
 
 interface Props {
   typeName: ReactNode;
@@ -9,9 +10,10 @@ interface Props {
   cardTitle : string;
   cardPeriod : string;
   progressStatus : number;
+  cardLink : string;
 }
 
-const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressStatus} : Props)=>{
+const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressStatus,cardLink} : Props)=>{
   let type
   if (typeName=="언어" || typeName=="기타") {
     type = styles.languageOther
@@ -29,23 +31,23 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
   return(
     <div className={styles.studyCard}>
       <div className={type}>{typeName}</div>
-      <div className={styles.cardTag}>#문제풀이&nbsp;&nbsp;#실습</div>
+      <div className={styles.cardTag}>{cardTag}</div>
         {starStatus===true?
         (<div className={styles.star_true}><AiFillStar size={27}/></div>) 
         :
           (<div className={styles.star_false}><AiOutlineStar size={27}/></div>)
         }
-      <div className={styles.cardContent}>
+      <Link href={cardLink} className={styles.cardContent}>
         <div className={styles.cardTitle}>
-          <h3>오픽 자격증 따기</h3>
+          <h3>{cardTitle}</h3>
         </div>
-        <p>12월 18일~ (27일째 스터디 중)</p>
+        <p>{cardPeriod}</p>
         <div className={styles.progressBar}>
           <div className={progressStatus>=50 ? styles.blueBar : styles.grayBar} 
                 style={{width:_width}}>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   )
 }

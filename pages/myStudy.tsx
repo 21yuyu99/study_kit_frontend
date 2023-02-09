@@ -7,8 +7,8 @@ import { useState } from 'react';
 import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
 import Head from 'next/head';
-export default function myStudy(){
-  let numStudy = 0 //2
+export default function MyStudy(){
+  let numStudy = 2 //0
 
  return(
   <>
@@ -41,8 +41,8 @@ export default function myStudy(){
       </Link> 
       :
       <> 
-      <StudyCard typeName={"언어"} starStatus={true} cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
-      <StudyCard typeName={"자격증"} starStatus={false}cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={40}></StudyCard>
+      <StudyCard cardLink={'/studyIntro'} typeName={"언어"} starStatus={true} cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+      <StudyCard cardLink={''} typeName={"자격증"} starStatus={false}cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={40}></StudyCard>
       </>
     }
     <div className={styles.subTitle}>
