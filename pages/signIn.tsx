@@ -7,12 +7,31 @@ import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
 import { WarningBox, WarningMsg } from '@/components/msgBox';
 import { CommonSignIn } from './api/singInUp';
-
+import cookie from 'react-cookies';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 export default function SignIn() {
  const [id,setId] = useState("");
  const [pwd,setPwd] = useState("");
  const [essentialCheck,setEssential]= useState(true);
  const [warningStatus,setWarning] = useState(false);
+ const router = useRouter();
+ const onClickHandler = ()=>{
+  CommonSignIn({id,pwd})
+  .then(res=>{
+    const expires = new Date();
+    expires.setMinutes(expires.getMinutes() + 30);
+    cookie.save('refreshToken', res.data['data'].refreshToken, {
+    path : '/',
+    expires,
+    // secure : true,
+    // httpOnly : true
+})
+  axios.defaults.headers.common['Authorization'] = `Bearer ${res.data['data'].accessToken}`;
+  router.push("/myStudy");
+  }
+    ).catch(()=>setWarning(true));
+ }
  return(
   <>
   <TopNavigation title={"로그인"} backSpace={true} rightIcon={"null"}></TopNavigation>
@@ -47,13 +66,13 @@ export default function SignIn() {
               <Link href='/newStudy'>먼저 둘러보기 &#62;</Link>
             </div>
           </div>
+          {warningStatus===true&&(<WarningBox message="아이디 또는 비밀번호가 올바르지 않습니다" status= {warningStatus} setStatus={setWarning}/>)}
         {(id.length<3||pwd.length<8)?   
               <>
-                <WarningBox message="아이디 또는 비밀번호가 올바르지 않습니다" status= {warningStatus} setStatus={setWarning}/>   
-                <span className = {styles.grayButtonWrapper} onClick={()=>{setEssential(false);setWarning(true)}}><WidthButton color="gray" buttonText ="로그인"/></span>
+                <span className = {styles.grayButtonWrapper} onClick={()=>{setEssential(false)}}><WidthButton color="gray" buttonText ="로그인"/></span>
               </>
             :
-            <Link className = {styles.blueButtonWrapper} onClick={()=>CommonSignIn({id,pwd})}href="/newStudy"><WidthButton color="blue" buttonText ="로그인"/></Link>
+            <span className = {styles.blueButtonWrapper} onClick={()=>onClickHandler()}><WidthButton color="blue" buttonText ="로그인"/></span>
           }
     </div>
   </>

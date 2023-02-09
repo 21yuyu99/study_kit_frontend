@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useRouter } from "next/router";
-import cookie from 'react-cookies';
 export const idCheckHandler = (id:string)=>{
   return(
     axios.post('https://www.studykit.site:443/api/members/id',{
@@ -39,41 +37,14 @@ export const idCheckHandler = (id:string)=>{
     joinAccepted :true,
     nickname : nickName,
     password : pwd
-  }).then(
-    ()=>axios.post('https://www.studykit.site:443/api/members/login',{
-      id:id,
-      password : pwd
-    })
-  ).then(res=>{
-    const expires = new Date();
-    expires.setMinutes(expires.getMinutes() + 30);
-    cookie.save('refreshToken', res.data['data'].refreshToken, {
-    path : '/',
-    expires,
-    // secure : true,
-    // httpOnly : true
-})
-  axios.defaults.headers.common['Authorization'] = `Bearer ${res.data['data'].accessToken}`;
-  }
-    )
-    .catch(()=>alert("회원가입 실패"))
+  })
   )
  }
  export const CommonSignIn = ({id,pwd}:{id:string,pwd:string})=>{
+  return(
     axios.post('https://www.studykit.site:443/api/members/login',{
     id:id,
     password : pwd
-  }).then(res=>{
-    const expires = new Date();
-    expires.setMinutes(expires.getMinutes() + 30);
-    cookie.save('refreshToken', res.data['data'].refreshToken, {
-    path : '/',
-    expires,
-    // secure : true,
-    // httpOnly : true
-})
-  axios.defaults.headers.common['Authorization'] = `Bearer ${res.data['data'].accessToken}`;
-  }
-    )
-    .catch(()=>alert("로그인 실패"))
+  })
+  )
  }

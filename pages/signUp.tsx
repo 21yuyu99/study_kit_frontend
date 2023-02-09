@@ -9,6 +9,9 @@ import { WarningBox, WarningMsg, IsOkMsg } from '@/components/msgBox';
 import { CommonSignUp, idCheckHandler, nicknameCheckHandler, sendSms, verifySms } from './api/singInUp';
 import { essentialCheckType } from '@/types/signUp';
 import { useCookies } from 'react-cookie';
+import { useRouter } from 'next/router';
+import axios from 'axios';
+import cookie from 'react-cookies';
 
 export default function SignUp() {
  const [id,setId] = useState("");
@@ -127,6 +130,29 @@ export default function SignUp() {
       }
   }
  }
+ const router = useRouter();
+ const singUpHandler = ()=>{
+  CommonSignUp({id,nickName,pwd})
+  .then(
+    ()=>axios.post('https://www.studykit.site:443/api/members/login',{
+      id:id,
+      password : pwd
+    })
+  ).then(res=>{
+    const expires = new Date();
+    expires.setMinutes(expires.getMinutes() + 30);
+    cookie.save('refreshToken', res.data['data'].refreshToken, {
+    path : '/',
+    expires,
+    // secure : true,
+    // httpOnly : true
+})
+  axios.defaults.headers.common['Authorization'] = `Bearer ${res.data['data'].accessToken}`;
+  router.push("/newStudy?login=new");
+  }
+    )
+    .catch(()=>alert("회원가입 실패"))
+ }
  return(
   <>
   <TopNavigation title={"회원가입"} backSpace={true} rightIcon={"null"}></TopNavigation>
@@ -215,7 +241,7 @@ export default function SignUp() {
             <span className = {styles.grayButtonWrapper} onClick={()=>{setButton(false);setWarning(true)}}><WidthButton color="gray" buttonText ="회원가입하기"/></span>
             </>)
             :(<>
-            <span className = {styles.blueButtonWrapper} onClick={()=> CommonSignUp({id,nickName,pwd})} ><WidthButton color="blue" buttonText ="회원가입하기"/></span>
+            <span className = {styles.blueButtonWrapper} onClick={()=> singUpHandler()} ><WidthButton color="blue" buttonText ="회원가입하기"/></span>
             </>
             )
           }
