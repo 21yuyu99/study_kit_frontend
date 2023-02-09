@@ -55,7 +55,8 @@ export const idCheckHandler = (id:string)=>{
     cookie.save('refreshToken', res.data['data'].refreshToken,{
       path:'/',
       expires,
-      // secure : true,
+      secure : true,
+      httpOnly:true
           });
   axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
   return true}
@@ -79,11 +80,12 @@ export const idCheckHandler = (id:string)=>{
     cookie.save('refreshToken', res.data['data'].refreshToken,{
       path:'/',
       expires,
-      // secure : true,
+      secure : true,
+      httpOnly:true
           });
   axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
-  console.log(res);
+  alert("로그인성공");
   }
-  ).catch(()=>console.log("토큰 발급 에러"))
+  ).catch(()=>alert("로그인 실패"))
   }
  }
