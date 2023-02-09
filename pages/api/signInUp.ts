@@ -34,14 +34,15 @@ export const idCheckHandler = (id:string)=>{
   )
  }
  export const CommonSignUp = ({id,nickName,pwd}:{id:string,nickName:string,pwd:string})=>{
-  return(
-    axios.post('https://www.studykit.site:443/api/members/signup',{
+    return(
+      axios.post('https://www.studykit.site:443/api/members/signup',{
     id:id,
     joinAccepted :true,
     nickname : nickName,
     password : pwd
-  })
+  }).then(()=>CommonSignIn({id,pwd})
   )
+    )
  }
  export const CommonSignIn = ({id,pwd}:{id:string,pwd:string})=>{
   return(
@@ -54,6 +55,7 @@ export const idCheckHandler = (id:string)=>{
     cookie.save('refreshToken', res.data['data'].refreshToken,{
       path:'/',
       expires,
+      // secure : true,
           });
   axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
   return true}
@@ -64,9 +66,8 @@ export const idCheckHandler = (id:string)=>{
 
  export const keepLogin = ()=>{
   loginRefresh()
-  setInterval(()=>loginRefresh(),1000*60*29)  
+  return setInterval(()=>loginRefresh(),1000*60*29)  
  }
-
  export const loginRefresh = () =>{
   if(axios.defaults.headers['Authorization']!==undefined){
     axios.post('https://www.studykit.site:443/api/members/reissue',null,{
@@ -78,6 +79,7 @@ export const idCheckHandler = (id:string)=>{
     cookie.save('refreshToken', res.data['data'].refreshToken,{
       path:'/',
       expires,
+      // secure : true,
           });
   axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
   console.log(res);

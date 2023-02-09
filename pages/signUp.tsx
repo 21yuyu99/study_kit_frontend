@@ -131,27 +131,13 @@ export default function SignUp() {
   }
  }
  const router = useRouter();
- const singUpHandler = ()=>{
-  CommonSignUp({id,nickName,pwd})
-  .then(
-    ()=>axios.post('https://www.studykit.site:443/api/members/login',{
-      id:id,
-      password : pwd
-    })
-  ).then(res=>{
-    const expires = new Date();
-    expires.setMinutes(expires.getMinutes() + 30);
-    cookie.save('refreshToken', res.data['data'].refreshToken, {
-    path : '/',
-    expires,
-    // secure : true,
-    // httpOnly : true
-})
-  axios.defaults.headers.common['Authorization'] = `Bearer ${res.data['data'].accessToken}`;
-  router.push("/newStudy?login=new");
+ const singUpHandler = async()=>{
+  if(await CommonSignUp({id,nickName,pwd})===true){
+    router.push("/newStudy?login=new");
   }
-    )
-    .catch(()=>alert("회원가입 실패"))
+  else{
+    alert("회원가입 실패")
+  }   
  }
  return(
   <>
