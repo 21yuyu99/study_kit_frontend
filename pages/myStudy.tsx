@@ -3,13 +3,13 @@ import SmallStudyCard from '@/components/studyCard/small';
 import StudyCard from '@/components/studyCard';
 import TopNavigation from '@/components/topNavigation';
 import BottomNavigation from '@/components/bottomNavigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
 import Head from 'next/head';
-export default function myStudy(){
+import axios from 'axios';
+export default function MyStudy(){
   let numStudy = 0 //2
-
  return(
   <>
   <TopNavigation title={"스터디키트"} backSpace={false} rightIcon={"bell"}></TopNavigation>

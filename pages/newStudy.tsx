@@ -10,12 +10,12 @@ import Link from 'next/link'
 import { IsOKBox, IsOkMsg } from '@/components/msgBox';
 import { useRouter } from 'next/router';
 import cookie from 'react-cookies';
+import axios from 'axios';
 
 export default function NewStudy(){
   const [search,setSearch] = useState("");
   const [signUpMsg,setsignUpMsg] = useState(true);
   const login = useRouter().query.login;
-  console.log(cookie.load('refreshToken'));
  return(
   <>
   <TopNavigation title={"새 스터디"} backSpace={false} rightIcon={"bell"}></TopNavigation>

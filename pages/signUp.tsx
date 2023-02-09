@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
 import { WarningBox, WarningMsg, IsOkMsg } from '@/components/msgBox';
-import { CommonSignUp, idCheckHandler, nicknameCheckHandler, sendSms, verifySms } from './api/singInUp';
+import { CommonSignUp, idCheckHandler, nicknameCheckHandler, sendSms, verifySms } from './api/signInUp';
 import { essentialCheckType } from '@/types/signUp';
 import { useCookies } from 'react-cookie';
 import { useRouter } from 'next/router';

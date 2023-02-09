@@ -1,7 +1,7 @@
 import styles from "./inputBox.module.scss";
 import { CheckButtonProps, InputBoxProps, InputSpaceContainerProp, SignInInputSpaceProps,SignUpInputSpaceProps} from "@/types/signUp";
 import { useState } from "react";
-import { idCheckHandler } from "@/pages/api/singInUp";
+import { idCheckHandler } from "@/pages/api/signInUp";
 export const InputBox = (props:InputBoxProps)=>{
  return(
   <div className={styles.boxContainer}>

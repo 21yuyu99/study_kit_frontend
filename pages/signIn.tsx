@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
 import { WarningBox, WarningMsg } from '@/components/msgBox';
-import { CommonSignIn } from './api/singInUp';
+import { CommonSignIn } from './api/signInUp';
 import cookie from 'react-cookies';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -16,21 +16,13 @@ export default function SignIn() {
  const [essentialCheck,setEssential]= useState(true);
  const [warningStatus,setWarning] = useState(false);
  const router = useRouter();
- const onClickHandler = ()=>{
-  CommonSignIn({id,pwd})
-  .then(res=>{
-    const expires = new Date();
-    expires.setMinutes(expires.getMinutes() + 30);
-    cookie.save('refreshToken', res.data['data'].refreshToken, {
-    path : '/',
-    expires,
-    // secure : true,
-    // httpOnly : true
-})
-  axios.defaults.headers.common['Authorization'] = `Bearer ${res.data['data'].accessToken}`;
-  router.push("/myStudy");
+ const onClickHandler = async ()=>{
+  if(await CommonSignIn({ id, pwd })===true){
+    router.push('/myStudy')
   }
-    ).catch(()=>setWarning(true));
+  else{
+    setWarning(true)
+  }
  }
  return(
   <>

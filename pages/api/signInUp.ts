@@ -1,4 +1,7 @@
 import axios from "axios";
+import { useRouter } from "next/router";
+import cookie from 'react-cookies';
+
 export const idCheckHandler = (id:string)=>{
   return(
     axios.post('https://www.studykit.site:443/api/members/id',{
@@ -45,6 +48,40 @@ export const idCheckHandler = (id:string)=>{
     axios.post('https://www.studykit.site:443/api/members/login',{
     id:id,
     password : pwd
-  })
+  }).then(res=>{
+    const expires = new Date();
+    expires.setMinutes(expires.getMinutes() + 30);
+    cookie.save('refreshToken', res.data['data'].refreshToken,{
+      path:'/',
+      expires,
+          });
+  axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
+  return true}
+  ).catch(()=>
+    {return false})
   )
+ }
+
+ export const keepLogin = ()=>{
+  loginRefresh()
+  setInterval(()=>loginRefresh(),1000*60*29)  
+ }
+
+ export const loginRefresh = () =>{
+  if(axios.defaults.headers['Authorization']!==undefined){
+    axios.post('https://www.studykit.site:443/api/members/reissue',null,{
+    headers:{Refresh:cookie.load('refreshToken')}
+}).then(res=>
+  {
+    const expires = new Date();
+    expires.setMinutes(expires.getMinutes() + 30);
+    cookie.save('refreshToken', res.data['data'].refreshToken,{
+      path:'/',
+      expires,
+          });
+  axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
+  console.log(res);
+  }
+  ).catch(()=>console.log("토큰 발급 에러"))
+  }
  }
