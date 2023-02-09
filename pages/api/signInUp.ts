@@ -56,7 +56,6 @@ export const idCheckHandler = (id:string)=>{
       path:'/',
       expires,
       secure : true,
-      httpOnly:true
           });
   axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
   return true}
@@ -81,10 +80,8 @@ export const idCheckHandler = (id:string)=>{
       path:'/',
       expires,
       secure : true,
-      httpOnly:true
           });
   axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
-  alert("로그인성공");
   }
   ).catch(()=>alert("로그인 실패"))
   }
