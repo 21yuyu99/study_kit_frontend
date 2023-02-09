@@ -55,7 +55,12 @@ export const idCheckHandler = (id:string)=>{
     cookie.save('refreshToken', res.data['data'].refreshToken,{
       path:'/',
       expires,
-      // secure : true,
+      secure : true,
+          });
+    cookie.save('accessToken', res.data['data'].accessToken,{
+      path:'/',
+      expires,
+      secure : true,
           });
   axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
   return true}
@@ -65,8 +70,16 @@ export const idCheckHandler = (id:string)=>{
  }
 
  export const keepLogin = ()=>{
+  if(axios.defaults.headers['Authorization']===undefined){
+    if(cookie.load('accessToken')!==undefined){
+    axios.defaults.headers['Authorization'] = cookie.load('accessToken');
+    }
+    else{
+      return;
+    }
+  }
   loginRefresh()
-  return setInterval(()=>loginRefresh(),1000*60*29)  
+  setInterval(()=>loginRefresh(),1000*60*29)  
  }
  export const loginRefresh = () =>{
   if(axios.defaults.headers['Authorization']!==undefined){
@@ -79,11 +92,15 @@ export const idCheckHandler = (id:string)=>{
     cookie.save('refreshToken', res.data['data'].refreshToken,{
       path:'/',
       expires,
-      // secure : true,
+      secure : true,
+          });
+    cookie.save('accessToken', res.data['data'].accessToken,{
+      path:'/',
+      expires,
+      secure : true,
           });
   axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
-  console.log(res);
   }
-  ).catch(()=>console.log("토큰 발급 에러"))
+  ).catch(()=>alert("로그인 실패"))
   }
  }
