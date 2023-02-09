@@ -10,10 +10,9 @@ interface Props {
   cardTitle : string;
   cardPeriod : string;
   progressStatus : number;
-  cardLink : string;
 }
 
-const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressStatus,cardLink} : Props)=>{
+const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressStatus,} : Props)=>{
   let type
   if (typeName=="언어" || typeName=="기타") {
     type = styles.languageOther
@@ -37,7 +36,7 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
         :
           (<div className={styles.star_false}><AiOutlineStar size={27}/></div>)
         }
-      <Link href={cardLink} className={styles.cardContent}>
+      <Link href='/studyIntro' className={styles.cardContent}>
         <div className={styles.cardTitle}>
           <h3>{cardTitle}</h3>
         </div>
