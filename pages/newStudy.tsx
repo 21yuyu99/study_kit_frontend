@@ -9,8 +9,15 @@ import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { IsOKBox, IsOkMsg } from '@/components/msgBox';
+import cookie from 'react-cookies';
+import axios from 'axios';
+import { loginRefresh } from './api/signInUp';
+
 export default function NewStudy(){
   const [search,setSearch] = useState("");
+  const [signUpMsg,setsignUpMsg] = useState(true);
+  const login = useRouter().query.login;
  return(
   <>
   <TopNavigation title={"새 스터디"} backSpace={false} rightIcon={"bell"}></TopNavigation>
@@ -29,23 +36,29 @@ export default function NewStudy(){
       <button type="submit" className={styles.searchButton}><AiOutlineSearch size="20"/></button>
     </form>
     <StudyTypeBar/>
-    <StudyCard typeName={"언어"} starStatus={true} cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
-    <StudyCard typeName={"기타"} starStatus={true}cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
-    <StudyCard typeName={"자격증"} starStatus={false}cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
-    <StudyCard typeName={"취/창업"} starStatus={false}cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
-    <StudyCard typeName={"프로젝트"} starStatus={false}cardTag={['#문제풀이','#실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
-    <Link href="/createStudy/selectTemplate">
-    <div className={styles.createStudyContainer}>
-      <Plus/>
-      <div className={styles.createStudyText}>
-        <div className={styles.createStudyTitle}>
-          <h3>새 스터디 만들기</h3>
+    <StudyCard typeName={"언어"} starStatus={true} cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <StudyCard typeName={"기타"} starStatus={true}cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={40}></StudyCard>
+    <StudyCard typeName={"자격증"} starStatus={false}cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={20}></StudyCard>
+    <StudyCard typeName={"취/창업"} starStatus={false}cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={40}></StudyCard>
+    <StudyCard typeName={"프로젝트"} starStatus={false}cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
+    <Link href="/createStudy/selectTemplate" className={styles.a}>
+      <div className={styles.createStudyContainer}>
+        <Plus/>
+        <div className={styles.createStudyText}>
+          <div className={styles.createStudyTitle}>
+            <h3>새 스터디 만들기</h3>
+          </div>
+          <p>원하는 스터디가 없다면? 스터디장이 될 차례!</p>
         </div>
-        <p>원하는 스터디가 없다면? 스터디장이 될 차례!</p>
       </div>
-    </div>
     </Link>
     <div className={styles.noSearchResult}>더이상 검색결과가 없습니다</div>
+    {login==="new"&&
+    (
+      <span className={styles.msgContainer}>
+      <IsOKBox status = {signUpMsg} setStatus = {setsignUpMsg} message="회원가입을 완료했습니다."></IsOKBox>
+    </span>
+    )}
   </main>
   <BottomNavigation location={"새스터디"}/>
   </>
