@@ -57,6 +57,11 @@ export const idCheckHandler = (id:string)=>{
       expires,
       secure : true,
           });
+    cookie.save('accessToken', res.data['data'].accessToken,{
+      path:'/',
+      expires,
+      secure : true,
+          });
   axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
   return true}
   ).catch(()=>
@@ -65,8 +70,16 @@ export const idCheckHandler = (id:string)=>{
  }
 
  export const keepLogin = ()=>{
+  if(axios.defaults.headers['Authorization']===undefined){
+    if(cookie.load('accessToken')!==undefined){
+    axios.defaults.headers['Authorization'] = cookie.load('accessToken');
+    }
+    else{
+      return;
+    }
+  }
   loginRefresh()
-  return setInterval(()=>loginRefresh(),1000*60*29)  
+  setInterval(()=>loginRefresh(),1000*60*29)  
  }
  export const loginRefresh = () =>{
   if(axios.defaults.headers['Authorization']!==undefined){
@@ -77,6 +90,11 @@ export const idCheckHandler = (id:string)=>{
     const expires = new Date();
     expires.setMinutes(expires.getMinutes() + 30);
     cookie.save('refreshToken', res.data['data'].refreshToken,{
+      path:'/',
+      expires,
+      secure : true,
+          });
+    cookie.save('accessToken', res.data['data'].accessToken,{
       path:'/',
       expires,
       secure : true,
