@@ -24,9 +24,9 @@ export const InputBox = (props:InputBoxProps)=>{
 }
 export const InputSpaceContainer = (props:InputSpaceContainerProp)=>{
 return(
-  <form action="" method="post"className={styles.inputSpaceContainer}>
+  <div className={styles.inputSpaceContainer}>
     {props.children}
- </form>
+ </div>
 )
 }
 export const SignInInputSpace = (props:SignInInputSpaceProps)=>{
