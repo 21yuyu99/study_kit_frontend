@@ -18,6 +18,11 @@ export default function NewStudy(){
   const [search,setSearch] = useState("");
   const [signUpMsg,setsignUpMsg] = useState(true);
   const login = useRouter().query.login;
+  const [PopUpStatus,setPopUp] = useState(false);
+  const router = useRouter();
+  const routerHandler = (link:string)=>{
+    cookie.load('accessToken')===undefined?setPopUp(true):router.push(link);
+  }
  return(
   <>
   <TopNavigation title={"새 스터디"} backSpace={false} rightIcon={"bell"} backgroundStyle={0}></TopNavigation>
@@ -27,7 +32,7 @@ export default function NewStudy(){
       <div className={styles.bannerTitle}>
           <h3>원하는 스터디가 없다면?</h3><h3>스터디장이 될 차례!</h3>
         </div>
-       <p><Link href="/createStudy/selectTemplate">스터디키트가 떠먹여주는 스터디 만들기 &gt;</Link></p>
+       <p onClick={()=>routerHandler("/createStudy/selectTemplate")}>스터디키트가 떠먹여주는 스터디 만들기 &gt;</p>
       </div>
       <div className={styles.pencil}>✏️</div>
     </div>
@@ -41,7 +46,7 @@ export default function NewStudy(){
     <StudyCard typeName={"자격증"} starStatus={false} cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={20}></StudyCard>
     <StudyCard typeName={"취/창업"} starStatus={false} cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={40}></StudyCard>
     <StudyCard typeName={"프로젝트"} starStatus={false} cardTag={['#문제풀이',' #실습']} cardTitle="오픽 자격증 따기" cardPeriod='12월 18일~(27일째 스터디 중)' progressStatus={80}></StudyCard>
-    <Link href="/createStudy/selectTemplate" className={styles.a}>
+    <div onClick={()=>routerHandler("/createStudy/selectTemplate")} className={styles.a}>
       <div className={styles.createStudyContainer}>
         <Plus/>
         <div className={styles.createStudyText}>
@@ -51,7 +56,7 @@ export default function NewStudy(){
           <p>원하는 스터디가 없다면? 스터디장이 될 차례!</p>
         </div>
       </div>
-    </Link>
+    </div>
     <div className={styles.noSearchResult}>더이상 검색결과가 없습니다</div>
     {login==="new"&&
     (
@@ -61,7 +66,7 @@ export default function NewStudy(){
     )}
   </main>
   <BottomNavigation location={"새스터디"}/>
-  <PopUp/>
+  {PopUpStatus===true&&<PopUp status={PopUpStatus} setStatus={setPopUp}/>}
   </>
  )
 }

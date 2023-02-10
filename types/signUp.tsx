@@ -32,6 +32,7 @@ export interface essentialCheckType{
   isChecked : boolean,
   isVerified : boolean
 }
-export interface popUpProps {
-  children : JSX.Element[]|JSX.Element
+export interface PopUpProps{
+  status : boolean
+  setStatus : Dispatch<SetStateAction<boolean>>
 }

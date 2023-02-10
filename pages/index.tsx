@@ -2,14 +2,13 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.scss'	
 import Link from 'next/link'
 import { GuideSection, SignUpBtBox } from '@/components/signUp'
-
+import cookie from 'react-cookies';
 export default function Home() {	
   return (	
     <>	
       <Head>	
         <title>Study Kit</title>	
         <meta name="description" content="스터디 키트" />	
-        <link rel="icon" href="/img/favicon.ico" />	
       </Head>	
       <main className={styles.main}>
         <div className={styles.banner}>

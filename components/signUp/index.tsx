@@ -1,5 +1,5 @@
 import styles from "./signUp.module.scss";
-import { CheckButtonProps, InputBoxProps, InputSpaceContainerProp, popUpProps, SignInInputSpaceProps,SignUpInputSpaceProps} from "@/types/signUp";
+import { CheckButtonProps, InputBoxProps, InputSpaceContainerProp, PopUpProps, SignInInputSpaceProps,SignUpInputSpaceProps} from "@/types/signUp";
 import { useState } from "react";
 import { idCheckHandler } from "@/pages/api/signInUp";
 import Link from "next/link";
@@ -123,12 +123,13 @@ export const CheckButton = (props:CheckButtonProps)=>{
   </button>
  )
 }
-export const PopUp = (props:popUpProps) =>{
+export const PopUp = (props:PopUpProps) =>{
+  const {setStatus} = props;
   return(
     <div className={styles.popUpContainer}>
       <div className={styles.popUpTopContainer}>
         <div className={styles.popUptitle}>지금 회원가입하고<br/>스터디에 참여하세요</div>
-        <div className={styles.removeBtn}><BiX/></div>
+        <div className={styles.removeBtn} onClick={()=>setStatus(false)}><BiX/></div>
       </div>
       <div className={styles.guideSectionWrapper}><GuideSection/></div>
       <SignUpBtBox/>
