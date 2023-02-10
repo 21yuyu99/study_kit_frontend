@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import cookie from 'react-cookies';
 import axios from 'axios';
 import { loginRefresh } from './api/signInUp';
+import { PopUp } from '@/components/signUp';
 
 export default function NewStudy(){
   const [search,setSearch] = useState("");
@@ -60,6 +61,7 @@ export default function NewStudy(){
     )}
   </main>
   <BottomNavigation location={"새스터디"}/>
+  <PopUp/>
   </>
  )
 }

@@ -1,0 +1,144 @@
+.boxContainer{
+  width: 90%;
+  margin: 10px auto;
+  margin-bottom: 20px;
+  display: flex;
+  .textContainer{
+    width: 100%;
+    .title{
+      font-size: 13pt;
+      margin-bottom: 10px;
+    }
+    .subTitle{
+      font-size: 11pt;
+      color: #9E9E9E;
+      margin: 2px 0;
+    }
+  }
+  .inputSpaceContainer{
+    display: flex;
+    position: relative;
+    align-items: center;
+    .inputSpace{
+      margin-top: 5px;
+      background-color: #F4F4F4;
+      border: none;
+      width: 100%;
+      height: 40px;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      outline:none;
+    }
+    .activeButton ,.disabledButton{
+      border: none;
+      margin-top: 5px;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-right: 2px;
+      font-size: 11pt;
+      background-color: #F4F4F4;
+    }
+    .disabledButton{
+      color: #7E8489;
+    }
+    .activeButton{
+      color: #0091FF; 
+    }
+  }  
+}
+.popUpContainer{
+  background-color:white;
+  position: fixed;
+  z-index:50;
+  bottom:0;
+  width: 100%;
+  padding-top:20px;
+  border-radius: 25px 25px 0px 0px;
+  box-shadow: 0 -1px 15px #6A6A8B;
+  .popUpTopContainer{
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .popUptitle{
+    font-size: 14pt;
+    font-weight: 600;
+    width: 50%;
+    padding-left: 20px;
+    padding-top:10px;
+  }
+  .removeBtn{
+    color : #535353;
+    width: 50%;
+    text-align: right;
+    padding-right: 20px;
+    svg{
+      vertical-align: top;
+    }
+  }
+  .guideSectionWrapper{
+    padding-bottom: 15px;
+  }
+}
+.linkContainer{
+  display: flex;
+  height: 5%;
+  font-size: 11pt;
+  .linkToSignIn{
+    width: 50%;
+    padding-left: 20px;
+    color: #7E8489;
+    a{
+      color: #0091FF;
+    }
+  }
+  .linkToNewStudy{
+    width: 50%;
+    text-align: right;
+    padding-right: 20px;
+    a{
+      color: #7E8489;
+      font-weight: bold;
+    }
+  }
+}
+.signUp{
+  max-height: 30%;
+  margin-top: 5px;
+  a{
+    display: block;
+    margin: auto;
+    width: 90%;
+    border-radius: 16px;
+  }
+  .studyKit, .kakao, .google{
+    height: 50px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h3{
+      font-size: 15px;
+    }
+  }
+  .studyKit{
+    background-color: #0091FF;
+    h3{
+      color: white;
+    }
+  }
+  .kakao, .google{
+    margin-top: 5px;
+    h3{
+      padding-left: 8px;
+      color: #535353;
+    }
+  }
+  .kakao{
+    background-color: #FEE500;
+  }
+  .google{
+    background-color: #ECECEC;
+  }
+}
