@@ -4,8 +4,13 @@ import {GrFormClose} from 'react-icons/gr';
 import { Dispatch, SetStateAction } from "react";
 import Check from '@/public/img/check.svg'
 import { BiX } from "react-icons/bi";
+import Link from "next/link";
 interface MsgBoxProps{
   message : string,
+  status : boolean,
+  setStatus : Dispatch<SetStateAction<boolean>>
+}
+interface GoBackProps {
   status : boolean,
   setStatus : Dispatch<SetStateAction<boolean>>
 }
@@ -52,7 +57,8 @@ export const IsOKBox = ({message,status,setStatus}:MsgBoxProps)=>{
       <></>
     )
 }
-export const GoBackWarning = ()=>{
+export const GoBackWarning = (props:GoBackProps)=>{
+  const {setStatus} = props;
   return(
     <div className={styles.goBackContainer}>
       <div className={styles.goBackBox}>
@@ -66,8 +72,8 @@ export const GoBackWarning = ()=>{
         정말 나가시겠습니까?
       </div>
       <div className={styles.goBackBtnContainer}>
-        <div className={styles.goBackCancel}>취소하기</div>
-        <div className={styles.goBackBtn}>삭제하고 나가기</div>
+        <div className={styles.goBackCancel} onClick={()=> setStatus(false)}>취소하기</div>
+        <Link href="/newStudy" className={styles.goBackBtn}>삭제하고 나가기</Link>
       </div>
       </div>
     </div>

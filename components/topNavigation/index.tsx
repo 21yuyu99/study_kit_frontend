@@ -3,6 +3,9 @@ import Bell from '@/public/img/bell.svg';
 import Box from '@/public/img/box.svg';
 import Back from '@/public/img/back.svg';
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { GoBackWarning } from "../msgBox";
 
 interface Props {
   title: string;
@@ -11,7 +14,17 @@ interface Props {
   backgroundStyle: number;
 }
 
-const topNavigation = ({title, backSpace, rightIcon, backgroundStyle} : Props)=>{
+const TopNavigation = ({title, backSpace, rightIcon, backgroundStyle} : Props)=>{
+  const router = useRouter();
+  const [goBack,setGoBack] = useState(false);
+  const onBackBtnHandler = ()=>{
+    if(title==="스터디 개설 (3/3)"){
+      setGoBack(true);
+    }
+    else{
+      router.push(lnk);
+    }
+  }
   let lnk : string = ""
   if (title==="스터디 개설 (1/3)") {
     lnk = "/newStudy"
@@ -55,15 +68,19 @@ const topNavigation = ({title, backSpace, rightIcon, backgroundStyle} : Props)=>
     }
   }
   return(
+    <>
     <nav className={styles.top} style={backStyle}>
       {backSpace===true?
-        (<div className={styles.back}><Link href={lnk}><Back/></Link></div>) 
+        (<div className={styles.back} onClick={()=>onBackBtnHandler()}><Back/></div>) 
         :
           (<div className={styles.topLeftContainer}></div>)
         }
       <div className={styles.topTitle}>{title}</div>
       <div className={styles.icon}>{icon}</div>
     </nav>
+    {goBack===true&&<GoBackWarning status={goBack} setStatus={setGoBack}/>}
+    </>
+
   )
 }
-export default topNavigation;
+export default TopNavigation;

@@ -68,7 +68,6 @@ export default function StudyIntro() {
     })}
   </main>
   <Link href="/myStudy"><WidthButton color="blue" buttonText ="개설하기"/></Link>
-  <GoBackWarning/>
   </>
  )
 }
