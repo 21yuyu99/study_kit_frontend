@@ -1,0 +1,97 @@
+.main{
+  min-height: 100%;
+  padding-top:10px;
+  background-color: white;
+}
+.navContainer{
+  height: 6.8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navLeft, .navCenter, .navRight{
+  flex: 1;
+  height: 100%;
+  line-height: 6.8vh;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+}
+.navLeft, .navRight{
+  color: #9E9E9E;
+  border-bottom: solid 1px #DBDBDB;
+}
+.navCenter{
+  color: black;
+  border-bottom: solid 4px #DFB144;
+}
+.buttonContainer{
+  width: 90%;
+  border-radius: 16px;
+  background-color: #F4F4F4;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  .buttonText{
+    padding-left: 13px;
+    .buttonTitle{
+      h3{
+        color: #535353;
+        font-size: 12pt;
+        padding:2px 0;
+      }
+      .title{
+        display: flex;
+        align-items: center;
+        .reqNum{
+          padding-left: 4px;
+          font-size: 12pt;
+          font-weight: bold;
+          color: #0091FF;
+        }
+      }
+    }
+    p{
+      margin-top: 5px;
+      font-size: 10pt;
+      color:#7E8489;
+    }
+  }
+}
+@each $onOff in on,off{
+  .toggleSwitch_#{$onOff}{
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    margin-left: auto;
+    margin-right:10px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+}
+.toggleSwitch_on{
+  background-color: #0091FF;
+}
+.toggleSwitch_off{
+  background-color :#9E9E9E;
+}
+.toggleButton_on{
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left:42%;
+}
+.toggleButton_off{
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 5%;
+}

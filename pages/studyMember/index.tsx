@@ -1,4 +1,4 @@
-import styles from '@/styles/studyMember.module.scss'
+import styles from '@/styles/studyMember/index.module.scss'
 import TopNavigation from '@/components/topNavigation';
 import PlusMan from '@/public/img/plusMan.svg'
 import Member from '@/components/member';
@@ -16,7 +16,7 @@ export default function StudyMember(){
     <Link href='/studyBoard' className={styles.navRight}>게시판</Link>
   </nav>
   <main className={styles.main}>
-   <Link href='' className={styles.buttonContainer}>
+   <Link href='/studyMember/management' className={styles.buttonContainer}>
       <PlusMan/>
       <div className={styles.buttonText}>
         <div className={styles.buttonTitle}>
