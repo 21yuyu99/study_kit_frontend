@@ -5,6 +5,7 @@ import { introStepContent } from '@/components/inputBox/content';
 import { ReactElement, useCallback, useRef, useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
+import { GoBackWarning } from '@/components/msgBox';
 export interface QnaType{
   id:number,
   content:string
@@ -67,6 +68,7 @@ export default function StudyIntro() {
     })}
   </main>
   <Link href="/myStudy"><WidthButton color="blue" buttonText ="개설하기"/></Link>
+  <GoBackWarning/>
   </>
  )
 }

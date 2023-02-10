@@ -45,3 +45,56 @@
   color: #0091FF;
   padding : 10px 0;
 }
+.goBackContainer{
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  z-index: 100;
+  top:0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .goBackBox{
+    background-color: white;
+    width: 90%;
+    padding:15px;
+    border-radius: 15px;
+    .goBackTopContainer{
+      display: flex;
+      justify-content: center;
+      svg{
+        color:#535353;
+      }
+    }
+    .goBackTitle{
+      font-size: 13pt;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    .goBackSubText{
+      font-size: 11pt;
+      color:#7E8489;
+    }
+    .goBackBtnContainer{
+      display: flex;
+      justify-content:space-between;
+      font-size: 13pt;
+      .goBackBtn,.goBackCancel{
+        width: 48%;
+        margin-top: 10px;
+        padding:15px 0;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 11pt;
+      }
+      .goBackBtn{
+        background-color: #C94E38;
+        color: white;
+      }
+      .goBackCancel{
+        background-color: #ECECEC;
+        color:#535353;
+      }
+    }
+  }
+}
