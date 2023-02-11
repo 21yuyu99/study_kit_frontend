@@ -25,3 +25,29 @@
   color: black;
   border-bottom: solid 4px #C94E38;
 }
+.pagination{
+  display: flex;
+  justify-content:space-around;
+  width: 50%;
+  margin: auto;
+  color:#7E8489;
+  font-size: 12pt;
+  margin-top:15%;
+  font-weight: 600;
+  .pageNumberWrapper{
+    display: flex;
+    flex-basis:60%;
+    justify-content: space-between;
+    .pagePoint,.pageNotPoint{
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .pagePoint{
+      color:white;
+      background-color:#0091FF;
+    }
+  }
+}
