@@ -1,7 +1,8 @@
 import styles from '@/styles/studyMember/index.module.scss'
 import TopNavigation from '@/components/topNavigation';
+import MidNav from '@/components/midNav';
 import PlusMan from '@/public/img/plusMan.svg'
-import Member from '@/components/member';
+import { Member } from '@/components/member';
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -10,11 +11,7 @@ export default function StudyMember(){
   return(
   <>
   <TopNavigation title={"토익 뽀개기"} backSpace={true} rightIcon={"bell"} backgroundStyle={2}></TopNavigation>
-  <nav className={styles.navContainer}>
-    <Link href='/studyIntro' className={styles.navLeft}>스터디 소개</Link>
-    <Link href='/studyMember' className={styles.navCenter}>스터디원</Link>
-    <Link href='/studyBoard' className={styles.navRight}>게시판</Link>
-  </nav>
+  <MidNav title={'스터디원'}/>
   <main className={styles.main}>
    <Link href='/studyMember/management' className={styles.buttonContainer}>
       <PlusMan/>

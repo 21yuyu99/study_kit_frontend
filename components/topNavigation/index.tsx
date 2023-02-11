@@ -38,6 +38,9 @@ const TopNavigation = ({title, backSpace, rightIcon, backgroundStyle} : Props)=>
   else if (title==="회원가입"|| title==="로그인") {
     lnk = "/"
   }
+  else if (title==="가입 신청 관리") {
+    lnk = "/studyMember"
+  }
   else {
     lnk = "/myStudy"
   }

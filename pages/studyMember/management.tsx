@@ -1,7 +1,7 @@
 import styles from '@/styles/studyMember/management.module.scss'
 import TopNavigation from '@/components/topNavigation';
 import PlusMan from '@/public/img/plusMan.svg'
-import Member from '@/components/member';
+import { Member } from '@/components/member';
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';

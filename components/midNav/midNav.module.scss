@@ -1,0 +1,14 @@
+.navContainer{
+  height: 6.8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navLeft, .navCenter, .navRight{
+  flex: 1;
+  height: 100%;
+  line-height: 6.8vh;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+}
