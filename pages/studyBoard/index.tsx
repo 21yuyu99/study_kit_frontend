@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { PreviewBoard } from '@/components/studyBoard';
+import Pen from '@/public/img/pen.svg'
 export default function StudyBoard(){
   interface PageNumberType {
     num : number,
@@ -45,6 +46,7 @@ export default function StudyBoard(){
     <PreviewBoard title="p.135 질문 있습니다!" isChief={false} date="2023.01.23" views={50} comment={23} nickName="chlwldP"/>
     <PreviewBoard title="p.135 질문 있습니다!" isChief={false} date="2023.01.23" views={50} comment={23} nickName="chlwldP"/>
     <PreviewBoard title="p.135 질문 있습니다!" isChief={false} date="2023.01.23" views={50} comment={23} nickName="chlwldP"/>
+    <div className={styles.penIcon}><Pen/></div>
     <div className={styles.pagination}>
       <div className={styles.back}>&#60;</div>
       <div className={styles.pageNumberWrapper}>
