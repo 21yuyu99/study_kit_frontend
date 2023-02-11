@@ -9,47 +9,33 @@ const MidNav = ({title} : Props)=>{
   let leftNavStyle
   let centerNavStyle
   let rightNavStyle
+  const inactiveStyle = {
+    color: '#9E9E9E',
+    borderBottom: 'solid 1px #DBDBDB'
+  }
   if (title==='스터디 소개') {
     leftNavStyle = {
       color: 'black',
       borderBottom: 'solid 4px #0091FF'
     }
-    centerNavStyle = {
-      color: '#9E9E9E',
-      borderBottom: 'solid 1px #DBDBDB'
-    }
-    rightNavStyle = {
-      color: '#9E9E9E',
-      borderBottom: 'solid 1px #DBDBDB'
-    }
+    centerNavStyle = inactiveStyle
+    rightNavStyle = inactiveStyle
   }
   else if (title==='스터디원') {
-    leftNavStyle = {
-      color: '#9E9E9E',
-      borderBottom: 'solid 1px #DBDBDB'
-    }
     centerNavStyle = {
       color: 'black',
       borderBottom: 'solid 4px #DFB144'
     }
-    rightNavStyle = {
-      color: '#9E9E9E',
-      borderBottom: 'solid 1px #DBDBDB'
-    }
+    leftNavStyle = inactiveStyle
+    rightNavStyle = inactiveStyle
   }
   else if (title==='게시판') {
-    leftNavStyle = {
-      color: '#9E9E9E',
-      borderBottom: 'solid 1px #DBDBDB'
-    }
-    centerNavStyle = {
-      color: '#9E9E9E',
-      borderBottom: 'solid 1px #DBDBDB'
-    }
     rightNavStyle = {
       color: 'black',
       borderBottom: 'solid 4px #C94E38'
     }
+    leftNavStyle = inactiveStyle
+    centerNavStyle = inactiveStyle
   }
   return(
     <nav className={styles.navContainer}>
