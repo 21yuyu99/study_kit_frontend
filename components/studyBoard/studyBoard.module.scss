@@ -27,18 +27,25 @@
   }
   .previewRightContainer{
     width: 35%;
-    .previewBoardIcon{
-      background-color: #DFB144;
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
-      margin-left: auto;
-      margin-right: 10px;
-      margin-bottom:5px;
+    @each $color in blue,yellow{
+      .previewBoardIcon_#{$color}{
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: 10px;
+        margin-bottom:5px;
+        @if $color == blue{
+          background-color: #0091FF;
+        }
+        @else{
+          background-color: #DFB144;
+        }
+      }
     }
     .previewWhoContainer{
       display: flex;
-      align-items: end;
+      align-items: flex-end;
       justify-content: right;
       .previewNickname{
         color:#7E8489;
@@ -56,5 +63,8 @@
         margin-right: 5px;
       }
     }
+  }
+  .iconColor{
+    color:Red;
   }
 }

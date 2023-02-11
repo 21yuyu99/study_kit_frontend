@@ -30,7 +30,7 @@ export const PreviewBoard = (props:PreviewBoardProps)=>{
         </div>
       </div>
       <div className={styles.previewRightContainer}>
-        <div className={styles.previewBoardIcon}/>
+        <div className={isChief?styles.previewBoardIcon_yellow:styles.previewBoardIcon_blue}/>
         <div className={styles.previewWhoContainer}>
         {isChief&&<div className={styles.previewChiefIcon}>스터디장</div>}
         <div className={styles.previewNickname}>{nickName}</div>
