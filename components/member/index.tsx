@@ -2,7 +2,7 @@ import styles from "./member.module.scss";
 import Rectangle from '@/public/img/Rectangle 9030.svg'
 import { memberProps } from "@/types/member";
 
-const Member = (props:memberProps)=>{
+export const Member = (props:memberProps)=>{
   return(
     <div className={styles.memberContainer}>
       <div className={styles.memberPhoto}><Rectangle/></div>
@@ -16,4 +16,3 @@ const Member = (props:memberProps)=>{
     </div>
   )
 }
-export default Member;

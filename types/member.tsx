@@ -3,3 +3,12 @@ export interface memberProps {
     level: number,
     isHead: boolean,
 }
+export interface applyMemberProps {
+    nickName : string,
+    level: number,
+    time: number,
+    intro: string,
+    q1: string,
+    q2: string,
+    ischeck: boolean,
+}
