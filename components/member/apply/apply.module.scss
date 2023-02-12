@@ -1,0 +1,60 @@
+.memberContainer{
+  color: black;
+  border-bottom: solid 1px #DBDBDB;
+  padding-top: 18px;
+  .topContent{
+    display: flex;
+    .memberPhoto{
+      padding-left: 18px;
+    }
+    .memberName{
+      padding-left: 18px;
+      font-size: 12pt;
+      .level{
+        padding-top: 7px;
+        font-size: 9pt;
+      }
+    }
+    .time{
+      margin-left: auto;
+      padding-right: 18px;
+      font-size: 12pt;
+    }
+  }
+  .bottomContent{
+    display: flex;
+    .leftContainer{
+      padding-left: 79px;
+    }
+    .qText{
+      font-size: 10pt;
+      padding-bottom: 10px;
+      padding-right: 18px;
+      margin-right: auto;
+    }
+    .qTitle{
+      font-size: 9pt;
+      padding-bottom: 5px;
+    }
+    .buttonContainer{
+      display: flex;
+      justify-content: right;
+      padding: 18px 0;
+      .refuseButton, .acceptButton{
+        display: flex;
+        font-size: 10pt;
+        padding: 5px;
+      }
+      .refuseButton{
+        color: #535353;
+      }
+      .acceptButton{
+        color: #0091FF;
+        margin: 0 16px;
+      }
+      .buttonText{
+        padding-left: 4px;
+      }
+    }
+  }
+}

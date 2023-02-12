@@ -3,28 +3,6 @@
   padding-top:10px;
   background-color: white;
 }
-.navContainer{
-  height: 6.8vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.navLeft, .navCenter, .navRight{
-  flex: 1;
-  height: 100%;
-  line-height: 6.8vh;
-  text-align: center;
-  font-size: 12pt;
-  font-weight: bold;
-}
-.navLeft, .navRight{
-  color: #9E9E9E;
-  border-bottom: solid 1px #DBDBDB;
-}
-.navCenter{
-  color: black;
-  border-bottom: solid 4px #DFB144;
-}
 .buttonContainer{
   width: 90%;
   border-radius: 16px;
@@ -34,6 +12,7 @@
   display: flex;
   align-items: center;
   margin-top: 10px;
+  margin-bottom: 10px;
   .buttonText{
     padding-left: 13px;
     .buttonTitle{
