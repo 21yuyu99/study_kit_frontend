@@ -6,7 +6,7 @@ export const Member = (props:memberProps)=>{
   return(
     <div className={styles.memberContainer}>
       <div className={styles.memberPhoto}><Rectangle/></div>
-      {props.isHead===true ? <div className={styles.head}>스터디장</div> : ''}
+      {props.isHead===true ? <ChiefIcon/>: ''}
       <div className={styles.memberName}>
         {props.nickName}
       </div>
@@ -14,5 +14,10 @@ export const Member = (props:memberProps)=>{
         LV {props.level}
       </div>
     </div>
+  )
+}
+export const ChiefIcon = ()=>{
+  return(
+    <div className={styles.head}>스터디장</div>
   )
 }

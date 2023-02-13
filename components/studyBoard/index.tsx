@@ -1,5 +1,6 @@
 import styles from './studyBoard.module.scss';
 import Speaker from '@/public/img/speaker.svg';
+import { ChiefIcon } from '../member';
 export interface PreviewBoardProps{
   title : string,
   isChief : boolean,
@@ -32,7 +33,7 @@ export const PreviewBoard = (props:PreviewBoardProps)=>{
       <div className={styles.previewRightContainer}>
         <div className={isChief?styles.previewBoardIcon_yellow:styles.previewBoardIcon_blue}/>
         <div className={styles.previewWhoContainer}>
-        {isChief&&<div className={styles.previewChiefIcon}>스터디장</div>}
+        {isChief&&<ChiefIcon/>}
         <div className={styles.previewNickname}>{nickName}</div>
         </div>
       </div>
