@@ -72,7 +72,7 @@ export default function StudyMember(){
         <div className={toggle===true?`${styles.toggleButton_on}`:`${styles.toggleButton_off}`}></div>
       </div>
     </div>
-    {members.map(x => <ApplyMember nickName={x.nickname} level={x.level} elapsedHour={x.elapsedHour} 
+    {members.map(x => <ApplyMember id={x.id} nickName={x.nickname} level={x.level} elapsedHour={x.elapsedHour} 
       intro={x.intro} q1={x.q1} q2={x.q2} getMsgBoxValue={setBox}/>)}
     {msgbox===1&&
     (

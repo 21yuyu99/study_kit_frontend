@@ -6,6 +6,7 @@ export interface memberProps {
     isHead: boolean,
 }
 export interface applyMemberProps {
+    id: number,
     nickName : string,
     level: number,
     elapsedHour: number,
