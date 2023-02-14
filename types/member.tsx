@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, Key, SetStateAction } from "react";
 
 export interface memberProps {
     nickName : string,
@@ -6,7 +6,7 @@ export interface memberProps {
     isHead: boolean,
 }
 export interface applyMemberProps {
-    id: number,
+    key: Key,
     nickName : string,
     level: number,
     elapsedHour: number,
