@@ -1,14 +1,17 @@
-.memberContainer{
-  color: black;
+.borderContainer{
   border-bottom: solid 1px #DBDBDB;
-  padding-top: 18px;
+}
+.memberContainer{
+  width: 90%;
+  margin: auto;
+  color: black;
+  padding-top: 16px;
   .topContent{
     display: flex;
     .memberPhoto{
-      padding-left: 18px;
+      padding-right: 18px;
     }
     .memberName{
-      padding-left: 18px;
       font-size: 12pt;
       .level{
         padding-top: 7px;
@@ -17,19 +20,17 @@
     }
     .time{
       margin-left: auto;
-      padding-right: 18px;
       font-size: 12pt;
     }
   }
   .bottomContent{
     display: flex;
     .leftContainer{
-      padding-left: 79px;
+      padding-left: 60px;
     }
     .qText{
       font-size: 10pt;
-      padding-bottom: 10px;
-      padding-right: 18px;
+      padding-bottom: 15px;
       margin-right: auto;
     }
     .qTitle{
@@ -39,7 +40,7 @@
     .buttonContainer{
       display: flex;
       justify-content: right;
-      padding: 18px 0;
+      padding-bottom: 15px;
       .refuseButton, .acceptButton{
         display: flex;
         font-size: 10pt;
@@ -50,7 +51,7 @@
       }
       .acceptButton{
         color: #0091FF;
-        margin: 0 16px;
+        margin-left: 16px;
       }
       .buttonText{
         padding-left: 4px;

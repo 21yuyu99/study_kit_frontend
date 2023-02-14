@@ -6,7 +6,7 @@ export interface memberProps {
 export interface applyMemberProps {
     nickName : string,
     level: number,
-    time: number,
+    elapsedHour: number,
     intro: string,
     q1: string,
     q2: string,

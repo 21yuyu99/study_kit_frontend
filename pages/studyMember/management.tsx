@@ -38,17 +38,17 @@ export default function StudyMember(){
         <div className={toggle===true?`${styles.toggleButton_on}`:`${styles.toggleButton_off}`}></div>
       </div>
     </div>
-    <ApplyMember nickName={'가나다'} level={4} time={1}
+    <ApplyMember nickName={'가나다'} level={4} elapsedHour={16}
       intro={'안녕하세요. 영어 공부하려고 가입한 홍길순이에요.  혼자서는 도저히 공부가 안되네요. 받아주시면 감사하겠습니다 ㅠ'} 
       q1={'안녕하세요. 영어 공부하려고 가입한 홍길순이에요.  혼자서는 도저히 공부가 안되네요. 받아주시면 감사하겠습니다 ㅠ'} 
       q2={'안녕하세요. 영어 공부하려고 가입한 홍길순이에요.  혼자서는 도저히 공부가 안되네요. 받아주시면 감사하겠습니다 ㅠ'} 
       ischeck={false}/>
-    <ApplyMember nickName={'가나다'} level={4} time={3} 
+    <ApplyMember nickName={'가나다'} level={4} elapsedHour={37} 
       intro={'안녕하세요. 영어 공부하려고 가입한 홍길순이에요.  혼자서는 도저히 공부가 안되네요. 받아주시면 감사하겠습니다 ㅠ'} 
       q1={'안녕하세요. 영어 공부하려고 가입한 홍길순이에요.  혼자서는 도저히 공부가 안되네요. 받아주시면 감사하겠습니다 ㅠ'} 
       q2={'안녕하세요. 영어 공부하려고 가입한 홍길순이에요.  혼자서는 도저히 공부가 안되네요. 받아주시면 감사하겠습니다 ㅠ'} 
       ischeck={true}/>
-    <ApplyMember nickName={'가나다'} level={4} time={3} 
+    <ApplyMember nickName={'가나다'} level={4} elapsedHour={72} 
       intro={'안녕하세요. 영어 공부하려고 가입한 홍길순이에요.  혼자서는 도저히 공부가 안되네요. 받아주시면 감사하겠습니다 ㅠ'} 
       q1={'안녕하세요. 영어 공부하려고 가입한 홍길순이에요.  혼자서는 도저히 공부가 안되네요. 받아주시면 감사하겠습니다 ㅠ'} 
       q2={'안녕하세요. 영어 공부하려고 가입한 홍길순이에요.  혼자서는 도저히 공부가 안되네요. 받아주시면 감사하겠습니다 ㅠ'} 

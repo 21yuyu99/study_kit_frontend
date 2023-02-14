@@ -4,14 +4,16 @@ import { memberProps } from "@/types/member";
 
 export const Member = (props:memberProps)=>{
   return(
-    <div className={styles.memberContainer}>
-      <div className={styles.memberPhoto}><Rectangle/></div>
-      {props.isHead===true ? <ChiefIcon/>: ''}
-      <div className={styles.memberName}>
-        {props.nickName}
-      </div>
-      <div className={styles.memberLevel}>
-        LV {props.level}
+    <div className={styles.borderContainer}>
+      <div className={styles.memberContainer}>
+        <div className={styles.memberPhoto}><Rectangle/></div>
+        {props.isHead===true ? <ChiefIcon/>: ''}
+        <div className={styles.memberName}>
+          {props.nickName}
+        </div>
+        <div className={styles.memberLevel}>
+          LV {props.level}
+        </div>
       </div>
     </div>
   )
