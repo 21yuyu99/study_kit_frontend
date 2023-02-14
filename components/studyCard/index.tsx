@@ -35,7 +35,7 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
   }
   return(
     <>
-    <div className={styles.studyCard}>
+    <Link href='/studyIntro' className={styles.studyCard}>
       <div className={type}>{typeName}</div>
       <div className={styles.cardTag}>{cardTag}</div>
         {starStatus===true?
@@ -43,7 +43,7 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
         :
           (<div className={styles.star_false}><AiOutlineStar size={27}/></div>)
         }
-      <Link href='/studyIntro' className={styles.cardContent}>
+      <div className={styles.cardContent}>
         <div className={styles.cardTitle}>
           <h3>{cardTitle}</h3>
         </div>
@@ -53,8 +53,8 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
                 style={{width:_width}}>
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
     {popUpStatus===true&&<PopUp status={popUpStatus} setStatus={setPopUp}/>}
     </>
   )
