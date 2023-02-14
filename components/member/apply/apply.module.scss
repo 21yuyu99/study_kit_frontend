@@ -1,7 +1,7 @@
 .borderContainer{
   border-bottom: solid 1px #DBDBDB;
 }
-.memberContainer{
+.mainContainer{
   width: 90%;
   margin: auto;
   color: black;
@@ -57,5 +57,11 @@
         padding-left: 4px;
       }
     }
+  }
+}
+.bottomContainer{
+  display: flex;
+  .bottomLeftContainer{
+    margin: auto;
   }
 }

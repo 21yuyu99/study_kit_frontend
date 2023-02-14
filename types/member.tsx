@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface memberProps {
     nickName : string,
     level: number,
@@ -10,5 +12,5 @@ export interface applyMemberProps {
     intro: string,
     q1: string,
     q2: string,
-    ischeck: boolean,
+    getMsgBoxValue: Dispatch<SetStateAction<number>>,
 }

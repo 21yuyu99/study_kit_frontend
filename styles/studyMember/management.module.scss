@@ -69,18 +69,24 @@
   background-color :#9E9E9E;
 }
 .toggleButton_on{
-  width:20px;
-  height:20px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: white;
   position: absolute;
-  left:42%;
+  left: 42%;
 }
 .toggleButton_off{
-  width:20px;
-  height:20px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: white;
   position: absolute;
   left: 5%;
+}
+.msgContainer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
