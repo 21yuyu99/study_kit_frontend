@@ -1,0 +1,33 @@
+.borderContainer{
+  border-bottom: solid 1px #DBDBDB;
+}
+.memberContainer{
+  height: 75px;
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  .memberPhoto{
+    padding-top: 6px;
+    padding-right: 16px;
+  }
+  .memberName{
+    font-size: 11pt;
+  }
+  .memberLevel{
+    font-size: 11pt;
+    margin-left: auto;
+  }
+}
+.head{
+  color: white;
+  background-color: #0091FF;
+  font-size: 8pt;
+  border-radius: 6px;
+  width: 50px;
+  line-height: 18px;
+  text-align: center;
+  margin-right: 5px;
+}

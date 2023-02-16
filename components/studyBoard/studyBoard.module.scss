@@ -1,0 +1,56 @@
+.previewBoardContainer{
+  display:flex;
+  padding:10px 15px;
+  justify-content: space-between;
+  border-bottom: 1px solid #E0E0E0;
+  .preivewLeftContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    width: 65%;
+    .previewTitle{
+      font-size: 13pt;
+      font-weight: 600;
+      svg{
+        vertical-align:text-top;
+        margin-right: 8px;
+      }
+    }
+    .previewSubInfo{
+      font-size: 10pt;
+      color:#7E8489;
+      display: flex;
+      span{
+        margin-right: 10px;
+      }
+    }
+  }
+  .previewRightContainer{
+    width: 35%;
+    @each $color in blue,yellow{
+      .previewBoardIcon_#{$color}{
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: 10px;
+        margin-bottom:5px;
+        @if $color == blue{
+          background-color: #0091FF;
+        }
+        @else{
+          background-color: #DFB144;
+        }
+      }
+    }
+    .previewWhoContainer{
+      display: flex;
+      align-items: flex-start;
+      justify-content: right;
+      .previewNickname{
+        color:#7E8489;
+        font-size: 10pt;
+      }
+    }
+  }
+}

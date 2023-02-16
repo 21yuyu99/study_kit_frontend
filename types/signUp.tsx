@@ -32,3 +32,7 @@ export interface essentialCheckType{
   isChecked : boolean,
   isVerified : boolean
 }
+export interface PopUpProps{
+  status : boolean
+  setStatus : Dispatch<SetStateAction<boolean>>
+}

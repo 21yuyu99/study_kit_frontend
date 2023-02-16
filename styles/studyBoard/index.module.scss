@@ -1,0 +1,68 @@
+.main{
+  min-height: 100%;
+  padding-top:10px;
+  background-color: white;
+}
+.navContainer{
+  height: 6.8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navLeft, .navCenter, .navRight{
+  flex: 1;
+  height: 100%;
+  line-height: 6.8vh;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+}
+.navLeft, .navCenter{
+  color: #9E9E9E;
+  border-bottom: solid 1px #DBDBDB;
+}
+.navRight{
+  color: black;
+  border-bottom: solid 4px #C94E38;
+}
+.pagination{
+  display: flex;
+  justify-content:space-around;
+  width: 50%;
+  margin: auto;
+  color:#7E8489;
+  font-size: 12pt;
+  margin-top:15%;
+  font-weight: 600;
+  .pageNumberWrapper{
+    display: flex;
+    flex-basis:60%;
+    justify-content: space-between;
+    .pagePoint,.pageNotPoint{
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .pagePoint{
+      color:white;
+      background-color:#0091FF;
+    }
+  }
+}
+.penIcon{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 50px;
+  background-color:#0091FF;
+  margin-top:10px;
+  right: 5%;
+  box-shadow: 0px 4px 5px 1px rgba(106,106,139,0.8);
+  svg{
+   vertical-align:middle;
+  }
+}

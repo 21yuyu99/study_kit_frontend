@@ -7,12 +7,12 @@ import { useEffect, useState } from 'react';
 import Plus from 'public/img/plus.svg';
 import Link from 'next/link'
 import Head from 'next/head';
-import axios from 'axios';
 export default function MyStudy(){
-  let numStudy = 0 //2
+  let numStudy = 2 //0
+
  return(
   <>
-  <TopNavigation title={"스터디키트"} backSpace={false} rightIcon={"bell"}></TopNavigation>
+  <TopNavigation title={"스터디키트"} backSpace={false} rightIcon={"bell"} backgroundStyle={0}></TopNavigation>
   <main className={styles.main}>
     <div className={styles.banner}>
       <div className={styles.bannerText}>

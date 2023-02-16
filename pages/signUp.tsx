@@ -141,7 +141,7 @@ export default function SignUp() {
  }
  return(
   <>
-  <TopNavigation title={"회원가입"} backSpace={true} rightIcon={"null"}></TopNavigation>
+  <TopNavigation title={"회원가입"} backSpace={true} rightIcon={"null"} backgroundStyle={0}></TopNavigation>
   <main className={styles.main}>
     {signUpStepContent.map((content)=>{
       switch(content.number){

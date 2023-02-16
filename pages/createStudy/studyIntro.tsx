@@ -5,6 +5,7 @@ import { introStepContent } from '@/components/inputBox/content';
 import { ReactElement, useCallback, useRef, useState } from 'react';
 import { WidthButton } from '@/components/widthButton';
 import TopNavigation from '@/components/topNavigation';
+import { GoBackWarning } from '@/components/msgBox';
 export interface QnaType{
   id:number,
   content:string
@@ -30,7 +31,7 @@ export default function StudyIntro() {
  return(
   <>
   <div className={styles.topProgressBar}></div>
-  <TopNavigation title={"스터디 개설 (3/3)"} backSpace={true} rightIcon={"box"}></TopNavigation>
+  <TopNavigation title={"스터디 개설 (3/3)"} backSpace={true} rightIcon={"box"} backgroundStyle={0}></TopNavigation>
   <main className={styles.main}>
     {introStepContent.map((content)=>{
       switch(content.number){

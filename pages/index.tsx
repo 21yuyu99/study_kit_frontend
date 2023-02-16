@@ -1,16 +1,14 @@
 import Head from 'next/head'	
 import styles from '@/styles/Home.module.scss'	
-import Kakao from '@/public/img/kakao.svg'
-import Google from '@/public/img/google.svg'
 import Link from 'next/link'
-
+import { GuideSection, SignUpBtBox } from '@/components/signUp'
+import cookie from 'react-cookies';
 export default function Home() {	
   return (	
     <>	
       <Head>	
         <title>Study Kit</title>	
         <meta name="description" content="스터디 키트" />	
-        <link rel="icon" href="/img/favicon.ico" />	
       </Head>	
       <main className={styles.main}>
         <div className={styles.banner}>
@@ -23,22 +21,8 @@ export default function Home() {
             <p>스터디그룹 활동하기</p>
           </div>
         </div>
-        <div className={styles.linkContainer}>
-          <div className={styles.linkToSignIn}>
-            이미 회원이신가요? <Link href='/signIn'>로그인</Link>
-          </div>
-          <div className={styles.linkToNewStudy}>
-            <Link href='/newStudy'>먼저 둘러보기 &#62;</Link>
-          </div>
-        </div>
-        <div className={styles.signUp}>
-          <Link href='/signUp'><div className={styles.studyKit}><h3>1분만에 회원가입하기</h3></div></Link>
-          <Link href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${
-          process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI}`}><div className={styles.kakao}><Kakao/><h3>카카오로 바로 시작하기</h3></div></Link>
-          <Link href={`https://accounts.google.com/o/oauth2/v2/auth?scope=profile email&response_type=code&client_id=${
-            process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI}`}><div className={styles.google}>
-            <Google/><h3>구글로 바로 시작하기</h3></div></Link>
-        </div>	
+        <GuideSection/>
+        <SignUpBtBox/>
       </main>
       </>
   )	

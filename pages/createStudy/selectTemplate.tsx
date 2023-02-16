@@ -1,5 +1,5 @@
 import styles from '../../styles/createStudy/selectTemplate.module.scss';
-import Plus from '../../public/img/Group 7029.svg';
+import Plus from '../../public/img/plusGray.svg';
 import StudyTypeBar from '@/components/studyTypeBar';
 import Template from '@/components/template';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ export default function SelectTemplate(){
     <div className={styles.left}></div>
     <div className={styles.right}></div>
   </div>
-  <TopNavigation title={"스터디 개설 (1/3)"} backSpace={true} rightIcon={"box"}></TopNavigation>
+  <TopNavigation title={"스터디 개설 (1/3)"} backSpace={true} rightIcon={"box"} backgroundStyle={0}></TopNavigation>
   <main className={styles.main}>
     <div className={styles.banner}>
       <div className={styles.bannerText}>

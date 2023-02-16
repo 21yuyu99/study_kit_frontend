@@ -1,0 +1,92 @@
+.main{
+  min-height: 100%;
+  padding-top:10px;
+  background-color: white;
+}
+.buttonContainer{
+  width: 90%;
+  border-radius: 16px;
+  background-color: #F4F4F4;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  .buttonText{
+    padding-left: 13px;
+    .buttonTitle{
+      h3{
+        color: #535353;
+        font-size: 12pt;
+        padding:2px 0;
+      }
+      @media (max-width: 374px) {
+        h3{
+          font-size: 11pt;
+        }
+      }
+      .title{
+        display: flex;
+        align-items: center;
+        .reqNum{
+          padding-left: 4px;
+          font-size: 12pt;
+          font-weight: bold;
+          color: #0091FF;
+        }
+      }
+    }
+    p{
+      margin-top: 5px;
+      font-size: 10pt;
+      color:#7E8489;
+    }
+    @media (max-width: 374px) {
+      p{
+        font-size: 9pt;
+      }
+    }
+  }
+}
+@each $onOff in on,off{
+  .toggleSwitch_#{$onOff}{
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: 5px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+}
+.toggleSwitch_on{
+  background-color: #0091FF;
+}
+.toggleSwitch_off{
+  background-color :#9E9E9E;
+}
+.toggleButton_on{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 42%;
+}
+.toggleButton_off{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 5%;
+}
+.msgContainer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
