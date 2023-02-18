@@ -1,5 +1,5 @@
 import TopNavigation from "@/components/topNavigation";
-import styles from "@/styles/studyBoard/ShowSingle.module.scss";
+import styles from "@/styles/studyBoard/showSingle.module.scss";
 const ShowSingle = ()=>{
   return(
     <>
