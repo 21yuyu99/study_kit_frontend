@@ -1,13 +1,22 @@
 import { requestLogin } from "@/pages/api/auth/kakao";
 import { useRouter } from "next/router";
-import {Navigate} from 'react-router-dom';
-import { redirect } from "react-router-dom"
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-const Kakao=()=>{
-  const routerCode = useRouter().query.code;
+const Kakao = ()=>{
+  const router = useRouter();
+  const routerCode = router.query.code;
   if(typeof(routerCode)==="string"){
-    const login = requestLogin({routerCode});
-    login.then(data=>console.log(data));                                                                                                        
+    const callApi = async() =>{
+      const loginResult = await requestLogin({ routerCode });
+    if(loginResult==="new"){
+      router.push("/newStudy?login=new");
+    }
+    else if(loginResult==="old"){
+      router.push('/myStudy');
+    }
+    else{
+      router.push('/');
+    }
+    }
+    callApi();
   }
   return(
     <>

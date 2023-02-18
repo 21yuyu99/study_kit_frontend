@@ -18,7 +18,7 @@ const TopNavigation = ({title, backSpace, rightIcon, backgroundStyle} : Props)=>
   const router = useRouter();
   const [goBack,setGoBack] = useState(false);
   const onBackBtnHandler = ()=>{
-    if(title==="스터디 개설 (3/3)"){
+    if(title==="스터디 개설 (3/3)"||title==="스터디 개설 (2/3)"){
       setGoBack(true);
     }
     else{
