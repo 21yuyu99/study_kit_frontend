@@ -31,7 +31,7 @@ const StudyCard = ({typeName,starStatus,cardTag,cardTitle,cardPeriod,progressSta
   let _width = progressStatus + '%';
   const [popUpStatus,setPopUp] = useState(false);
   const onClickHandler = ()=>{
-    cookie.load('accessToken')===undefined?setPopUp(true):starStatus;
+    cookie.load('refreshToken')===undefined?setPopUp(true):starStatus;
   }
   return(
     <>

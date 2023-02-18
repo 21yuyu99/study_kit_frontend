@@ -50,14 +50,16 @@ export const idCheckHandler = (id:string)=>{
     id:id,
     password : pwd
   }).then(res=>{
-    const expires = new Date();
-    expires.setMinutes(expires.getMinutes() + 30);
-    cookie.save('refreshToken', res.data['data'].refreshToken,{
+    let expires = new Date();
+    expires.setMinutes(expires.getMinutes() + 40);
+    cookie.save('accessToken', res.data['data'].accessToken,{
       path:'/',
       expires,
       secure : true,
           });
-    cookie.save('accessToken', res.data['data'].accessToken,{
+    expires = new Date();
+    expires.setDate(expires.getDate()+7);
+    cookie.save('refreshToken', res.data['data'].refreshToken,{
       path:'/',
       expires,
       secure : true,
@@ -69,38 +71,40 @@ export const idCheckHandler = (id:string)=>{
   )
  }
 
- export const keepLogin = ()=>{
-  if(axios.defaults.headers['Authorization']===undefined){
-    if(cookie.load('accessToken')!==undefined){
-    axios.defaults.headers['Authorization'] = cookie.load('accessToken');
-    }
-    else{
-      return;
-    }
-  }
-  loginRefresh()
-  setInterval(()=>loginRefresh(),1000*60*29)  
- }
- export const loginRefresh = () =>{
-  if(axios.defaults.headers['Authorization']!==undefined){
-    axios.post('https://www.studykit.site:443/api/members/reissue',null,{
-    headers:{Refresh:cookie.load('refreshToken')}
-}).then(res=>
-  {
-    const expires = new Date();
-    expires.setMinutes(expires.getMinutes() + 30);
-    cookie.save('refreshToken', res.data['data'].refreshToken,{
-      path:'/',
-      expires,
-      secure : true,
-          });
-    cookie.save('accessToken', res.data['data'].accessToken,{
-      path:'/',
-      expires,
-      secure : true,
-          });
-  axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
-  }
-  ).catch(()=>alert("로그인 실패"))
-  }
- }
+//  export const keepLogin = ()=>{
+//   if(axios.defaults.headers['Authorization']===undefined){
+//     if(cookie.load('accessToken')!==undefined){
+//     axios.defaults.headers['Authorization'] = cookie.load('accessToken');
+//     }
+//     else{
+//       return;
+//     }
+//   }
+//   loginRefresh()
+//   setInterval(()=>loginRefresh(),1000*60*29)  
+//  }
+//  export const loginRefresh = () =>{
+//   if(axios.defaults.headers['Authorization']!==undefined){
+//     axios.post('https://www.studykit.site:443/api/members/reissue',null,{
+//     headers:{Refresh:cookie.load('refreshToken')}
+// }).then(res=>
+//   {
+//     let expires = new Date();
+//     expires.setMinutes(expires.getMinutes() + 40);
+//     cookie.save('accessToken', res.data['data'].accessToken,{
+//       path:'/',
+//       expires,
+//       secure : true,
+//           });
+//     expires = new Date();
+//     expires.setDate(expires.getDate()+7);
+//     cookie.save('refreshToken', res.data['data'].refreshToken,{
+//       path:'/',
+//       expires,
+//       secure : true,
+//           });
+//   axios.defaults.headers['Authorization'] = `${res.data['data'].accessToken}`;
+//   }
+//   ).catch(()=>alert("로그인 실패"))
+//   }
+//  }

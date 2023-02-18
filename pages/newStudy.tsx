@@ -12,7 +12,6 @@ import { useRouter } from 'next/router';
 import { IsOKBox, IsOkMsg } from '@/components/msgBox';
 import cookie from 'react-cookies';
 import axios from 'axios';
-import { loginRefresh } from './api/signInUp';
 import { PopUp } from '@/components/signUp';
 
 export default function NewStudy(){
@@ -22,7 +21,7 @@ export default function NewStudy(){
   const [PopUpStatus,setPopUp] = useState(false);
   const router = useRouter();
   const routerHandler = (link:string)=>{
-    cookie.load('accessToken')===undefined?setPopUp(true):router.push(link);
+    cookie.load('refreshToken')===undefined?setPopUp(true):router.push(link);
   }
  return(
   <>

@@ -31,7 +31,7 @@ const BottomNavigation = ({location} : Props)=>{
     //right = <manB/>
   }
   const onClickHandler = (link:string)=>{
-    cookie.load('accessToken')===undefined?setPopUp(true):router.push(link);
+    cookie.load('refreshToken')===undefined?setPopUp(true):router.push(link);
   }
   return(
     <>
