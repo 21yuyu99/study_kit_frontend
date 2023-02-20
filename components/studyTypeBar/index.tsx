@@ -16,7 +16,7 @@ const StudyTypeBar = ()=>{
     {text:"취/창업",
     isSelected : false
     }, 
-    {text:"프로젝트",
+    {text:"IT/개발",
     isSelected : false
     },
     {text:"기타",
