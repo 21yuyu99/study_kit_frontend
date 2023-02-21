@@ -1,7 +1,7 @@
 import styles from '../../styles/createStudy/detailStep.module.scss';
 import Link from 'next/link';
 import { AddPhoto, CountMember, InputBox, InputDeadline, InputSpace, SelectOnOff } from '@/components/inputBox';
-import { it, job } from '@/components/inputBox/content';
+import { etc, it, job, language, license } from '@/components/inputBox/content';
 import { useReducer, useState } from 'react';
 import { checkBoxTypes } from '@/types/createStudy';
 import { WidthButton } from '@/components/widthButton';
@@ -20,6 +20,8 @@ export default function DetailStep() {
   const [toggle, setToggle] = useState(false);
   const [essentialCheck, setEssential] = useState(true);
   const [warningStatus, setWarning] = useState(false);
+  const [licnse,setLicnse] =useState("");
+  const [score,setScore] = useState("");
   const countReducer = (state: { count: number }, action: { type: String }) => {
     switch (action.type) {
       case "INCREMENT":
@@ -93,7 +95,14 @@ export default function DetailStep() {
         type = it;
       case "job":
         type = job;
+      case "license":
+        type = license;
+      case "language":
+        type = language;
+      case "etc":
+        type = etc;
     }
+    console.log(type);
   }
   return (
     <>
@@ -121,6 +130,15 @@ export default function DetailStep() {
                     <InputBox key={type.indexOf(x)} number={type.indexOf(x) + 1} title={x.title} subTitle={x.subTitle}>
                       <InputDeadline toggle={toggle} setToggle={setToggle} range={range} setRange={setRange} />
                       <></>
+                    </InputBox>
+                  )
+                case "자격증":
+                  return (
+                    <InputBox key={type.indexOf(x)} number={type.indexOf(x) + 1} title={x.title} subTitle={x.subTitle}>
+                      <InputSpace text={licnse} setText={setLicnse} />
+                      {(goal === "" && essentialCheck === false) ? (
+                        <WarningMsg msg="필수 항목입니다." />
+                      ) : <></>}
                     </InputBox>
                   )
                 case "인원 설정":
@@ -173,13 +191,27 @@ export default function DetailStep() {
                       ) : <></>}
                     </InputBox>
                   )
+                case "목표 점수":
+                  return (
+                    <InputBox key={type.indexOf(x)} number={type.indexOf(x) + 1} title={x.title} subTitle={x.subTitle}>
+                      <InputSpace text={licnse} setText={setLicnse} />
+                      {(goal === "" && essentialCheck === false) ? (
+                        <WarningMsg msg="필수 항목입니다." />
+                      ) : <></>}
+                    </InputBox>
+                  )
               }
             }
           )
         }
       </main>
       <div className={styles.bottomContainer}>
-        {(title === "" || lan === "" || tool === "" || (checkState.check[0].isChecked === false && checkState.check[1].isChecked === false)) ?
+        {(type===it&&(title === "" || lan === "" || tool === "" ||(checkState.check[0].isChecked === false && checkState.check[1].isChecked === false)))||
+        (type===job&&(title===""||goal===""||(checkState.check[0].isChecked === false && checkState.check[1].isChecked === false)))||
+        (type===etc&&(title===""||(checkState.check[0].isChecked === false && checkState.check[1].isChecked === false)))||
+        (type===license&&(title===""||licnse===""||(checkState.check[0].isChecked === false && checkState.check[1].isChecked === false)))||
+        (type===language&&(title===""||lan===""||score===""||(checkState.check[0].isChecked === false && checkState.check[1].isChecked === false)))
+         ?
           (
             <>
               <WarningBox message="필수 항목을 모두 선택한 후 넘어가주세요." status={warningStatus} setStatus={setWarning} />

@@ -21,11 +21,11 @@ export default function SelectTemplate(){
       </div>
     </div>
     <StudyTypeBar/>
-    <Link href="/createStudy/detailStep?type=it"><Template type="언어"/></Link>
-    <Template type="자격증"/>
+    <Link href="/createStudy/detailStep?type=language"><Template type="언어"/></Link>
+    <Link href="/createStudy/detailStep?type=license"><Template type="자격증"/></Link>
     <Link href="/createStudy/detailStep?type=job"><Template type="취/창업"/></Link>
-    <Template type="IT/개발"/>
-    <Template type="기타"/>
+    <Link href="/createStudy/detailStep?type=it"><Template type="IT/개발"/></Link>
+    <Link href="/createStudy/detailStep?type=etc"><Template type="기타"/></Link>
     <div className={styles.createTemplate}>
       <Plus/>
       <div className={styles.createTemplateText}>

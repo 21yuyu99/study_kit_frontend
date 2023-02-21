@@ -36,6 +36,28 @@ export const job = [
   },
   tag,onOff
 ]
+export const etc = [
+  title,deadline,memberNum,tag,onOff
+]
+export const license = [
+  title,deadline,memberNum,
+  {
+    title : "자격증",
+    subTitle : "스터디를 통해 취득할 자격증을 기입해주세요. 필수 항목입니다."
+  },
+  tag,onOff
+]
+export const language = [
+  title,deadline,memberNum,
+  { title : "사용 언어",
+    subTitle : "스터디를 진행할 언어 또는 자격증을 설정해주세요. 필수 항목입니다.",
+  },
+  {
+    title : "목표 점수",
+    subTitle : "스터디를 통해 목표하는 점수를 작성해주세요. 필수 항목입니다."
+  },
+  onOff
+]
 export const introStepContent =[
   {
     number : 1,
