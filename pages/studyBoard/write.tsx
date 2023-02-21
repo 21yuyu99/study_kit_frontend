@@ -1,6 +1,6 @@
 import styles from '@/styles/studyBoard/write.module.scss'
 import TopNavigation from '@/components/topNavigation';
-import { BsFillCheckSquareFill, BsPlus } from 'react-icons/Bs'
+import { BsFillCheckSquareFill, BsPlus } from 'react-icons/bs'
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
