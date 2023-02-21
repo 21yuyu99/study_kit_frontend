@@ -23,8 +23,8 @@ export default function BoardWrite(){
     <div className={styles.topContainer}>
       <input value={title} onChange = {e => setTitle(e.target.value)} placeholder="제목" className={styles.title}></input>
       <div className={styles.checkNotice} onClick={()=>onClickCheckBox()}>
-        <BsFillCheckSquareFill className={checkBox===true ? styles.checkBox_on : styles.checkBox_off}/>
-        <div className={checkBox===true ? styles.boxText_on : styles.boxText_off}>공지</div>
+        <BsFillCheckSquareFill className={checkBox===true?`${styles.checkBox_on}`:`${styles.checkBox_off}`}/>
+        <div className={checkBox===true?`${styles.boxText_on}`:`${styles.boxText_off}`}>공지</div>
       </div>  
     </div>
     <div className={styles.midContainer}>
