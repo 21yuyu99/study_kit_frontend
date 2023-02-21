@@ -4,12 +4,10 @@ import { BsFillCheckSquareFill, BsPlus } from 'react-icons/Bs'
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { WarningBox } from '@/components/msgBox';
 export default function BoardWrite(){
  const [title,setTitle] = useState("");
  const [content,setContent] = useState("");
  const [checkBox,setCheckBox] = useState(false);
- const [warningStatus,setWarning] = useState(false);
  const onClickCheckBox = ()=>{
    if(checkBox === true){
     setCheckBox(false);
