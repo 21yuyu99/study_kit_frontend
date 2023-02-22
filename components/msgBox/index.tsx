@@ -11,6 +11,9 @@ interface MsgBoxProps{
   setStatus : Dispatch<SetStateAction<boolean>>
 }
 interface GoBackProps {
+  deleteExit : string,
+  message : string,
+  subMessage : string,
   status : boolean,
   setStatus : Dispatch<SetStateAction<boolean>>
 }
@@ -64,16 +67,16 @@ export const GoBackWarning = (props:GoBackProps)=>{
       <div className={styles.goBackBox}>
       <div className={styles.goBackTopContainer}>
       <div className={styles.goBackTitle}>
-        페이지를 나갈 경우 개설 중이던 스터디가 삭제됩니다.
+        {props.message}
       </div>
       <div><BiX size = {20}/></div>
       </div>
       <div className={styles.goBackSubText}>
-        정말 나가시겠습니까?
+        {props.subMessage}
       </div>
       <div className={styles.goBackBtnContainer}>
         <div className={styles.goBackCancel} onClick={()=> setStatus(false)}>취소하기</div>
-        <Link href="/newStudy" className={styles.goBackBtn}>삭제하고 나가기</Link>
+        <Link href={props.deleteExit} className={styles.goBackBtn}>삭제하고 나가기</Link>
       </div>
       </div>
     </div>

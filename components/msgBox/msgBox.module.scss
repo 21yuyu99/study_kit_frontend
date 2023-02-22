@@ -55,6 +55,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 480px;
   .goBackBox{
     background-color: white;
     width: 90%;
@@ -62,7 +63,6 @@
     border-radius: 15px;
     .goBackTopContainer{
       display: flex;
-      justify-content: center;
       svg{
         color:#535353;
       }
@@ -71,6 +71,7 @@
       font-size: 13pt;
       font-weight: 600;
       margin-bottom: 15px;
+      margin-right: auto;
     }
     .goBackSubText{
       font-size: 11pt;

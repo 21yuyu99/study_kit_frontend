@@ -26,6 +26,9 @@ const TopNavigation = ({title, backSpace, rightIcon, backgroundStyle} : Props)=>
     }
   }
   let lnk : string = ""
+  let deleteExit : string = "/newStudy"
+  let message : string = "페이지를 나갈 경우 개설 중이던 스터디가 삭제됩니다"
+  let subMessage : string = "정말 나가시겠습니까?"
   if (title==="스터디 개설 (1/3)") {
     lnk = "/newStudy"
   }
@@ -43,6 +46,8 @@ const TopNavigation = ({title, backSpace, rightIcon, backgroundStyle} : Props)=>
   }
   else if (title==="글쓰기") {
     lnk = "/studyBoard"
+    deleteExit = "/studyBoard"
+    message = "페이지를 나갈 경우 작성 중인 글이 삭제됩니다"
   }
   else {
     lnk = "/myStudy"
@@ -84,7 +89,7 @@ const TopNavigation = ({title, backSpace, rightIcon, backgroundStyle} : Props)=>
       <div className={styles.topTitle}>{title}</div>
       <div className={styles.icon}>{icon}</div>
     </nav>
-    {goBack===true&&<GoBackWarning status={goBack} setStatus={setGoBack}/>}
+    {goBack===true&&<GoBackWarning status={goBack} setStatus={setGoBack} message={message} subMessage={subMessage} deleteExit={deleteExit}/>}
     </>
 
   )
