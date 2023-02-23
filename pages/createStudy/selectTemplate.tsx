@@ -21,8 +21,6 @@ export default function SelectTemplate(){
       </div>
     </div>
     <StudyTypeBar/>
-    <Link href="/createStudy/detailStep"><Template/></Link>
-    <Template/>
     <div className={styles.createTemplate}>
       <Plus/>
       <div className={styles.createTemplateText}>
