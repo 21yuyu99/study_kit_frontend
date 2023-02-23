@@ -93,16 +93,20 @@ export default function DetailStep() {
     switch (queryResult) {
       case "it":
         type = it;
+        break;
       case "job":
         type = job;
+        break;
       case "license":
         type = license;
+        break;
       case "language":
         type = language;
+        break;
       case "etc":
         type = etc;
+        break;
     }
-    console.log(type);
   }
   return (
     <>
@@ -113,7 +117,7 @@ export default function DetailStep() {
       <TopNavigation title={"스터디 개설 (2/3)"} backSpace={true} rightIcon={"box"} backgroundStyle={0}></TopNavigation>
       <main className={styles.main}>
         {
-          type.map(
+        type.map(
             (x) => {
               switch (x.title) {
                 case "스터디 제목":
@@ -136,7 +140,7 @@ export default function DetailStep() {
                   return (
                     <InputBox key={type.indexOf(x)} number={type.indexOf(x) + 1} title={x.title} subTitle={x.subTitle}>
                       <InputSpace text={licnse} setText={setLicnse} />
-                      {(goal === "" && essentialCheck === false) ? (
+                      {(licnse === "" && essentialCheck === false) ? (
                         <WarningMsg msg="필수 항목입니다." />
                       ) : <></>}
                     </InputBox>
@@ -194,12 +198,21 @@ export default function DetailStep() {
                 case "목표 점수":
                   return (
                     <InputBox key={type.indexOf(x)} number={type.indexOf(x) + 1} title={x.title} subTitle={x.subTitle}>
-                      <InputSpace text={licnse} setText={setLicnse} />
-                      {(goal === "" && essentialCheck === false) ? (
+                      <InputSpace text={score} setText={setScore} />
+                      {(score === "" && essentialCheck === false) ? (
                         <WarningMsg msg="필수 항목입니다." />
                       ) : <></>}
                     </InputBox>
                   )
+                default:
+                  return (
+                    <InputBox key={type.indexOf(x)} number={type.indexOf(x) + 1} title={x.title} subTitle={x.subTitle}>
+                      <InputSpace text={title} setText={setTitle} />
+                      {(title === "" && essentialCheck === false) ? (
+                        <WarningMsg msg="필수 항목입니다." />
+                      ) : <></>}
+                    </InputBox>
+                  );
               }
             }
           )
