@@ -1,0 +1,54 @@
+.main{
+  width: 90%;
+  margin: auto;
+  background-color: #F4F4F4;
+  border-radius: 16px;
+}
+.topContainer{
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  padding-bottom: 0;
+  .nickName{
+   font-size: 12pt;
+   font-weight: bold;
+   color: #535353;
+   margin-right: auto;
+  }
+  .photo{
+    width: 44px;
+  }
+  svg{
+    color: #6A6A8B;
+  }
+}
+.midContainer{
+  display: flex;
+  padding-right: 10px;
+  padding-left: 50px;
+  .content{
+    color: #535353;
+    font-size: 10pt;
+    margin-right: auto;
+  }
+}
+.bottomContainer{
+  display: flex;
+  padding: 6px;
+  padding-left: 50px;
+  padding-bottom: 15px;
+  .leftSpace{
+    width: 45px;
+  }
+  .date, .reply, .remove{
+    color: #7E8489;
+    font-size: 8pt;
+  }
+  .reply{
+    padding-left: 10px;
+  }
+  .remove{
+    padding-right: 10px;
+    margin-left: auto;
+  }
+}
