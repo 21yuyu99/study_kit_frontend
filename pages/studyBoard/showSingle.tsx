@@ -32,8 +32,9 @@ const ShowSingle = ()=>{
     <>
     <TopNavigation title={"토익 뽀개기"} backSpace={true} rightIcon={"bell"} backgroundStyle={2}></TopNavigation>
     <main className={styles.main}>
-    {comment.map(x => <CommentCard nickName={x.nickname} isHead={x.isHead} content={x.content} date={x.date} nestedCommentNum={x.nestedCommentNum} 
+    {comment.map(x => <CommentCard key={x.id} nickName={x.nickname} isHead={x.isHead} content={x.content} date={x.date} nestedCommentNum={x.nestedCommentNum} 
     nestedComment={{
+      key: 1,
       nickName: "강상우",
       isHead: true,
       content: "확인하였습니다.",
