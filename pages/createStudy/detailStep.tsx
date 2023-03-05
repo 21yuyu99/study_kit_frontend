@@ -230,7 +230,7 @@ export default function DetailStep() {
               <WarningBox message="필수 항목을 모두 선택한 후 넘어가주세요." status={warningStatus} setStatus={setWarning} />
               <span className={styles.grayButtonWrapper} onClick={() => { setEssential(false); setWarning(true) }}><WidthButton color="gray" buttonText="다음" /></span>
             </>)
-          : <Link className={styles.blueButtonWrapper} href="/createStudy/studyIntro"><WidthButton color="blue" buttonText="다음" /></Link>
+          : <Link className={styles.blueButtonWrapper} href="/createStudy/studyIntro" onClick={()=>{}}><WidthButton color="blue" buttonText="다음"/></Link>
         }
       </div>
     </>

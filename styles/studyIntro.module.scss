@@ -3,3 +3,102 @@
   padding-top:10px;
   background-color: white;
 }
+.allBoxContainer{
+  margin:20px;
+  margin-top:10px;
+  .mainBox{
+    background-color:#F4F4F4;
+    padding:20px 25px 20px 25px;
+    border-radius: 10px;
+    .mainBoxTitle{
+      color:#9E9E9E;
+      font-size: 12pt;
+      margin-bottom:10px;
+    }
+    .mainBoxContent{
+      font-size: 13pt;
+    }
+    .mainBoxCard{
+      margin-bottom: 15px;
+    }
+    .modifyBtn{
+      color:#7E8489;
+      font-size: 11pt;
+      text-align: right;
+      margin-top:20px;
+      img{
+        vertical-align: middle;
+        margin-right:2px;
+      }
+    }
+  }
+  .cardContainer{
+    text-align: center;
+    .singleCard{
+      display: inline-block;
+      background-color: #f4f4f4;
+      width:30%;
+      margin-top:20px;
+      margin-right: 3.5%;
+      border-radius: 10px;
+      text-align: center;
+      .singleCardContent{
+        font-size: 14pt;
+        height: 100px;
+        vertical-align: middle;
+        line-height: 100px;
+        font-weight: 600;
+      }
+      .singleCardText{
+        background-color: #E0E0E0;
+        font-size: 10pt;
+        height: 50px;
+        line-height: 50px;
+        color:#6A6A8B;
+        border-radius: 0 0 10px 10px;
+      }
+    }
+    .singleCard:first-child{
+      .singleCardText{
+        background-color: #6a6a8b;
+        color:white;
+      }
+      .singleCardContent{
+        color:#0091ff;
+        .graphWrapper{
+          background-color:#0091ff;
+          border-radius: 50%;
+          width: 80px;
+          height: 80px;
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          background: conic-gradient(#0091ff 0% 75%,#e0e0e0 75% 100%);
+          .graph{
+            background-color: #f4f4f4;
+            position: absolute;
+            border-radius: 50%;
+            display: block;
+            top:50%; left:50%;
+            transform: translate(-50%, -50%);
+            width: 55px;
+            height: 55px;
+            line-height: 55px;
+            font-size: 12pt;
+          }
+        }
+      }
+    }
+    .singleCard:nth-child(2){
+      .singleCardContent{
+        color:#dfb144;
+      }
+    }
+    .singleCard:nth-child(3){
+      margin-right: 0;
+      .singleCardContent{
+        color:#c94e38;
+      }
+    }
+  }
+}
